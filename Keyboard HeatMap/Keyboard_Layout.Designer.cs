@@ -31,7 +31,7 @@
             this.keys_panel = new System.Windows.Forms.Panel();
             this.panel_key_times_pressed = new System.Windows.Forms.Panel();
             this.LB_times_pressed = new System.Windows.Forms.Label();
-            this.LABEL_number_of_keypresses = new System.Windows.Forms.Label();
+            this.LABEL_total_number_of_keypresses = new System.Windows.Forms.Label();
             this.program_Status = new System.Windows.Forms.Label();
             this.P_key = new System.Windows.Forms.Panel();
             this.LETTER_P = new System.Windows.Forms.Label();
@@ -59,9 +59,11 @@
             this.FUNC_RCTRL = new System.Windows.Forms.Label();
             this.SLASH_key = new System.Windows.Forms.Panel();
             this.SYMBOL_SLASH = new System.Windows.Forms.Label();
-            this.panel57 = new System.Windows.Forms.Panel();
+            this.RB_key = new System.Windows.Forms.Panel();
+            this.MOUSE_RB = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
-            this.panel58 = new System.Windows.Forms.Panel();
+            this.LB_key = new System.Windows.Forms.Panel();
+            this.MOUSE_LB = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.DOT_key = new System.Windows.Forms.Panel();
             this.SYMBOL_DOT = new System.Windows.Forms.Label();
@@ -170,8 +172,8 @@
             this.ENTER_key.SuspendLayout();
             this.RCTRL_key.SuspendLayout();
             this.SLASH_key.SuspendLayout();
-            this.panel57.SuspendLayout();
-            this.panel58.SuspendLayout();
+            this.RB_key.SuspendLayout();
+            this.LB_key.SuspendLayout();
             this.DOT_key.SuspendLayout();
             this.RALT_key.SuspendLayout();
             this.COMMA_key.SuspendLayout();
@@ -224,7 +226,7 @@
             // 
             this.keys_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
             this.keys_panel.Controls.Add(this.panel_key_times_pressed);
-            this.keys_panel.Controls.Add(this.LABEL_number_of_keypresses);
+            this.keys_panel.Controls.Add(this.LABEL_total_number_of_keypresses);
             this.keys_panel.Controls.Add(this.program_Status);
             this.keys_panel.Controls.Add(this.P_key);
             this.keys_panel.Controls.Add(this.BACKSLASH_key);
@@ -239,8 +241,8 @@
             this.keys_panel.Controls.Add(this.ENTER_key);
             this.keys_panel.Controls.Add(this.RCTRL_key);
             this.keys_panel.Controls.Add(this.SLASH_key);
-            this.keys_panel.Controls.Add(this.panel57);
-            this.keys_panel.Controls.Add(this.panel58);
+            this.keys_panel.Controls.Add(this.RB_key);
+            this.keys_panel.Controls.Add(this.LB_key);
             this.keys_panel.Controls.Add(this.DOT_key);
             this.keys_panel.Controls.Add(this.RALT_key);
             this.keys_panel.Controls.Add(this.COMMA_key);
@@ -290,16 +292,16 @@
             this.keys_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keys_panel.Location = new System.Drawing.Point(0, 0);
             this.keys_panel.Name = "keys_panel";
-            this.keys_panel.Size = new System.Drawing.Size(845, 330);
+            this.keys_panel.Size = new System.Drawing.Size(845, 320);
             this.keys_panel.TabIndex = 2;
             // 
             // panel_key_times_pressed
             // 
             this.panel_key_times_pressed.BackColor = System.Drawing.Color.DarkOrchid;
             this.panel_key_times_pressed.Controls.Add(this.LB_times_pressed);
-            this.panel_key_times_pressed.Location = new System.Drawing.Point(309, 290);
+            this.panel_key_times_pressed.Location = new System.Drawing.Point(309, 291);
             this.panel_key_times_pressed.Name = "panel_key_times_pressed";
-            this.panel_key_times_pressed.Size = new System.Drawing.Size(160, 33);
+            this.panel_key_times_pressed.Size = new System.Drawing.Size(151, 18);
             this.panel_key_times_pressed.TabIndex = 47;
             this.panel_key_times_pressed.Visible = false;
             // 
@@ -309,21 +311,21 @@
             this.LB_times_pressed.BackColor = System.Drawing.Color.Transparent;
             this.LB_times_pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LB_times_pressed.ForeColor = System.Drawing.Color.LawnGreen;
-            this.LB_times_pressed.Location = new System.Drawing.Point(6, 6);
+            this.LB_times_pressed.Location = new System.Drawing.Point(1, -1);
             this.LB_times_pressed.Name = "LB_times_pressed";
             this.LB_times_pressed.Size = new System.Drawing.Size(148, 21);
             this.LB_times_pressed.TabIndex = 0;
             this.LB_times_pressed.Text = "XXX Times Pressed";
             // 
-            // LABEL_number_of_keypresses
+            // LABEL_total_number_of_keypresses
             // 
-            this.LABEL_number_of_keypresses.AutoSize = true;
-            this.LABEL_number_of_keypresses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LABEL_number_of_keypresses.Location = new System.Drawing.Point(12, 296);
-            this.LABEL_number_of_keypresses.Name = "LABEL_number_of_keypresses";
-            this.LABEL_number_of_keypresses.Size = new System.Drawing.Size(153, 17);
-            this.LABEL_number_of_keypresses.TabIndex = 49;
-            this.LABEL_number_of_keypresses.Text = "Display no of keypresses";
+            this.LABEL_total_number_of_keypresses.AutoSize = true;
+            this.LABEL_total_number_of_keypresses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(12, 296);
+            this.LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
+            this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(153, 17);
+            this.LABEL_total_number_of_keypresses.TabIndex = 49;
+            this.LABEL_total_number_of_keypresses.Text = "Display no of keypresses";
             // 
             // program_Status
             // 
@@ -609,14 +611,27 @@
             this.SYMBOL_SLASH.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
             this.SYMBOL_SLASH.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             // 
-            // panel57
+            // RB_key
             // 
-            this.panel57.BackColor = System.Drawing.Color.White;
-            this.panel57.Controls.Add(this.label57);
-            this.panel57.Location = new System.Drawing.Point(726, 236);
-            this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(50, 50);
-            this.panel57.TabIndex = 38;
+            this.RB_key.BackColor = System.Drawing.Color.White;
+            this.RB_key.Controls.Add(this.MOUSE_RB);
+            this.RB_key.Controls.Add(this.label57);
+            this.RB_key.Location = new System.Drawing.Point(726, 236);
+            this.RB_key.Name = "RB_key";
+            this.RB_key.Size = new System.Drawing.Size(50, 50);
+            this.RB_key.TabIndex = 38;
+            // 
+            // MOUSE_RB
+            // 
+            this.MOUSE_RB.AutoSize = true;
+            this.MOUSE_RB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MOUSE_RB.Location = new System.Drawing.Point(10, 15);
+            this.MOUSE_RB.Name = "MOUSE_RB";
+            this.MOUSE_RB.Size = new System.Drawing.Size(30, 21);
+            this.MOUSE_RB.TabIndex = 2;
+            this.MOUSE_RB.Text = "RB";
+            this.MOUSE_RB.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
+            this.MOUSE_RB.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             // 
             // label57
             // 
@@ -627,14 +642,27 @@
             this.label57.Size = new System.Drawing.Size(0, 21);
             this.label57.TabIndex = 0;
             // 
-            // panel58
+            // LB_key
             // 
-            this.panel58.BackColor = System.Drawing.Color.White;
-            this.panel58.Controls.Add(this.label58);
-            this.panel58.Location = new System.Drawing.Point(670, 236);
-            this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(50, 50);
-            this.panel58.TabIndex = 39;
+            this.LB_key.BackColor = System.Drawing.Color.White;
+            this.LB_key.Controls.Add(this.MOUSE_LB);
+            this.LB_key.Controls.Add(this.label58);
+            this.LB_key.Location = new System.Drawing.Point(670, 236);
+            this.LB_key.Name = "LB_key";
+            this.LB_key.Size = new System.Drawing.Size(50, 50);
+            this.LB_key.TabIndex = 39;
+            // 
+            // MOUSE_LB
+            // 
+            this.MOUSE_LB.AutoSize = true;
+            this.MOUSE_LB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MOUSE_LB.Location = new System.Drawing.Point(11, 15);
+            this.MOUSE_LB.Name = "MOUSE_LB";
+            this.MOUSE_LB.Size = new System.Drawing.Size(28, 21);
+            this.MOUSE_LB.TabIndex = 1;
+            this.MOUSE_LB.Text = "LB";
+            this.MOUSE_LB.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
+            this.MOUSE_LB.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             // 
             // label58
             // 
@@ -1614,7 +1642,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.keys_panel);
             this.Name = "Keyboard_Layout";
-            this.Size = new System.Drawing.Size(845, 330);
+            this.Size = new System.Drawing.Size(845, 320);
             this.keys_panel.ResumeLayout(false);
             this.keys_panel.PerformLayout();
             this.panel_key_times_pressed.ResumeLayout(false);
@@ -1645,10 +1673,10 @@
             this.RCTRL_key.PerformLayout();
             this.SLASH_key.ResumeLayout(false);
             this.SLASH_key.PerformLayout();
-            this.panel57.ResumeLayout(false);
-            this.panel57.PerformLayout();
-            this.panel58.ResumeLayout(false);
-            this.panel58.PerformLayout();
+            this.RB_key.ResumeLayout(false);
+            this.RB_key.PerformLayout();
+            this.LB_key.ResumeLayout(false);
+            this.LB_key.PerformLayout();
             this.DOT_key.ResumeLayout(false);
             this.DOT_key.PerformLayout();
             this.RALT_key.ResumeLayout(false);
@@ -1774,9 +1802,9 @@
         private Label FUNC_RCTRL;
         private Panel SLASH_key;
         private Label SYMBOL_SLASH;
-        private Panel panel57;
+        private Panel RB_key;
         private Label label57;
-        private Panel panel58;
+        private Panel LB_key;
         private Label label58;
         private Panel DOT_key;
         private Label SYMBOL_DOT;
@@ -1872,7 +1900,9 @@
         private Label SYMBOL_TILDA;
         private Panel panel_key_times_pressed;
         private Label LB_times_pressed;
-        public Label LABEL_number_of_keypresses;
+        public Label LABEL_total_number_of_keypresses;
         public Label program_Status;
+        private Label MOUSE_RB;
+        private Label MOUSE_LB;
     }
 }

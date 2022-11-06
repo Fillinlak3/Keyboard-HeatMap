@@ -19,65 +19,9 @@ namespace Keyboard_HeatMap
     {
         public Dictionary<int, Panel> keys;
         public Dictionary<int, long> number_of_keyPress;
-        public Dictionary<int, int> keys_hashcodes;
+        private Dictionary<int, int> keys_hashcodes;
         public long TOTAL_KEYPRESSES = -1;
-        string[] keys_name = { 
-            "Oemtilde", 
-            "D1",
-            "D2",
-            "D3",
-            "D4",
-            "D5",
-            "D6",
-            "D7",
-            "D8",
-            "D9",
-            "D0",
-            "OemMinus",
-            "Oemplus",
-            "Back",
-            "Tab",
-            "Q",
-            "W",
-            "E",
-            "R",
-            "T",
-            "Y",
-            "U",
-            "I",
-            "O",
-            "P",
-            "OemOpenBrackets",
-            "Oem6", // Clsoe Brackets
-            "Return", // Enter
-            "Capital", // CapsLk
-            "A",
-            "S",
-            "D",
-            "F",
-            "G",
-            "H",
-            "J",
-            "K",
-            "L",
-            "Oem1", // Semicolon
-            "Oem7", // Quotation-mark
-            "Oem5", // Backslash
-            "ShiftKey",
-            "Z",
-            "X",
-            "C",
-            "V",
-            "B",
-            "N",
-            "M",
-            "Oemcomma",
-            "OemPeriod",
-            "OemQuestion", // Slash
-            "ControlKey",
-            "Menu",
-            "Space"
-        };
+
 
         public Keyboard_Layout()
         {
@@ -159,6 +103,9 @@ namespace Keyboard_HeatMap
             keys.Add(164, LALT_key);
             keys.Add(165, RALT_key);
             keys.Add(32, SPACE_key);
+
+            keys.Add(1, LB_key);
+            keys.Add(2, RB_key);
         }
 
         // Number of keypresses.
@@ -232,7 +179,6 @@ namespace Keyboard_HeatMap
 
             number_of_keyPress.Add(1, 0);
             number_of_keyPress.Add(2, 0);
-
         }
 
         // To get the on-hover animation to work.s
@@ -303,6 +249,9 @@ namespace Keyboard_HeatMap
             keys_hashcodes.Add(164, FUNC_LALT.GetHashCode());
             keys_hashcodes.Add(165, FUNC_RALT.GetHashCode());
             keys_hashcodes.Add(32, FUNC_SPACE.GetHashCode());
+
+            keys_hashcodes.Add(1, MOUSE_LB.GetHashCode());
+            keys_hashcodes.Add(2, MOUSE_RB.GetHashCode());
         }
 
         // Keypresses progress.
@@ -400,7 +349,7 @@ namespace Keyboard_HeatMap
 
         public void Reload()
         {
-            TOTAL_KEYPRESSES = -1;
+            TOTAL_KEYPRESSES = 0;
             _resetNumberOfKeyPresses();
             _resetKeyboardColors();
         }
@@ -416,6 +365,7 @@ namespace Keyboard_HeatMap
             // Find the button that the user is on-hover and display under it
             // the number of keypresses (only if > 0).
             foreach (var keyfound in keys_hashcodes)
+            {
                 if (keyfound.Value == sender.GetHashCode())
                 {
                     if (number_of_keyPress[keyfound.Key] > 0)
@@ -424,10 +374,11 @@ namespace Keyboard_HeatMap
 
                         // Set the location and the size of the panel.
                         panel_key_times_pressed.Location = new Point(keys[keyfound.Key].Location.X + 5, keys[keyfound.Key].Location.Y + 38);
-                        panel_key_times_pressed.Size = new Size(panel_key_times_pressed.Controls[0].Width + 10, panel_key_times_pressed.Controls[0].Height + 10);
+                        panel_key_times_pressed.Size = new Size(panel_key_times_pressed.Controls[0].Width, panel_key_times_pressed.Controls[0].Height);
                         panel_key_times_pressed.Visible = true;
                     }
                 }
+            }
         }
 
         // Hide the animation.

@@ -36,18 +36,23 @@ namespace Keyboard_HeatMap
             {
                 if (keyboard_Layout.program_Status.Text == "Disabled")
                 {
+                    // Disable the X button to prevent closing while program running.
+                    this.ControlBox = false;
                     keyboard_Layout.program_Status.Text = "Enabled";
                     keyboard_Layout.program_Status.BackColor = Color.Green;
                     keyboard_Layout.Reload();
                 }
                 else
                 {
+                    // Enable the X button when program is stopped.
+                    this.ControlBox = true;
                     keyboard_Layout.program_Status.Text = "Disabled";
                     keyboard_Layout.program_Status.BackColor = Color.Red;
                     keyboard_Layout.WriteLogFile();
                 }
 
-                detectKeyPress.Enabled = Frame_Update.Enabled = !detectKeyPress.Enabled;          
+                Thread.Sleep(50);
+                detectKeyPress.Enabled = Frame_Update.Enabled = !detectKeyPress.Enabled;
             }
             else if(e.KeyCode == Keys.F1) // Help Page.
             {
@@ -61,8 +66,10 @@ namespace Keyboard_HeatMap
             if (!keyboard_Layout.keys.ContainsKey(key))
                 return;
 
-            // Colors and frequency of changing colors are just a concept
-            // 'till I have a statistic from different people.
+            /*
+                Colors and frequency of changing colors are just a concept
+                'till I have a statistic from different people.
+             */
 
             // Green Gradient. => some keypresses.
             if (number_of_presses < 10)
@@ -88,32 +95,14 @@ namespace Keyboard_HeatMap
             else if (number_of_presses >= 6500 && number_of_presses < 10000)
             { keyboard_Layout.keys[key].BackColor = Color.FromArgb(136, 8, 8); return; }
             else if (number_of_presses >= 10000) return;
-
-            //if (number_of_presses < 10)
-            //{ keyboard_Layout.keys[key].BackColor = Color.LightGreen; return; }
-            //else if (number_of_presses >= 10 && number_of_presses < 20)
-            //{ keyboard_Layout.keys[key].BackColor = Color.LimeGreen; return; }
-            //else if (number_of_presses >= 20 && number_of_presses < 30)
-            //{ keyboard_Layout.keys[key].BackColor = Color.Green; return; }
-
-            //if (number_of_presses >= 30 && number_of_presses < 40)
-            //{ keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 255, 0); return; }
-            //else if (number_of_presses >= 40 && number_of_presses < 50)
-            //{ keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 146, 0); return; }
-            //else if (number_of_presses >= 50 && number_of_presses < 60)
-            //{ keyboard_Layout.keys[key].BackColor = Color.IndianRed; return; }
-
-            //if (number_of_presses >= 60 && number_of_presses < 70)
-            //{ keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 85, 0); return; }
-            //else if (number_of_presses >= 70 && number_of_presses < 80)
-            //{ keyboard_Layout.keys[key].BackColor = Color.Red; return; }
-            //else if (number_of_presses >= 80 && number_of_presses < 90)
-            //{ keyboard_Layout.keys[key].BackColor = Color.FromArgb(136, 8, 8); return; }
-            //else if (number_of_presses >= 100) return;
         }
 
         private void Frame_Update_Tick(object sender, EventArgs e)
         {
+            /*
+                If key exists in number_of_keyPress dictionary, it will be displayed
+                by coloring the coresponding key.
+             */
             for (int i = 0; i < 256; i++)
                 if (keyboard_Layout.number_of_keyPress.ContainsKey(i))
                     if (keyboard_Layout.number_of_keyPress[i] != 0)
@@ -121,26 +110,50 @@ namespace Keyboard_HeatMap
 
             // Creating a new var to bypass 'marshal-by-reference' CS1690 warning.
             long _total_keypresses = keyboard_Layout.TOTAL_KEYPRESSES;
-            keyboard_Layout.LABEL_number_of_keypresses.Text = "Total number of keypresses: " + _total_keypresses.ToString();
+            keyboard_Layout.LABEL_total_number_of_keypresses.Text = "Total number of keypresses: " + _total_keypresses.ToString();
         }
 
         // Used this method to prevent helding down a key.
-        private int lastKeyPressed = -1;
+        private int lastKeyPressed = -1, actionKeyPressed = 0;
+        int PRESSED = 1, UNPRESSED = 0;
         private void detectKeyPress_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 256; i++)
+            {
                 if (GetAsyncKeyState(i) == -32767 /*&& lastKeyPressed == -1*/)
                 {
                     lastKeyPressed = i;
-                    keyboard_Layout.TOTAL_KEYPRESSES++;
-                    if (keyboard_Layout.number_of_keyPress.ContainsKey(i))
-                    { keyboard_Layout.number_of_keyPress[i]++; break; }
+
+                    /*
+                        If action key pressed it will ignore this to prevent infinite total keypresses.
+                        Otherwise if it's a normal key it'll run once.
+                     */
+                    if (actionKeyPressed == UNPRESSED)
+                    {
+                        keyboard_Layout.TOTAL_KEYPRESSES++;
+                        if (keyboard_Layout.number_of_keyPress.ContainsKey(i))
+                        { keyboard_Layout.number_of_keyPress[i]++; }
+                    }
+
+                    /*
+                        If action key pressed such as: ctrls, shifts, alts.
+                        Then I need to check if it is pressed and stop the key pressing event
+                        to prevent bugs such as infite total_keypresses.
+                     */
+                    if (actionKeyPressed == UNPRESSED && (i >= 160 && i <= 165))
+                    {
+                        // It will be x2 everytime and I always need to decrement it.
+                        keyboard_Layout.TOTAL_KEYPRESSES--;
+                        actionKeyPressed = PRESSED; // mark action key as pressed.
+                    }
                 }
-                else if (GetAsyncKeyState(lastKeyPressed) == 0)
+                else if (lastKeyPressed != -1 && GetAsyncKeyState(lastKeyPressed) == 0)
                 /*
                     Runs only when a key is held down.
-                */
-                { lastKeyPressed = -1; }
+                    Reset lastKeyPressed and actionKeyPressed.
+                 */
+                { lastKeyPressed = -1; actionKeyPressed = UNPRESSED; }
+            }
         }
     }
 }

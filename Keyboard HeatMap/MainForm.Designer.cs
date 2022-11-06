@@ -60,6 +60,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(844, 321);
             this.Controls.Add(this.keyboard_Layout);
+            this.MaximizeBox = false;
             this.Name = "Form_Main";
             this.Opacity = 0.9D;
             this.Text = "Keyboard HeatMap";
