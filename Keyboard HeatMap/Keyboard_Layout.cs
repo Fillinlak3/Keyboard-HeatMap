@@ -262,15 +262,6 @@ namespace Keyboard_HeatMap
                     keys[i].BackColor = Color.White;
         }
 
-        long _calculateTotalKeypresses()
-        {
-            TOTAL_KEYPRESSES = 0;
-            for (int i = 0; i < 256; i++)
-                if (number_of_keyPress.ContainsKey(i))
-                    TOTAL_KEYPRESSES += number_of_keyPress[i];
-            return TOTAL_KEYPRESSES;
-        }
-
         void _writeLogFile()
         {
             string data = "==========\n<KEYBOARD>\n==========\n";
@@ -362,8 +353,10 @@ namespace Keyboard_HeatMap
         // Display On-Hover animation for a single key with the number of keypresses.
         private void DisplayCursorOverKeypresses(object sender, EventArgs e)
         {
-            // Find the button that the user is on-hover and display under it
-            // the number of keypresses (only if > 0).
+            /*
+                Find the button that the user is on-hover and display under it
+                the number of keypresses (only if > 0).
+             */
             foreach (var keyfound in keys_hashcodes)
             {
                 if (keyfound.Value == sender.GetHashCode())
@@ -372,7 +365,7 @@ namespace Keyboard_HeatMap
                     {
                         panel_key_times_pressed.Controls[0].Text = number_of_keyPress[keyfound.Key].ToString();
 
-                        // Set the location and the size of the panel.
+                        // Set the location, visibility and the size of the panel.
                         panel_key_times_pressed.Location = new Point(keys[keyfound.Key].Location.X + 5, keys[keyfound.Key].Location.Y + 38);
                         panel_key_times_pressed.Size = new Size(panel_key_times_pressed.Controls[0].Width, panel_key_times_pressed.Controls[0].Height);
                         panel_key_times_pressed.Visible = true;

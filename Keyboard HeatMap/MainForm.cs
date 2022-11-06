@@ -26,6 +26,7 @@ namespace Keyboard_HeatMap
 
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // The progress is saved automacally if the program is closed.
             if (detectKeyPress.Enabled == true)
                 keyboard_Layout.WriteLogFile();
         }
@@ -40,6 +41,8 @@ namespace Keyboard_HeatMap
                     this.ControlBox = false;
                     keyboard_Layout.program_Status.Text = "Enabled";
                     keyboard_Layout.program_Status.BackColor = Color.Green;
+                    
+                    // Restart the program and reset all past progress.
                     keyboard_Layout.Reload();
                 }
                 else
@@ -48,6 +51,8 @@ namespace Keyboard_HeatMap
                     this.ControlBox = true;
                     keyboard_Layout.program_Status.Text = "Disabled";
                     keyboard_Layout.program_Status.BackColor = Color.Red;
+
+                    // Save all the progress into a log file.
                     keyboard_Layout.WriteLogFile();
                 }
 
@@ -63,6 +68,7 @@ namespace Keyboard_HeatMap
 
         void CheckNumberOfPresses(long number_of_presses, int key)
         {
+            // If the key is not found in the dictionary, exit to avoid crashes.
             if (!keyboard_Layout.keys.ContainsKey(key))
                 return;
 
@@ -122,6 +128,7 @@ namespace Keyboard_HeatMap
             {
                 if (GetAsyncKeyState(i) == -32767 /*&& lastKeyPressed == -1*/)
                 {
+                    // Remember the last key pressed.
                     lastKeyPressed = i;
 
                     /*
@@ -150,7 +157,10 @@ namespace Keyboard_HeatMap
                 else if (lastKeyPressed != -1 && GetAsyncKeyState(lastKeyPressed) == 0)
                 /*
                     Runs only when a key is held down.
-                    Reset lastKeyPressed and actionKeyPressed.
+                    If current key  is the same as last key, it means the user
+                    is still pressing the button and the program will ignore
+                    continuous keypress. If the user releases the button, it will
+                    reset lastKeyPressed and actionKeyPressed.
                  */
                 { lastKeyPressed = -1; actionKeyPressed = UNPRESSED; }
             }
