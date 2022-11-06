@@ -323,9 +323,9 @@
             this.LABEL_total_number_of_keypresses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(12, 296);
             this.LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
-            this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(153, 17);
+            this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(115, 17);
             this.LABEL_total_number_of_keypresses.TabIndex = 49;
-            this.LABEL_total_number_of_keypresses.Text = "Display no of keypresses";
+            this.LABEL_total_number_of_keypresses.Text = "No keypresses yet";
             // 
             // program_Status
             // 

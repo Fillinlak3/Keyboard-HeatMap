@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.detectKeyPress = new System.Windows.Forms.Timer(this.components);
             this.Frame_Update = new System.Windows.Forms.Timer(this.components);
             this.keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
@@ -60,6 +61,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(844, 321);
             this.Controls.Add(this.keyboard_Layout);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form_Main";
             this.Opacity = 0.9D;
