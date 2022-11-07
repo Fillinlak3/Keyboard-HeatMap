@@ -33,6 +33,7 @@
             this.detectKeyPress = new System.Windows.Forms.Timer(this.components);
             this.Frame_Update = new System.Windows.Forms.Timer(this.components);
             this.keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
+            this.help_Page = new Keyboard_HeatMap.Help_Page();
             this.SuspendLayout();
             // 
             // detectKeyPress
@@ -54,6 +55,16 @@
             this.keyboard_Layout.TabIndex = 0;
             this.keyboard_Layout.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyboard_Layout_KeyDown);
             // 
+            // help_Page
+            // 
+            this.help_Page.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            this.help_Page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.help_Page.Location = new System.Drawing.Point(0, 0);
+            this.help_Page.Name = "help_Page";
+            this.help_Page.Size = new System.Drawing.Size(844, 321);
+            this.help_Page.TabIndex = 1;
+            this.help_Page.Visible = false;
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -61,6 +72,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(844, 321);
             this.Controls.Add(this.keyboard_Layout);
+            this.Controls.Add(this.help_Page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -77,5 +89,6 @@
         private System.Windows.Forms.Timer detectKeyPress;
         private System.Windows.Forms.Timer Frame_Update;
         private Keyboard_Layout keyboard_Layout;
+        private Help_Page help_Page;
     }
 }

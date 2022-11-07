@@ -10,6 +10,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media.Animation;
 
@@ -179,6 +180,7 @@ namespace Keyboard_HeatMap
 
             number_of_keyPress.Add(1, 0);
             number_of_keyPress.Add(2, 0);
+            number_of_keyPress.Add(4, 0);
         }
 
         // To get the on-hover animation to work.s
@@ -331,13 +333,15 @@ namespace Keyboard_HeatMap
 
             data += "=======\n<MOUSE>\n=======\n";
             data += "LB: " + number_of_keyPress[1].ToString() + "\n";
-            data += "RB: " + number_of_keyPress[2].ToString() + "\n\n";
+            data += "RB: " + number_of_keyPress[2].ToString() + "\n";
+            data += "MB: " + number_of_keyPress[4].ToString() + "\n\n";
 
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
             File.WriteAllText("keypress_statistics.log", data);
         }
 
+        // Restart the program
         public void Reload()
         {
             TOTAL_KEYPRESSES = 0;
@@ -366,9 +370,11 @@ namespace Keyboard_HeatMap
                         panel_key_times_pressed.Controls[0].Text = number_of_keyPress[keyfound.Key].ToString();
 
                         // Set the location, visibility and the size of the panel.
-                        panel_key_times_pressed.Location = new Point(keys[keyfound.Key].Location.X + 5, keys[keyfound.Key].Location.Y + 38);
-                        panel_key_times_pressed.Size = new Size(panel_key_times_pressed.Controls[0].Width, panel_key_times_pressed.Controls[0].Height);
+                        panel_key_times_pressed.Location = new System.Drawing.Point(keys[keyfound.Key].Location.X + 5, keys[keyfound.Key].Location.Y + 38);
+                        panel_key_times_pressed.Size = new System.Drawing.Size(panel_key_times_pressed.Controls[0].Width, panel_key_times_pressed.Controls[0].Height);
                         panel_key_times_pressed.Visible = true;
+
+                        return;
                     }
                 }
             }

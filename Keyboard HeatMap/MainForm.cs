@@ -29,19 +29,28 @@ namespace Keyboard_HeatMap
             // The progress is saved automacally if the program is closed.
             if (detectKeyPress.Enabled == true)
                 keyboard_Layout.WriteLogFile();
+
+            Application.Exit();
         }
 
         private void keyboard_Layout_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2) // Start Program.
+            if (e.KeyCode == Keys.F2) // Start/Stop Program.
             {
+                // If user on help page hide and show kb_layout.
+                if (help_Page.Visible)
+                {
+                    help_Page.SendToBack();
+                    help_Page.Visible = false;
+                }
+
                 if (keyboard_Layout.program_Status.Text == "Disabled")
                 {
                     // Disable the X button to prevent closing while program running.
                     this.ControlBox = false;
                     keyboard_Layout.program_Status.Text = "Enabled";
                     keyboard_Layout.program_Status.BackColor = Color.Green;
-                    
+
                     // Restart the program and reset all past progress.
                     keyboard_Layout.Reload();
                 }
@@ -61,7 +70,12 @@ namespace Keyboard_HeatMap
             }
             else if(e.KeyCode == Keys.F1) // Help Page.
             {
+                help_Page.Visible = !help_Page.Visible;
 
+                if (help_Page.Visible)
+                    help_Page.BringToFront();
+                else
+                    help_Page.SendToBack();
             }
             //keyboard_Layout.keys[e.KeyCode.ToString()].BackColor = Color.Red;
         }
