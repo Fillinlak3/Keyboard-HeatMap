@@ -53,7 +53,6 @@
             this.keyboard_Layout.Name = "keyboard_Layout";
             this.keyboard_Layout.Size = new System.Drawing.Size(844, 321);
             this.keyboard_Layout.TabIndex = 0;
-            this.keyboard_Layout.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyboard_Layout_KeyDown);
             // 
             // help_Page
             // 
@@ -75,12 +74,14 @@
             this.Controls.Add(this.help_Page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form_Main";
             this.Opacity = 0.9D;
             this.Text = "Keyboard HeatMap";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_Main_KeyDown);
             this.ResumeLayout(false);
 
         }

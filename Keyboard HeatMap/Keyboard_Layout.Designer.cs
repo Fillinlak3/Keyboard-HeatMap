@@ -32,7 +32,6 @@
             this.panel_key_times_pressed = new System.Windows.Forms.Panel();
             this.LB_times_pressed = new System.Windows.Forms.Label();
             this.LABEL_total_number_of_keypresses = new System.Windows.Forms.Label();
-            this.program_Status = new System.Windows.Forms.Label();
             this.P_key = new System.Windows.Forms.Panel();
             this.LETTER_P = new System.Windows.Forms.Label();
             this.BACKSLASH_key = new System.Windows.Forms.Panel();
@@ -157,6 +156,7 @@
             this.NUM1 = new System.Windows.Forms.Label();
             this.TILDA_key = new System.Windows.Forms.Panel();
             this.SYMBOL_TILDA = new System.Windows.Forms.Label();
+            this.program_Status = new System.Windows.Forms.Label();
             this.keys_panel.SuspendLayout();
             this.panel_key_times_pressed.SuspendLayout();
             this.P_key.SuspendLayout();
@@ -225,9 +225,9 @@
             // keys_panel
             // 
             this.keys_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            this.keys_panel.Controls.Add(this.program_Status);
             this.keys_panel.Controls.Add(this.panel_key_times_pressed);
             this.keys_panel.Controls.Add(this.LABEL_total_number_of_keypresses);
-            this.keys_panel.Controls.Add(this.program_Status);
             this.keys_panel.Controls.Add(this.P_key);
             this.keys_panel.Controls.Add(this.BACKSLASH_key);
             this.keys_panel.Controls.Add(this.EQUAL_key);
@@ -293,7 +293,7 @@
             this.keys_panel.Location = new System.Drawing.Point(0, 0);
             this.keys_panel.Name = "keys_panel";
             this.keys_panel.Size = new System.Drawing.Size(845, 320);
-            this.keys_panel.TabIndex = 2;
+            this.keys_panel.TabIndex = 1;
             // 
             // panel_key_times_pressed
             // 
@@ -324,19 +324,8 @@
             this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(12, 296);
             this.LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
             this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(115, 17);
-            this.LABEL_total_number_of_keypresses.TabIndex = 49;
+            this.LABEL_total_number_of_keypresses.TabIndex = 0;
             this.LABEL_total_number_of_keypresses.Text = "No keypresses yet";
-            // 
-            // program_Status
-            // 
-            this.program_Status.AutoSize = true;
-            this.program_Status.BackColor = System.Drawing.Color.Red;
-            this.program_Status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.program_Status.Location = new System.Drawing.Point(762, 293);
-            this.program_Status.Name = "program_Status";
-            this.program_Status.Size = new System.Drawing.Size(70, 21);
-            this.program_Status.TabIndex = 48;
-            this.program_Status.Text = "Disabled";
             // 
             // P_key
             // 
@@ -366,7 +355,7 @@
             this.BACKSLASH_key.Location = new System.Drawing.Point(718, 124);
             this.BACKSLASH_key.Name = "BACKSLASH_key";
             this.BACKSLASH_key.Size = new System.Drawing.Size(50, 50);
-            this.BACKSLASH_key.TabIndex = 10;
+            this.BACKSLASH_key.TabIndex = 0;
             // 
             // SYMBOL_BACKSLASH
             // 
@@ -387,7 +376,7 @@
             this.EQUAL_key.Location = new System.Drawing.Point(684, 12);
             this.EQUAL_key.Name = "EQUAL_key";
             this.EQUAL_key.Size = new System.Drawing.Size(50, 50);
-            this.EQUAL_key.TabIndex = 5;
+            this.EQUAL_key.TabIndex = 0;
             // 
             // SYMBOL_EQUAL
             // 
@@ -408,7 +397,7 @@
             this.RSHIFT_key.Location = new System.Drawing.Point(703, 180);
             this.RSHIFT_key.Name = "RSHIFT_key";
             this.RSHIFT_key.Size = new System.Drawing.Size(129, 50);
-            this.RSHIFT_key.TabIndex = 26;
+            this.RSHIFT_key.TabIndex = 0;
             // 
             // FUNC_RSHIFT
             // 
@@ -429,7 +418,7 @@
             this.MINUS_key.Location = new System.Drawing.Point(628, 12);
             this.MINUS_key.Name = "MINUS_key";
             this.MINUS_key.Size = new System.Drawing.Size(50, 50);
-            this.MINUS_key.TabIndex = 6;
+            this.MINUS_key.TabIndex = 0;
             // 
             // SYMBOL_MINUS
             // 
@@ -471,7 +460,7 @@
             this.BRACKET_CLOSE_key.Location = new System.Drawing.Point(715, 68);
             this.BRACKET_CLOSE_key.Name = "BRACKET_CLOSE_key";
             this.BRACKET_CLOSE_key.Size = new System.Drawing.Size(50, 50);
-            this.BRACKET_CLOSE_key.TabIndex = 7;
+            this.BRACKET_CLOSE_key.TabIndex = 0;
             // 
             // SYMBOL_BRACKET_CLOSE
             // 
@@ -513,7 +502,7 @@
             this.BKSPC_key.Location = new System.Drawing.Point(740, 12);
             this.BKSPC_key.Name = "BKSPC_key";
             this.BKSPC_key.Size = new System.Drawing.Size(92, 50);
-            this.BKSPC_key.TabIndex = 28;
+            this.BKSPC_key.TabIndex = 0;
             // 
             // FUNC_BKSPC
             // 
@@ -555,7 +544,7 @@
             this.ENTER_key.Location = new System.Drawing.Point(774, 68);
             this.ENTER_key.Name = "ENTER_key";
             this.ENTER_key.Size = new System.Drawing.Size(58, 106);
-            this.ENTER_key.TabIndex = 27;
+            this.ENTER_key.TabIndex = 0;
             // 
             // FUNC_ENTER
             // 
@@ -576,7 +565,7 @@
             this.RCTRL_key.Location = new System.Drawing.Point(782, 236);
             this.RCTRL_key.Name = "RCTRL_key";
             this.RCTRL_key.Size = new System.Drawing.Size(50, 50);
-            this.RCTRL_key.TabIndex = 37;
+            this.RCTRL_key.TabIndex = 0;
             // 
             // FUNC_RCTRL
             // 
@@ -597,7 +586,7 @@
             this.SLASH_key.Location = new System.Drawing.Point(647, 180);
             this.SLASH_key.Name = "SLASH_key";
             this.SLASH_key.Size = new System.Drawing.Size(50, 50);
-            this.SLASH_key.TabIndex = 26;
+            this.SLASH_key.TabIndex = 0;
             // 
             // SYMBOL_SLASH
             // 
@@ -619,7 +608,7 @@
             this.RB_key.Location = new System.Drawing.Point(726, 236);
             this.RB_key.Name = "RB_key";
             this.RB_key.Size = new System.Drawing.Size(50, 50);
-            this.RB_key.TabIndex = 38;
+            this.RB_key.TabIndex = 0;
             // 
             // MOUSE_RB
             // 
@@ -650,7 +639,7 @@
             this.LB_key.Location = new System.Drawing.Point(670, 236);
             this.LB_key.Name = "LB_key";
             this.LB_key.Size = new System.Drawing.Size(50, 50);
-            this.LB_key.TabIndex = 39;
+            this.LB_key.TabIndex = 0;
             // 
             // MOUSE_LB
             // 
@@ -680,7 +669,7 @@
             this.DOT_key.Location = new System.Drawing.Point(591, 180);
             this.DOT_key.Name = "DOT_key";
             this.DOT_key.Size = new System.Drawing.Size(50, 50);
-            this.DOT_key.TabIndex = 27;
+            this.DOT_key.TabIndex = 0;
             // 
             // SYMBOL_DOT
             // 
@@ -701,7 +690,7 @@
             this.RALT_key.Location = new System.Drawing.Point(614, 236);
             this.RALT_key.Name = "RALT_key";
             this.RALT_key.Size = new System.Drawing.Size(50, 50);
-            this.RALT_key.TabIndex = 40;
+            this.RALT_key.TabIndex = 0;
             // 
             // FUNC_RALT
             // 
@@ -785,7 +774,7 @@
             this.SPACE_key.Location = new System.Drawing.Point(184, 236);
             this.SPACE_key.Name = "SPACE_key";
             this.SPACE_key.Size = new System.Drawing.Size(422, 50);
-            this.SPACE_key.TabIndex = 44;
+            this.SPACE_key.TabIndex = 0;
             // 
             // FUNC_SPACE
             // 
@@ -806,7 +795,7 @@
             this.LALT_key.Location = new System.Drawing.Point(124, 236);
             this.LALT_key.Name = "LALT_key";
             this.LALT_key.Size = new System.Drawing.Size(50, 50);
-            this.LALT_key.TabIndex = 45;
+            this.LALT_key.TabIndex = 0;
             // 
             // FUNC_LALT
             // 
@@ -848,7 +837,7 @@
             this.panel65.Location = new System.Drawing.Point(68, 236);
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(50, 50);
-            this.panel65.TabIndex = 46;
+            this.panel65.TabIndex = 0;
             // 
             // label65
             // 
@@ -887,7 +876,7 @@
             this.LCTRL_key.Location = new System.Drawing.Point(12, 236);
             this.LCTRL_key.Name = "LCTRL_key";
             this.LCTRL_key.Size = new System.Drawing.Size(50, 50);
-            this.LCTRL_key.TabIndex = 36;
+            this.LCTRL_key.TabIndex = 0;
             // 
             // FUNC_LCTRL
             // 
@@ -1433,7 +1422,7 @@
             this.NUMBER_9_key.Location = new System.Drawing.Point(516, 12);
             this.NUMBER_9_key.Name = "NUMBER_9_key";
             this.NUMBER_9_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_9_key.TabIndex = 4;
+            this.NUMBER_9_key.TabIndex = 0;
             // 
             // NUM9
             // 
@@ -1454,7 +1443,7 @@
             this.NUMBER_8_key.Location = new System.Drawing.Point(460, 12);
             this.NUMBER_8_key.Name = "NUMBER_8_key";
             this.NUMBER_8_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_8_key.TabIndex = 3;
+            this.NUMBER_8_key.TabIndex = 0;
             // 
             // NUM8
             // 
@@ -1475,7 +1464,7 @@
             this.NUMBER_7_key.Location = new System.Drawing.Point(404, 12);
             this.NUMBER_7_key.Name = "NUMBER_7_key";
             this.NUMBER_7_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_7_key.TabIndex = 3;
+            this.NUMBER_7_key.TabIndex = 0;
             // 
             // NUM7
             // 
@@ -1496,7 +1485,7 @@
             this.NUMBER_6_key.Location = new System.Drawing.Point(348, 12);
             this.NUMBER_6_key.Name = "NUMBER_6_key";
             this.NUMBER_6_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_6_key.TabIndex = 3;
+            this.NUMBER_6_key.TabIndex = 0;
             // 
             // NUM6
             // 
@@ -1517,7 +1506,7 @@
             this.NUMBER_5_key.Location = new System.Drawing.Point(292, 12);
             this.NUMBER_5_key.Name = "NUMBER_5_key";
             this.NUMBER_5_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_5_key.TabIndex = 2;
+            this.NUMBER_5_key.TabIndex = 0;
             // 
             // NUM5
             // 
@@ -1538,7 +1527,7 @@
             this.NUMBER_4_key.Location = new System.Drawing.Point(236, 12);
             this.NUMBER_4_key.Name = "NUMBER_4_key";
             this.NUMBER_4_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_4_key.TabIndex = 1;
+            this.NUMBER_4_key.TabIndex = 0;
             // 
             // NUM4
             // 
@@ -1559,7 +1548,7 @@
             this.NUMBER_3_key.Location = new System.Drawing.Point(180, 12);
             this.NUMBER_3_key.Name = "NUMBER_3_key";
             this.NUMBER_3_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_3_key.TabIndex = 1;
+            this.NUMBER_3_key.TabIndex = 0;
             // 
             // NUM3
             // 
@@ -1580,7 +1569,7 @@
             this.NUMBER_2_key.Location = new System.Drawing.Point(124, 12);
             this.NUMBER_2_key.Name = "NUMBER_2_key";
             this.NUMBER_2_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_2_key.TabIndex = 1;
+            this.NUMBER_2_key.TabIndex = 0;
             // 
             // NUM2
             // 
@@ -1601,7 +1590,7 @@
             this.NUMBER_1_key.Location = new System.Drawing.Point(68, 12);
             this.NUMBER_1_key.Name = "NUMBER_1_key";
             this.NUMBER_1_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_1_key.TabIndex = 1;
+            this.NUMBER_1_key.TabIndex = 0;
             // 
             // NUM1
             // 
@@ -1635,6 +1624,18 @@
             this.SYMBOL_TILDA.Text = "~";
             this.SYMBOL_TILDA.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
             this.SYMBOL_TILDA.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
+            // 
+            // program_Status
+            // 
+            this.program_Status.AutoSize = true;
+            this.program_Status.BackColor = System.Drawing.Color.Red;
+            this.program_Status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.program_Status.Location = new System.Drawing.Point(762, 293);
+            this.program_Status.Name = "program_Status";
+            this.program_Status.Size = new System.Drawing.Size(70, 21);
+            this.program_Status.TabIndex = 48;
+            this.program_Status.Text = "Disabled";
+            this.program_Status.Click += new System.EventHandler(this.program_Status_Click);
             // 
             // Keyboard_Layout
             // 
@@ -1901,8 +1902,8 @@
         private Panel panel_key_times_pressed;
         private Label LB_times_pressed;
         public Label LABEL_total_number_of_keypresses;
-        public Label program_Status;
         private Label MOUSE_RB;
         private Label MOUSE_LB;
+        public Label program_Status;
     }
 }

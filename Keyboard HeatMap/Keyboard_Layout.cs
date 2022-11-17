@@ -18,6 +18,9 @@ namespace Keyboard_HeatMap
 {
     public partial class Keyboard_Layout : UserControl
     {
+        private string TempPathSavedRecords;
+
+
         public Dictionary<int, Panel> keys;
         public Dictionary<int, long> number_of_keyPress;
         private Dictionary<int, int> keys_hashcodes;
@@ -35,6 +38,8 @@ namespace Keyboard_HeatMap
             _assignKeysToDict();
             _assignHashCodes();
             _resetNumberOfKeyPresses();
+
+            TempPathSavedRecords = System.IO.Path.GetTempPath() + $@"Keyboard HeatMap\keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
         }
 
         void _assignKeysToDict()
@@ -339,6 +344,7 @@ namespace Keyboard_HeatMap
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
             File.WriteAllText("keypress_statistics.log", data);
+            File.WriteAllText(TempPathSavedRecords, data);
         }
 
         // Restart the program
@@ -351,6 +357,11 @@ namespace Keyboard_HeatMap
 
         public void WriteLogFile()
         {
+            if (TOTAL_KEYPRESSES <= 1)
+                return;
+            if (!Directory.Exists(System.IO.Path.GetTempPath() + "Keyboard HeatMap"))
+                Directory.CreateDirectory(System.IO.Path.GetTempPath() + "Keyboard HeatMap");
+
             _writeLogFile();
         }
 
@@ -384,6 +395,11 @@ namespace Keyboard_HeatMap
         private void HideCursorOverKeypresses(object sender, EventArgs e)
         {
             panel_key_times_pressed.Visible = false;
+        }
+
+        private void program_Status_Click(object sender, EventArgs e)
+        {
+            SendKeys.SendWait("{F2}");
         }
     }
 }

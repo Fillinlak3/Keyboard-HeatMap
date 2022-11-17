@@ -33,7 +33,7 @@ namespace Keyboard_HeatMap
             Application.Exit();
         }
 
-        private void keyboard_Layout_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        private void Form_Main_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2) // Start/Stop Program.
             {
@@ -68,7 +68,7 @@ namespace Keyboard_HeatMap
                 Thread.Sleep(50);
                 detectKeyPress.Enabled = Frame_Update.Enabled = !detectKeyPress.Enabled;
             }
-            else if(e.KeyCode == Keys.F1) // Help Page.
+            else if (e.KeyCode == Keys.F1) // Help Page.
             {
                 help_Page.Visible = !help_Page.Visible;
 
@@ -77,7 +77,6 @@ namespace Keyboard_HeatMap
                 else
                     help_Page.SendToBack();
             }
-            //keyboard_Layout.keys[e.KeyCode.ToString()].BackColor = Color.Red;
         }
 
         void CheckNumberOfPresses(long number_of_presses, int key)
@@ -136,6 +135,7 @@ namespace Keyboard_HeatMap
         // Used this method to prevent helding down a key.
         private int lastKeyPressed = -1, actionKeyPressed = 0;
         int PRESSED = 1, UNPRESSED = 0;
+
         private void detectKeyPress_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 256; i++)
