@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.keys_panel = new System.Windows.Forms.Panel();
+            this.BTN_Help = new System.Windows.Forms.Button();
+            this.program_Status = new System.Windows.Forms.Label();
             this.panel_key_times_pressed = new System.Windows.Forms.Panel();
             this.LB_times_pressed = new System.Windows.Forms.Label();
             this.LABEL_total_number_of_keypresses = new System.Windows.Forms.Label();
@@ -156,7 +158,6 @@
             this.NUM1 = new System.Windows.Forms.Label();
             this.TILDA_key = new System.Windows.Forms.Panel();
             this.SYMBOL_TILDA = new System.Windows.Forms.Label();
-            this.program_Status = new System.Windows.Forms.Label();
             this.keys_panel.SuspendLayout();
             this.panel_key_times_pressed.SuspendLayout();
             this.P_key.SuspendLayout();
@@ -225,6 +226,7 @@
             // keys_panel
             // 
             this.keys_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            this.keys_panel.Controls.Add(this.BTN_Help);
             this.keys_panel.Controls.Add(this.program_Status);
             this.keys_panel.Controls.Add(this.panel_key_times_pressed);
             this.keys_panel.Controls.Add(this.LABEL_total_number_of_keypresses);
@@ -295,6 +297,31 @@
             this.keys_panel.Size = new System.Drawing.Size(845, 320);
             this.keys_panel.TabIndex = 1;
             // 
+            // BTN_Help
+            // 
+            this.BTN_Help.FlatAppearance.BorderSize = 0;
+            this.BTN_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_Help.Image = global::Keyboard_HeatMap.Properties.Resources.info;
+            this.BTN_Help.Location = new System.Drawing.Point(12, 293);
+            this.BTN_Help.Name = "BTN_Help";
+            this.BTN_Help.Size = new System.Drawing.Size(35, 24);
+            this.BTN_Help.TabIndex = 0;
+            this.BTN_Help.TabStop = false;
+            this.BTN_Help.UseVisualStyleBackColor = true;
+            this.BTN_Help.Click += new System.EventHandler(this.BTN_Help_Click);
+            // 
+            // program_Status
+            // 
+            this.program_Status.AutoSize = true;
+            this.program_Status.BackColor = System.Drawing.Color.Red;
+            this.program_Status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.program_Status.Location = new System.Drawing.Point(762, 293);
+            this.program_Status.Name = "program_Status";
+            this.program_Status.Size = new System.Drawing.Size(70, 21);
+            this.program_Status.TabIndex = 48;
+            this.program_Status.Text = "Disabled";
+            this.program_Status.Click += new System.EventHandler(this.program_Status_Click);
+            // 
             // panel_key_times_pressed
             // 
             this.panel_key_times_pressed.BackColor = System.Drawing.Color.DarkOrchid;
@@ -321,7 +348,7 @@
             // 
             this.LABEL_total_number_of_keypresses.AutoSize = true;
             this.LABEL_total_number_of_keypresses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(12, 296);
+            this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(47, 297);
             this.LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
             this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(115, 17);
             this.LABEL_total_number_of_keypresses.TabIndex = 0;
@@ -1625,18 +1652,6 @@
             this.SYMBOL_TILDA.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
             this.SYMBOL_TILDA.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             // 
-            // program_Status
-            // 
-            this.program_Status.AutoSize = true;
-            this.program_Status.BackColor = System.Drawing.Color.Red;
-            this.program_Status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.program_Status.Location = new System.Drawing.Point(762, 293);
-            this.program_Status.Name = "program_Status";
-            this.program_Status.Size = new System.Drawing.Size(70, 21);
-            this.program_Status.TabIndex = 48;
-            this.program_Status.Text = "Disabled";
-            this.program_Status.Click += new System.EventHandler(this.program_Status_Click);
-            // 
             // Keyboard_Layout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1905,5 +1920,6 @@
         private Label MOUSE_RB;
         private Label MOUSE_LB;
         public Label program_Status;
+        private Button BTN_Help;
     }
 }

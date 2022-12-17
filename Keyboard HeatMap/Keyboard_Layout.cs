@@ -1,30 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
-using System.Windows.Media.Animation;
+﻿using System.IO;
 
 namespace Keyboard_HeatMap
 {
     public partial class Keyboard_Layout : UserControl
     {
-        private string TempPathSavedRecords;
-
+        public readonly static string TempPathSavedRecords = System.IO.Path.GetTempPath() + $@"Keyboard HeatMap\Saves\";
 
         public Dictionary<int, Panel> keys;
         public Dictionary<int, long> number_of_keyPress;
         private Dictionary<int, int> keys_hashcodes;
-        public long TOTAL_KEYPRESSES = -1;
+        public long TOTAL_KEYPRESSES = 0;
 
 
         public Keyboard_Layout()
@@ -39,7 +24,8 @@ namespace Keyboard_HeatMap
             _assignHashCodes();
             _resetNumberOfKeyPresses();
 
-            TempPathSavedRecords = System.IO.Path.GetTempPath() + $@"Keyboard HeatMap\keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
+            if (Directory.Exists(TempPathSavedRecords) == false)
+                Directory.CreateDirectory(TempPathSavedRecords);
         }
 
         void _assignKeysToDict()
@@ -344,7 +330,8 @@ namespace Keyboard_HeatMap
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
             File.WriteAllText("keypress_statistics.log", data);
-            File.WriteAllText(TempPathSavedRecords, data);
+            string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
+            File.WriteAllText(TempPathSavedRecords + LogFileName, data);
         }
 
         // Restart the program
@@ -359,8 +346,9 @@ namespace Keyboard_HeatMap
         {
             if (TOTAL_KEYPRESSES <= 1)
                 return;
-            if (!Directory.Exists(System.IO.Path.GetTempPath() + "Keyboard HeatMap"))
-                Directory.CreateDirectory(System.IO.Path.GetTempPath() + "Keyboard HeatMap");
+
+            if (Directory.Exists(TempPathSavedRecords) == false)
+                Directory.CreateDirectory(TempPathSavedRecords);
 
             _writeLogFile();
         }
@@ -400,6 +388,11 @@ namespace Keyboard_HeatMap
         private void program_Status_Click(object sender, EventArgs e)
         {
             SendKeys.SendWait("{F2}");
+        }
+
+        private void BTN_Help_Click(object sender, EventArgs e)
+        {
+            SendKeys.SendWait("{F1}");
         }
     }
 }

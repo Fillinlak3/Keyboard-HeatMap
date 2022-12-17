@@ -37,8 +37,14 @@
             this.LABEL_key_list = new System.Windows.Forms.Label();
             this.BTN_GoBack = new System.Windows.Forms.Button();
             this.LINKLABEL_ig_page = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LABEL_contact = new System.Windows.Forms.Label();
+            this.BTN_Settings = new System.Windows.Forms.Button();
+            this.PANEL_program_cfg = new System.Windows.Forms.Panel();
+            this.LABEL_program_cfg_panel = new System.Windows.Forms.Label();
+            this.BTN_open_saves_folder = new System.Windows.Forms.Button();
+            this.CHECKBOX_open_on_startup = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_logo)).BeginInit();
+            this.PANEL_program_cfg.SuspendLayout();
             this.SuspendLayout();
             // 
             // LABEL_title
@@ -105,7 +111,7 @@
             // 
             // BTN_GoBack
             // 
-            this.BTN_GoBack.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_GoBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
             this.BTN_GoBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_GoBack.FlatAppearance.BorderSize = 0;
             this.BTN_GoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -134,21 +140,88 @@
             this.LINKLABEL_ig_page.Text = "IG: @iambucuriee";
             this.LINKLABEL_ig_page.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OpenInstagramPage);
             // 
-            // label1
+            // LABEL_contact
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(687, 305);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Contact:";
+            this.LABEL_contact.AutoSize = true;
+            this.LABEL_contact.Location = new System.Drawing.Point(687, 305);
+            this.LABEL_contact.Name = "LABEL_contact";
+            this.LABEL_contact.Size = new System.Drawing.Size(52, 15);
+            this.LABEL_contact.TabIndex = 7;
+            this.LABEL_contact.Text = "Contact:";
+            // 
+            // BTN_Settings
+            // 
+            this.BTN_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            this.BTN_Settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_Settings.FlatAppearance.BorderSize = 0;
+            this.BTN_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_Settings.Image = global::Keyboard_HeatMap.Properties.Resources.setting;
+            this.BTN_Settings.Location = new System.Drawing.Point(759, 2);
+            this.BTN_Settings.Name = "BTN_Settings";
+            this.BTN_Settings.Size = new System.Drawing.Size(35, 24);
+            this.BTN_Settings.TabIndex = 8;
+            this.BTN_Settings.TabStop = false;
+            this.BTN_Settings.UseVisualStyleBackColor = false;
+            this.BTN_Settings.Click += new System.EventHandler(this.BTN_Settings_Click);
+            // 
+            // PANEL_program_cfg
+            // 
+            this.PANEL_program_cfg.Controls.Add(this.LABEL_program_cfg_panel);
+            this.PANEL_program_cfg.Controls.Add(this.BTN_open_saves_folder);
+            this.PANEL_program_cfg.Controls.Add(this.CHECKBOX_open_on_startup);
+            this.PANEL_program_cfg.Location = new System.Drawing.Point(660, 62);
+            this.PANEL_program_cfg.Name = "PANEL_program_cfg";
+            this.PANEL_program_cfg.Size = new System.Drawing.Size(155, 186);
+            this.PANEL_program_cfg.TabIndex = 9;
+            this.PANEL_program_cfg.Visible = false;
+            // 
+            // LABEL_program_cfg_panel
+            // 
+            this.LABEL_program_cfg_panel.AutoSize = true;
+            this.LABEL_program_cfg_panel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LABEL_program_cfg_panel.Location = new System.Drawing.Point(7, 7);
+            this.LABEL_program_cfg_panel.Name = "LABEL_program_cfg_panel";
+            this.LABEL_program_cfg_panel.Size = new System.Drawing.Size(142, 34);
+            this.LABEL_program_cfg_panel.TabIndex = 2;
+            this.LABEL_program_cfg_panel.Text = "Program Configuration\r\n            Panel";
+            // 
+            // BTN_open_saves_folder
+            // 
+            this.BTN_open_saves_folder.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_open_saves_folder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_open_saves_folder.FlatAppearance.BorderSize = 0;
+            this.BTN_open_saves_folder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_open_saves_folder.Image = global::Keyboard_HeatMap.Properties.Resources.diskette;
+            this.BTN_open_saves_folder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTN_open_saves_folder.Location = new System.Drawing.Point(2, 74);
+            this.BTN_open_saves_folder.Name = "BTN_open_saves_folder";
+            this.BTN_open_saves_folder.Size = new System.Drawing.Size(127, 23);
+            this.BTN_open_saves_folder.TabIndex = 1;
+            this.BTN_open_saves_folder.Text = "Open saves folder";
+            this.BTN_open_saves_folder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTN_open_saves_folder.UseVisualStyleBackColor = false;
+            this.BTN_open_saves_folder.Click += new System.EventHandler(this.BTN_open_saves_folder_Click);
+            // 
+            // CHECKBOX_open_on_startup
+            // 
+            this.CHECKBOX_open_on_startup.AutoSize = true;
+            this.CHECKBOX_open_on_startup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHECKBOX_open_on_startup.Location = new System.Drawing.Point(7, 54);
+            this.CHECKBOX_open_on_startup.Name = "CHECKBOX_open_on_startup";
+            this.CHECKBOX_open_on_startup.Size = new System.Drawing.Size(122, 19);
+            this.CHECKBOX_open_on_startup.TabIndex = 0;
+            this.CHECKBOX_open_on_startup.Text = "Launch on startup";
+            this.CHECKBOX_open_on_startup.UseVisualStyleBackColor = true;
+            this.CHECKBOX_open_on_startup.CheckedChanged += new System.EventHandler(this.CHECKBOX_open_on_startup_CheckedChanged);
             // 
             // Help_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PANEL_program_cfg);
+            this.Controls.Add(this.BTN_Settings);
+            this.Controls.Add(this.LABEL_contact);
             this.Controls.Add(this.LINKLABEL_ig_page);
             this.Controls.Add(this.BTN_GoBack);
             this.Controls.Add(this.LABEL_key_list);
@@ -160,6 +233,8 @@
             this.Name = "Help_Page";
             this.Size = new System.Drawing.Size(845, 320);
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_logo)).EndInit();
+            this.PANEL_program_cfg.ResumeLayout(false);
+            this.PANEL_program_cfg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +250,11 @@
         private Label LABEL_key_list;
         private Button BTN_GoBack;
         private LinkLabel LINKLABEL_ig_page;
-        private Label label1;
+        private Label LABEL_contact;
+        private Button BTN_Settings;
+        private Panel PANEL_program_cfg;
+        private Button BTN_open_saves_folder;
+        private CheckBox CHECKBOX_open_on_startup;
+        private Label LABEL_program_cfg_panel;
     }
 }

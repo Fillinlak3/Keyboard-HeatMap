@@ -1,9 +1,4 @@
-using Microsoft.VisualBasic.Devices;
-using System.Diagnostics;
-using System.Resources;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
-using System.Windows.Input;
 
 namespace Keyboard_HeatMap
 {
@@ -135,7 +130,6 @@ namespace Keyboard_HeatMap
         // Used this method to prevent helding down a key.
         private int lastKeyPressed = -1, actionKeyPressed = 0;
         int PRESSED = 1, UNPRESSED = 0;
-
         private void detectKeyPress_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 256; i++)

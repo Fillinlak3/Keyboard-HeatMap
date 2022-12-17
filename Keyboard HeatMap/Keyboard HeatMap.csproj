@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<AssemblyVersion>1.7.1</AssemblyVersion>
+	<AssemblyVersion>1.8.0</AssemblyVersion>
 	<FileVersion>$(AssemblyVersion)</FileVersion>
 	<Version>$(AssemblyVersion)</Version>
 	<Copyright>FillInHack Inc</Copyright>
@@ -16,6 +16,18 @@
     <StartupObject>Keyboard_HeatMap.Program</StartupObject>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>f935dc20-1cf0-11d0-adb9-00c04fd58a0b</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="icons\keyboard_1.3.ico" />

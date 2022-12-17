@@ -1,0 +1,9 @@
+####################
+# UPDATE - VER 1.8 #
+####################
+
+-> Added help button in bottom left corner of the keyboard page to switch to help page.
+-> Added settings button in top right corner of the help page. When pressed it shows a pannel with a couple of settings: Launch on startup and Open saves folder.
+
+-> Launch on startup setting will add the program into the Windows Startup folder.
+-> Open saves folder setting will open the folder where the program saves every keypress statistics.
