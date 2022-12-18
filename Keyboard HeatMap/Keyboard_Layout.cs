@@ -1,10 +1,11 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 
 namespace Keyboard_HeatMap
 {
     public partial class Keyboard_Layout : UserControl
     {
-        public readonly static string TempPathSavedRecords = System.IO.Path.GetTempPath() + $@"Keyboard HeatMap\Saves\";
+        public readonly static string SavedRecordsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $@"\Keyboard HeatMap\Saves\";
 
         public Dictionary<int, Panel> keys;
         public Dictionary<int, long> number_of_keyPress;
@@ -24,8 +25,8 @@ namespace Keyboard_HeatMap
             _assignHashCodes();
             _resetNumberOfKeyPresses();
 
-            if (Directory.Exists(TempPathSavedRecords) == false)
-                Directory.CreateDirectory(TempPathSavedRecords);
+            if (Directory.Exists(SavedRecordsPath) == false)
+                Directory.CreateDirectory(SavedRecordsPath);
         }
 
         void _assignKeysToDict()
@@ -329,9 +330,8 @@ namespace Keyboard_HeatMap
 
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
-            File.WriteAllText("keypress_statistics.log", data);
             string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
-            File.WriteAllText(TempPathSavedRecords + LogFileName, data);
+            File.WriteAllText(SavedRecordsPath + LogFileName, data);
         }
 
         // Restart the program
@@ -347,8 +347,8 @@ namespace Keyboard_HeatMap
             if (TOTAL_KEYPRESSES <= 1)
                 return;
 
-            if (Directory.Exists(TempPathSavedRecords) == false)
-                Directory.CreateDirectory(TempPathSavedRecords);
+            if (Directory.Exists(SavedRecordsPath) == false)
+                Directory.CreateDirectory(SavedRecordsPath);
 
             _writeLogFile();
         }

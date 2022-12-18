@@ -7,3 +7,11 @@
 
 -> Launch on startup setting will add the program into the Windows Startup folder.
 -> Open saves folder setting will open the folder where the program saves every keypress statistics.
+
+######################
+# UPDATE - VER 1.8.1 #
+######################
+
+-> Moved Saves folder into User/Documents/Keyboard HeatMap.
+-> Resolved a bug about launching from startup.
+-> Code cleanup.

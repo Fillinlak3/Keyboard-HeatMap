@@ -128,13 +128,13 @@ namespace Keyboard_HeatMap
         }
 
         // Used this method to prevent helding down a key.
-        private int lastKeyPressed = -1, actionKeyPressed = 0;
-        int PRESSED = 1, UNPRESSED = 0;
+        private static readonly int DEFAULT = -1, HELD_DOWN = -32767, PRESSED = 1, UNPRESSED = 0;
+        private int lastKeyPressed = DEFAULT, actionKeyPressed = UNPRESSED;
         private void detectKeyPress_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 256; i++)
             {
-                if (GetAsyncKeyState(i) == -32767 /*&& lastKeyPressed == -1*/)
+                if (GetAsyncKeyState(i) == HELD_DOWN)
                 {
                     // Remember the last key pressed.
                     lastKeyPressed = i;
@@ -147,7 +147,7 @@ namespace Keyboard_HeatMap
                     {
                         keyboard_Layout.TOTAL_KEYPRESSES++;
                         if (keyboard_Layout.number_of_keyPress.ContainsKey(i))
-                        { keyboard_Layout.number_of_keyPress[i]++; }
+                            keyboard_Layout.number_of_keyPress[i]++;
                     }
 
                     /*
@@ -162,7 +162,7 @@ namespace Keyboard_HeatMap
                         actionKeyPressed = PRESSED; // mark action key as pressed.
                     }
                 }
-                else if (lastKeyPressed != -1 && GetAsyncKeyState(lastKeyPressed) == 0)
+                else if (lastKeyPressed != DEFAULT && GetAsyncKeyState(lastKeyPressed) == UNPRESSED)
                 /*
                     Runs only when a key is held down.
                     If current key  is the same as last key, it means the user
@@ -170,7 +170,7 @@ namespace Keyboard_HeatMap
                     continuous keypress. If the user releases the button, it will
                     reset lastKeyPressed and actionKeyPressed.
                  */
-                { lastKeyPressed = -1; actionKeyPressed = UNPRESSED; }
+                { lastKeyPressed = DEFAULT; actionKeyPressed = UNPRESSED; }
             }
         }
     }

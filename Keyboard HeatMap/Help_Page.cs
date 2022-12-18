@@ -74,8 +74,8 @@ namespace Keyboard_HeatMap
         {
             try
             {
-                if (System.IO.Directory.Exists(Keyboard_Layout.TempPathSavedRecords))
-                    Process.Start("explorer.exe", Keyboard_Layout.TempPathSavedRecords);
+                if (System.IO.Directory.Exists(Keyboard_Layout.SavedRecordsPath))
+                    Process.Start("explorer.exe", Keyboard_Layout.SavedRecordsPath);
                 else throw new Exception(@"Saved Records path doesn't exists.");
             }
             catch { }
