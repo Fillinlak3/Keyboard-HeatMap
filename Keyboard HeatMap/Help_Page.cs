@@ -37,20 +37,22 @@ namespace Keyboard_HeatMap
 
         private void CHECKBOX_open_on_startup_CheckedChanged(object sender, EventArgs e)
         {
-            // Check if user had interaction.
-            if(CHECKBOX_open_on_startup.Checked == true)
-            {
-                if(ShortcutExists == false)
-                    // Create shortcut.
-                    CreateShortcut("Keyboard HeatMap", Startup_Folder, ApplicationExecutablePath);
-            }
-            else if(ShortcutExists == true)
-            {
-                // Delete shortcut.
-                System.IO.File.Delete(ApplicationShortcut);
-            }
-            // Finally, update the ShortcutExists.
-            ShortcutExists = System.IO.File.Exists(ApplicationShortcut);
+            #if RELEASE
+                // Check if user had interaction.
+                if(CHECKBOX_open_on_startup.Checked == true)
+                {
+                    if(ShortcutExists == false)
+                        // Create shortcut.
+                        CreateShortcut("Keyboard HeatMap", Startup_Folder, ApplicationExecutablePath);
+                }
+                else if(ShortcutExists == true)
+                {
+                    // Delete shortcut.
+                    System.IO.File.Delete(ApplicationShortcut);
+                }
+                // Finally, update the ShortcutExists.
+                ShortcutExists = System.IO.File.Exists(ApplicationShortcut);
+            #endif
         }
 
         /// <summary>

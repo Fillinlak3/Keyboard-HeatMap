@@ -1,4 +1,9 @@
+using System.Diagnostics;
+using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
+using System.Text.RegularExpressions;
 
 namespace Keyboard_HeatMap
 {
@@ -12,8 +17,83 @@ namespace Keyboard_HeatMap
             InitializeComponent();
         }
 
+        private readonly string URL = "https://pastebin.com/raw/kcDCqpgn";
+        private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
+
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            // Check for new version.
+            Dictionary<string, string>? data_parsed = new Dictionary<string, string>();
+            try
+            {
+                #pragma warning disable SYSLIB0014
+                using (WebClient web = new WebClient())
+                #pragma warning restore SYSLIB0014
+                {
+                    #region WEB Scraper
+                    List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
+
+                    // Remove comment lines --> lines that starts with '#'.
+                    for (int i = 0; i < data_scraped.Count; i++)
+                        if (data_scraped[i].StartsWith('#'))
+                            data_scraped.Remove(data_scraped[i--]);
+
+                    // Parse values into the dictionary.
+                    Regex regex = new Regex("\"(.*?)\"");
+                    foreach (string data in data_scraped)
+                    {
+                        var matches = regex.Matches(data);
+                        if (matches.Count == 2)
+                        {
+                            string key = matches[0].Groups[1].ToString();
+                            string value = matches[1].Groups[1].ToString();
+                            data_parsed.Add(key, value);
+                        }
+                    }
+                    data_scraped = null;
+                    #endregion
+
+                    // Check if data was gathered from the server.
+                    if (data_parsed == null || data_parsed.Count == 0)
+                        throw new Exception("Couldn't retrive data from server.");
+
+                    // Check if versions have syntax: x.x.x where x is a digit.
+                    regex = new Regex("^[1-9].[0-9].[0-9]$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                    if (regex.IsMatch(data_parsed["Version"]) == false)
+                        throw new Exception("Corrupted or invalid data retrieved.");
+
+                    // After all check if there is an downgrade / upgrade.
+                    if (data_parsed["Version"] != Program_Version)
+                    {
+                        DialogResult dialogResult;
+
+                        // It's a downgrade.
+                        if (data_parsed["Version"].CompareTo(Program_Version) < 0)
+                            dialogResult = MessageBox.Show($"The current update encountered a manufacturing problem. Please download the previous package version. (prev: {data_parsed["Version"]}). Reason: {data_parsed["Downgrade-Reason"]}.", "Immediate Downgrade Needed!", MessageBoxButtons.YesNo);
+                        // It's an upgrade.
+                        else
+                            dialogResult = MessageBox.Show($"New version of Keyboard HeatMap found! (latest: {data_parsed["Version"]} | current: {Program_Version}) Would you like to download the new package?", "New Version Found!", MessageBoxButtons.YesNo);
+
+                        // If user wants to download the new package.
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            // Open google drive with the newest update for the program for user to download.
+                            Process.Start(new ProcessStartInfo(data_parsed["Download-Link"]) { UseShellExecute = true });
+                            // Kill the process.
+                            Application.Exit();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Server Error", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                data_parsed = null;
+            }
+
             // Lock program size.
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
             this.MaximumSize = new Size(this.Size.Width, this.Size.Height);

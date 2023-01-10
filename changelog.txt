@@ -1,6 +1,6 @@
-####################
-# UPDATE - VER 1.8 #
-####################
+######################
+# UPDATE - VER 1.8.0 #
+######################
 
 -> Added help button in bottom left corner of the keyboard page to switch to help page.
 -> Added settings button in top right corner of the help page. When pressed it shows a pannel with a couple of settings: Launch on startup and Open saves folder.
@@ -15,3 +15,9 @@
 -> Moved Saves folder into User/Documents/Keyboard HeatMap.
 -> Resolved a bug about launching from startup.
 -> Code cleanup.
+
+######################
+# UPDATE - VER 1.8.2 #
+######################
+
+-> Added updater to the program. When started, the program will check it's version with the one stored on the server. It will alert the user if there is a change (upgrade / downgrade). If so, a new browser page with the current package will be opened and the user will be asked to download it manually.

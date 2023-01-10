@@ -258,7 +258,7 @@ namespace Keyboard_HeatMap
 
         void _writeLogFile()
         {
-            string data = "==========\n<KEYBOARD>\n==========\n";
+            string data = "#==========\n<KEYBOARD>\n==========#\n";
 
             data += "~: " + number_of_keyPress[192].ToString() + "\n";
             data += "1: " + number_of_keyPress[49].ToString() + "\n";
@@ -323,12 +323,12 @@ namespace Keyboard_HeatMap
             data += "ralt: " + number_of_keyPress[165].ToString() + "\n";
             data += "space: " + number_of_keyPress[32].ToString() + "\n\n";
 
-            data += "=======\n<MOUSE>\n=======\n";
+            data += "#=======\n<MOUSE>\n=======#\n";
             data += "LB: " + number_of_keyPress[1].ToString() + "\n";
             data += "RB: " + number_of_keyPress[2].ToString() + "\n";
             data += "MB: " + number_of_keyPress[4].ToString() + "\n\n";
 
-            data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
+            data += ("# TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "# \n");
 
             string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
             File.WriteAllText(SavedRecordsPath + LogFileName, data);
