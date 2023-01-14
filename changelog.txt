@@ -1,6 +1,6 @@
-######################
-# UPDATE - VER 1.8.0 #
-######################
+	######################
+	# UPDATE - VER 1.8.0 #
+	######################
 
 -> Added help button in bottom left corner of the keyboard page to switch to help page.
 -> Added settings button in top right corner of the help page. When pressed it shows a pannel with a couple of settings: Launch on startup and Open saves folder.
@@ -8,16 +8,37 @@
 -> Launch on startup setting will add the program into the Windows Startup folder.
 -> Open saves folder setting will open the folder where the program saves every keypress statistics.
 
-######################
-# UPDATE - VER 1.8.1 #
-######################
+	######################
+	# UPDATE - VER 1.8.1 #
+	######################
 
 -> Moved Saves folder into User/Documents/Keyboard HeatMap.
 -> Resolved a bug about launching from startup.
 -> Code cleanup.
 
-######################
-# UPDATE - VER 1.8.2 #
-######################
+	######################
+	# UPDATE - VER 1.8.2 #
+	######################
 
 -> Added updater to the program. When started, the program will check it's version with the one stored on the server. It will alert the user if there is a change (upgrade / downgrade). If so, a new browser page with the current package will be opened and the user will be asked to download it manually.
+
+	######################
+	# UPDATE - VER 1.8.3 #
+	######################
+
+-> Added drag & drop of the saved records on the HeatMap. The program needs to be Deactivated and then from the records folder you can drag and drop a file to view previous activity. It works ONLY ONE file at once.
+
+(!)>>> Don't worry, older saved records (older than this update) wouldn't work because of the display in page:
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	   FROM:		    OR:
+	 ==========		  =======
+	 <KEYBOARD>		  <MOUSE>
+	 ==========		  =======
+			TO:
+	#========== <KEYBOARD> ==========#
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+(!)>>> The '#' are considered comment lines and are ignored by the scraper.
+
+If you want to load an older version of a saved record, you should make this change this manually and after that it should work.
+
+-> Minor fixes: help page buttons alignment, rounded edges at keyboard keys, while hovering a button to show number of keypresses, it's panel now has round edges and the panel will follow mouse cursor and also you can hover over the entire button or the symbol of the key.

@@ -48,11 +48,14 @@
             // 
             // keyboard_Layout
             // 
+            this.keyboard_Layout.AllowDrop = true;
             this.keyboard_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keyboard_Layout.Location = new System.Drawing.Point(0, 0);
             this.keyboard_Layout.Name = "keyboard_Layout";
             this.keyboard_Layout.Size = new System.Drawing.Size(844, 321);
             this.keyboard_Layout.TabIndex = 0;
+            this.keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragDrop);
+            this.keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragEnter);
             // 
             // help_Page
             // 

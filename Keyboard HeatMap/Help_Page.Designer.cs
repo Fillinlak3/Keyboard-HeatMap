@@ -156,7 +156,7 @@
             this.BTN_Settings.FlatAppearance.BorderSize = 0;
             this.BTN_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Settings.Image = global::Keyboard_HeatMap.Properties.Resources.setting;
-            this.BTN_Settings.Location = new System.Drawing.Point(759, 2);
+            this.BTN_Settings.Location = new System.Drawing.Point(752, 2);
             this.BTN_Settings.Name = "BTN_Settings";
             this.BTN_Settings.Size = new System.Drawing.Size(35, 24);
             this.BTN_Settings.TabIndex = 8;

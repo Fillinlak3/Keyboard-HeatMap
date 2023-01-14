@@ -1,5 +1,8 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Windows.Markup;
+using Windows.Devices.SmartCards;
 
 namespace Keyboard_HeatMap
 {
@@ -10,6 +13,7 @@ namespace Keyboard_HeatMap
         public Dictionary<int, Panel> keys;
         public Dictionary<int, long> number_of_keyPress;
         private Dictionary<int, int> keys_hashcodes;
+        private Dictionary<int, int> symbols_hashcodes;
         public long TOTAL_KEYPRESSES = 0;
 
 
@@ -20,8 +24,10 @@ namespace Keyboard_HeatMap
             keys = new Dictionary<int, Panel>();
             number_of_keyPress = new Dictionary<int, long>();
             keys_hashcodes = new Dictionary<int, int>();
+            symbols_hashcodes = new Dictionary<int, int>();
 
             _assignKeysToDict();
+            _centerKeysSymbolInParentPanel();
             _assignHashCodes();
             _resetNumberOfKeyPresses();
 
@@ -29,7 +35,7 @@ namespace Keyboard_HeatMap
                 Directory.CreateDirectory(SavedRecordsPath);
         }
 
-        void _assignKeysToDict()
+        private void _assignKeysToDict()
         {
             if (keys.Count != 0)
                 keys.Clear();
@@ -101,8 +107,16 @@ namespace Keyboard_HeatMap
             keys.Add(2, RB_key);
         }
 
+        private void _centerKeysSymbolInParentPanel()
+        {
+            foreach (var key in keys)
+            {
+                key.Value.Controls[0].Location = new Point((int)Math.Ceiling((key.Value.Size.Width - key.Value.Controls[0].Width) / 2.0), (int)Math.Ceiling((key.Value.Size.Height - key.Value.Controls[0].Height) / 2.0));
+            }
+        }
+
         // Number of keypresses.
-        void _resetNumberOfKeyPresses()
+        private void _resetNumberOfKeyPresses()
         {
             if (number_of_keyPress.Count != 0)
                 number_of_keyPress.Clear();
@@ -175,90 +189,158 @@ namespace Keyboard_HeatMap
             number_of_keyPress.Add(4, 0);
         }
 
-        // To get the on-hover animation to work.s
-        void _assignHashCodes()
+        // To get the on-hover animation to work.
+        private void _assignHashCodes()
         {
             if (keys_hashcodes.Count != 0)
                 keys_hashcodes.Clear();
 
-            keys_hashcodes.Add(192, SYMBOL_TILDA.GetHashCode());
-            keys_hashcodes.Add(49, NUM1.GetHashCode());
-            keys_hashcodes.Add(50, NUM2.GetHashCode());
-            keys_hashcodes.Add(51, NUM3.GetHashCode());
-            keys_hashcodes.Add(52, NUM4.GetHashCode());
-            keys_hashcodes.Add(53, NUM5.GetHashCode());
-            keys_hashcodes.Add(54, NUM6.GetHashCode());
-            keys_hashcodes.Add(55, NUM7.GetHashCode());
-            keys_hashcodes.Add(56, NUM8.GetHashCode());
-            keys_hashcodes.Add(57, NUM9.GetHashCode());
-            keys_hashcodes.Add(48, NUM0.GetHashCode());
-            keys_hashcodes.Add(189, SYMBOL_MINUS.GetHashCode());
-            keys_hashcodes.Add(187, SYMBOL_EQUAL.GetHashCode());
-            keys_hashcodes.Add(8, FUNC_BKSPC.GetHashCode());
+            // Keys
+            keys_hashcodes.Add(192, TILDA_key.GetHashCode());
+            keys_hashcodes.Add(49, NUMBER_1_key.GetHashCode());
+            keys_hashcodes.Add(50, NUMBER_2_key.GetHashCode());
+            keys_hashcodes.Add(51, NUMBER_3_key.GetHashCode());
+            keys_hashcodes.Add(52, NUMBER_4_key.GetHashCode());
+            keys_hashcodes.Add(53, NUMBER_5_key.GetHashCode());
+            keys_hashcodes.Add(54, NUMBER_6_key.GetHashCode());
+            keys_hashcodes.Add(55, NUMBER_7_key.GetHashCode());
+            keys_hashcodes.Add(56, NUMBER_8_key.GetHashCode());
+            keys_hashcodes.Add(57, NUMBER_9_key.GetHashCode());
+            keys_hashcodes.Add(48, NUMBER_0_key.GetHashCode());
+            keys_hashcodes.Add(189, MINUS_key.GetHashCode());
+            keys_hashcodes.Add(187, EQUAL_key.GetHashCode());
+            keys_hashcodes.Add(8, BKSPC_key.GetHashCode());
 
-            keys_hashcodes.Add(9, FUNC_TAB.GetHashCode());
-            keys_hashcodes.Add(81, LETTER_Q.GetHashCode());
-            keys_hashcodes.Add(87, LETTER_W.GetHashCode());
-            keys_hashcodes.Add(69, LETTER_E.GetHashCode());
-            keys_hashcodes.Add(82, LETTER_R.GetHashCode());
-            keys_hashcodes.Add(84, LETTER_T.GetHashCode());
-            keys_hashcodes.Add(89, LETTER_Y.GetHashCode());
-            keys_hashcodes.Add(85, LETTER_U.GetHashCode());
-            keys_hashcodes.Add(73, LETTER_I.GetHashCode());
-            keys_hashcodes.Add(79, LETTER_O.GetHashCode());
-            keys_hashcodes.Add(80, LETTER_P.GetHashCode());
-            keys_hashcodes.Add(219, SYMBOL_BRACKET_OPEN.GetHashCode());
-            keys_hashcodes.Add(221, SYMBOL_BRACKET_CLOSE.GetHashCode());
-            keys_hashcodes.Add(13, FUNC_ENTER.GetHashCode());
+            keys_hashcodes.Add(9, TAB_key.GetHashCode());
+            keys_hashcodes.Add(81, Q_key.GetHashCode());
+            keys_hashcodes.Add(87, W_key.GetHashCode());
+            keys_hashcodes.Add(69, E_key.GetHashCode());
+            keys_hashcodes.Add(82, R_key.GetHashCode());
+            keys_hashcodes.Add(84, T_key.GetHashCode());
+            keys_hashcodes.Add(89, Y_key.GetHashCode());
+            keys_hashcodes.Add(85, U_key.GetHashCode());
+            keys_hashcodes.Add(73, I_key.GetHashCode());
+            keys_hashcodes.Add(79, O_key.GetHashCode());
+            keys_hashcodes.Add(80, P_key.GetHashCode());
+            keys_hashcodes.Add(219, BRACKET_OPEN_key.GetHashCode());
+            keys_hashcodes.Add(221, BRACKET_CLOSE_key.GetHashCode());
+            keys_hashcodes.Add(13, ENTER_key.GetHashCode());
 
-            keys_hashcodes.Add(20, FUNC_CAPSLK.GetHashCode());
-            keys_hashcodes.Add(65, LETTER_A.GetHashCode());
-            keys_hashcodes.Add(83, LETTER_S.GetHashCode());
-            keys_hashcodes.Add(68, LETTER_D.GetHashCode());
-            keys_hashcodes.Add(70, LETTER_F.GetHashCode());
-            keys_hashcodes.Add(71, LETTER_G.GetHashCode());
-            keys_hashcodes.Add(72, LETTER_H.GetHashCode());
-            keys_hashcodes.Add(74, LETTER_J.GetHashCode());
-            keys_hashcodes.Add(75, LETTER_K.GetHashCode());
-            keys_hashcodes.Add(76, LETTER_L.GetHashCode());
-            keys_hashcodes.Add(186, SYMBOL_SEMICOLON.GetHashCode());
-            keys_hashcodes.Add(222, SYMBOL_QUOTATION_MARK.GetHashCode());
-            keys_hashcodes.Add(220, SYMBOL_BACKSLASH.GetHashCode());
+            keys_hashcodes.Add(20, CAPS_key.GetHashCode());
+            keys_hashcodes.Add(65, A_key.GetHashCode());
+            keys_hashcodes.Add(83, S_key.GetHashCode());
+            keys_hashcodes.Add(68, D_key.GetHashCode());
+            keys_hashcodes.Add(70, F_key.GetHashCode());
+            keys_hashcodes.Add(71, G_key.GetHashCode());
+            keys_hashcodes.Add(72, H_key.GetHashCode());
+            keys_hashcodes.Add(74, J_key.GetHashCode());
+            keys_hashcodes.Add(75, K_key.GetHashCode());
+            keys_hashcodes.Add(76, L_key.GetHashCode());
+            keys_hashcodes.Add(186, SEMICOLON_key.GetHashCode());
+            keys_hashcodes.Add(222, QUOTATION_MARK_key.GetHashCode());
+            keys_hashcodes.Add(220, BACKSLASH_key.GetHashCode());
 
-            keys_hashcodes.Add(160, FUNC_LSHIFT.GetHashCode());
-            keys_hashcodes.Add(161, FUNC_RSHIFT.GetHashCode());
-            keys_hashcodes.Add(90, LETTER_Z.GetHashCode());
-            keys_hashcodes.Add(88, LETTER_X.GetHashCode());
-            keys_hashcodes.Add(67, LETTER_C.GetHashCode());
-            keys_hashcodes.Add(86, LETTER_V.GetHashCode());
-            keys_hashcodes.Add(66, LETTER_B.GetHashCode());
-            keys_hashcodes.Add(78, LETTER_N.GetHashCode());
-            keys_hashcodes.Add(77, LETTER_M.GetHashCode());
-            keys_hashcodes.Add(188, SYMBOL_COMMA.GetHashCode());
-            keys_hashcodes.Add(190, SYMBOL_DOT.GetHashCode());
-            keys_hashcodes.Add(191, SYMBOL_SLASH.GetHashCode());
+            keys_hashcodes.Add(160, LSHIFT_key.GetHashCode());
+            keys_hashcodes.Add(161, RSHIFT_key.GetHashCode());
+            keys_hashcodes.Add(90, Z_key.GetHashCode());
+            keys_hashcodes.Add(88, X_key.GetHashCode());
+            keys_hashcodes.Add(67, C_key.GetHashCode());
+            keys_hashcodes.Add(86, V_key.GetHashCode());
+            keys_hashcodes.Add(66, B_key.GetHashCode());
+            keys_hashcodes.Add(78, N_key.GetHashCode());
+            keys_hashcodes.Add(77, M_key.GetHashCode());
+            keys_hashcodes.Add(188, COMMA_key.GetHashCode());
+            keys_hashcodes.Add(190, DOT_key.GetHashCode());
+            keys_hashcodes.Add(191, SLASH_key.GetHashCode());
 
-            keys_hashcodes.Add(162, FUNC_LCTRL.GetHashCode());
-            keys_hashcodes.Add(163, FUNC_RCTRL.GetHashCode());
-            keys_hashcodes.Add(164, FUNC_LALT.GetHashCode());
-            keys_hashcodes.Add(165, FUNC_RALT.GetHashCode());
-            keys_hashcodes.Add(32, FUNC_SPACE.GetHashCode());
+            keys_hashcodes.Add(162, LCTRL_key.GetHashCode());
+            keys_hashcodes.Add(163, RCTRL_key.GetHashCode());
+            keys_hashcodes.Add(164, LALT_key.GetHashCode());
+            keys_hashcodes.Add(165, RALT_key.GetHashCode());
+            keys_hashcodes.Add(32, SPACE_key.GetHashCode());
 
-            keys_hashcodes.Add(1, MOUSE_LB.GetHashCode());
-            keys_hashcodes.Add(2, MOUSE_RB.GetHashCode());
+            keys_hashcodes.Add(1, LB_key.GetHashCode());
+            keys_hashcodes.Add(2, RB_key.GetHashCode());
+
+            // Symbols
+            symbols_hashcodes.Add(192, SYMBOL_TILDA.GetHashCode());
+            symbols_hashcodes.Add(49, NUM1.GetHashCode());
+            symbols_hashcodes.Add(50, NUM2.GetHashCode());
+            symbols_hashcodes.Add(51, NUM3.GetHashCode());
+            symbols_hashcodes.Add(52, NUM4.GetHashCode());
+            symbols_hashcodes.Add(53, NUM5.GetHashCode());
+            symbols_hashcodes.Add(54, NUM6.GetHashCode());
+            symbols_hashcodes.Add(55, NUM7.GetHashCode());
+            symbols_hashcodes.Add(56, NUM8.GetHashCode());
+            symbols_hashcodes.Add(57, NUM9.GetHashCode());
+            symbols_hashcodes.Add(48, NUM0.GetHashCode());
+            symbols_hashcodes.Add(189, SYMBOL_MINUS.GetHashCode());
+            symbols_hashcodes.Add(187, SYMBOL_EQUAL.GetHashCode());
+            symbols_hashcodes.Add(8, FUNC_BKSPC.GetHashCode());
+
+            symbols_hashcodes.Add(9, FUNC_TAB.GetHashCode());
+            symbols_hashcodes.Add(81, LETTER_Q.GetHashCode());
+            symbols_hashcodes.Add(87, LETTER_W.GetHashCode());
+            symbols_hashcodes.Add(69, LETTER_E.GetHashCode());
+            symbols_hashcodes.Add(82, LETTER_R.GetHashCode());
+            symbols_hashcodes.Add(84, LETTER_T.GetHashCode());
+            symbols_hashcodes.Add(89, LETTER_Y.GetHashCode());
+            symbols_hashcodes.Add(85, LETTER_U.GetHashCode());
+            symbols_hashcodes.Add(73, LETTER_I.GetHashCode());
+            symbols_hashcodes.Add(79, LETTER_O.GetHashCode());
+            symbols_hashcodes.Add(80, LETTER_P.GetHashCode());
+            symbols_hashcodes.Add(219, SYMBOL_BRACKET_OPEN.GetHashCode());
+            symbols_hashcodes.Add(221, SYMBOL_BRACKET_CLOSE.GetHashCode());
+            symbols_hashcodes.Add(13, FUNC_ENTER.GetHashCode());
+
+            symbols_hashcodes.Add(20, FUNC_CAPSLK.GetHashCode());
+            symbols_hashcodes.Add(65, LETTER_A.GetHashCode());
+            symbols_hashcodes.Add(83, LETTER_S.GetHashCode());
+            symbols_hashcodes.Add(68, LETTER_D.GetHashCode());
+            symbols_hashcodes.Add(70, LETTER_F.GetHashCode());
+            symbols_hashcodes.Add(71, LETTER_G.GetHashCode());
+            symbols_hashcodes.Add(72, LETTER_H.GetHashCode());
+            symbols_hashcodes.Add(74, LETTER_J.GetHashCode());
+            symbols_hashcodes.Add(75, LETTER_K.GetHashCode());
+            symbols_hashcodes.Add(76, LETTER_L.GetHashCode());
+            symbols_hashcodes.Add(186, SYMBOL_SEMICOLON.GetHashCode());
+            symbols_hashcodes.Add(222, SYMBOL_QUOTATION_MARK.GetHashCode());
+            symbols_hashcodes.Add(220, SYMBOL_BACKSLASH.GetHashCode());
+
+            symbols_hashcodes.Add(160, FUNC_LSHIFT.GetHashCode());
+            symbols_hashcodes.Add(161, FUNC_RSHIFT.GetHashCode());
+            symbols_hashcodes.Add(90, LETTER_Z.GetHashCode());
+            symbols_hashcodes.Add(88, LETTER_X.GetHashCode());
+            symbols_hashcodes.Add(67, LETTER_C.GetHashCode());
+            symbols_hashcodes.Add(86, LETTER_V.GetHashCode());
+            symbols_hashcodes.Add(66, LETTER_B.GetHashCode());
+            symbols_hashcodes.Add(78, LETTER_N.GetHashCode());
+            symbols_hashcodes.Add(77, LETTER_M.GetHashCode());
+            symbols_hashcodes.Add(188, SYMBOL_COMMA.GetHashCode());
+            symbols_hashcodes.Add(190, SYMBOL_DOT.GetHashCode());
+            symbols_hashcodes.Add(191, SYMBOL_SLASH.GetHashCode());
+
+            symbols_hashcodes.Add(162, FUNC_LCTRL.GetHashCode());
+            symbols_hashcodes.Add(163, FUNC_RCTRL.GetHashCode());
+            symbols_hashcodes.Add(164, FUNC_LALT.GetHashCode());
+            symbols_hashcodes.Add(165, FUNC_RALT.GetHashCode());
+            symbols_hashcodes.Add(32, FUNC_SPACE.GetHashCode());
+
+            symbols_hashcodes.Add(1, MOUSE_LB.GetHashCode());
+            symbols_hashcodes.Add(2, MOUSE_RB.GetHashCode());
         }
 
         // Keypresses progress.
-        void _resetKeyboardColors()
+        private void _resetKeyboardColors()
         {
             for (int i = 0; i < 256; i++)
                 if (keys.ContainsKey(i))
                     keys[i].BackColor = Color.White;
         }
 
-        void _writeLogFile()
+        private void _writeLogFile()
         {
-            string data = "#==========\n<KEYBOARD>\n==========#\n";
+            string data = "#========== <KEYBOARD> ==========#\n";
 
             data += "~: " + number_of_keyPress[192].ToString() + "\n";
             data += "1: " + number_of_keyPress[49].ToString() + "\n";
@@ -323,15 +405,117 @@ namespace Keyboard_HeatMap
             data += "ralt: " + number_of_keyPress[165].ToString() + "\n";
             data += "space: " + number_of_keyPress[32].ToString() + "\n\n";
 
-            data += "#=======\n<MOUSE>\n=======#\n";
+            data += "#======= <MOUSE> =======#\n";
             data += "LB: " + number_of_keyPress[1].ToString() + "\n";
             data += "RB: " + number_of_keyPress[2].ToString() + "\n";
             data += "MB: " + number_of_keyPress[4].ToString() + "\n\n";
 
-            data += ("# TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "# \n");
+            data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
             string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
             File.WriteAllText(SavedRecordsPath + LogFileName, data);
+        }
+
+        private bool _readLogFile(string filepath)
+        {
+            try
+            {
+                List<string>? data_scraped = new List<string>(System.IO.File.ReadAllText(filepath).Split('\n', StringSplitOptions.TrimEntries).ToArray());
+
+                // Remove comment and blank lines.
+                Regex sWhitespace = new Regex(@"\s+");
+                for (int i = 0; i < data_scraped.Count; i++)
+                {
+                    if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
+                        data_scraped.Remove(data_scraped[i--]);
+                    else data_scraped[i] = sWhitespace.Replace(data_scraped[i], "").Split(':')[1];
+                }
+
+                if (data_scraped.Count != 62)
+                    throw new Exception("Record file is corrupted.");
+
+                // Asign values.
+                if (number_of_keyPress.Count != 0)
+                    number_of_keyPress.Clear();
+
+                number_of_keyPress.Add(192, Int32.Parse(data_scraped[0]));
+                number_of_keyPress.Add(49, Int32.Parse(data_scraped[1]));
+                number_of_keyPress.Add(50, Int32.Parse(data_scraped[2]));
+                number_of_keyPress.Add(51, Int32.Parse(data_scraped[3]));
+                number_of_keyPress.Add(52, Int32.Parse(data_scraped[4]));
+                number_of_keyPress.Add(53, Int32.Parse(data_scraped[5]));
+                number_of_keyPress.Add(54, Int32.Parse(data_scraped[6]));
+                number_of_keyPress.Add(55, Int32.Parse(data_scraped[7]));
+                number_of_keyPress.Add(56, Int32.Parse(data_scraped[8]));
+                number_of_keyPress.Add(57, Int32.Parse(data_scraped[9]));
+                number_of_keyPress.Add(48, Int32.Parse(data_scraped[10]));
+                number_of_keyPress.Add(189, Int32.Parse(data_scraped[11]));
+                number_of_keyPress.Add(187, Int32.Parse(data_scraped[12]));
+                number_of_keyPress.Add(8, Int32.Parse(data_scraped[13]));
+
+                number_of_keyPress.Add(9, Int32.Parse(data_scraped[14]));
+                number_of_keyPress.Add(81, Int32.Parse(data_scraped[15]));
+                number_of_keyPress.Add(87, Int32.Parse(data_scraped[16]));
+                number_of_keyPress.Add(69, Int32.Parse(data_scraped[17]));
+                number_of_keyPress.Add(82, Int32.Parse(data_scraped[18]));
+                number_of_keyPress.Add(84, Int32.Parse(data_scraped[19]));
+                number_of_keyPress.Add(89, Int32.Parse(data_scraped[20]));
+                number_of_keyPress.Add(85, Int32.Parse(data_scraped[21]));
+                number_of_keyPress.Add(73, Int32.Parse(data_scraped[22]));
+                number_of_keyPress.Add(79, Int32.Parse(data_scraped[23]));
+                number_of_keyPress.Add(80, Int32.Parse(data_scraped[24]));
+                number_of_keyPress.Add(219, Int32.Parse(data_scraped[25]));
+                number_of_keyPress.Add(221, Int32.Parse(data_scraped[26]));
+                number_of_keyPress.Add(13, Int32.Parse(data_scraped[27]));
+
+                number_of_keyPress.Add(20, Int32.Parse(data_scraped[28]));
+                number_of_keyPress.Add(65, Int32.Parse(data_scraped[29]));
+                number_of_keyPress.Add(83, Int32.Parse(data_scraped[30]));
+                number_of_keyPress.Add(68, Int32.Parse(data_scraped[31]));
+                number_of_keyPress.Add(70, Int32.Parse(data_scraped[32]));
+                number_of_keyPress.Add(71, Int32.Parse(data_scraped[33]));
+                number_of_keyPress.Add(72, Int32.Parse(data_scraped[34]));
+                number_of_keyPress.Add(74, Int32.Parse(data_scraped[35]));
+                number_of_keyPress.Add(75, Int32.Parse(data_scraped[36]));
+                number_of_keyPress.Add(76, Int32.Parse(data_scraped[37]));
+                number_of_keyPress.Add(186, Int32.Parse(data_scraped[38]));
+                number_of_keyPress.Add(222, Int32.Parse(data_scraped[39]));
+                number_of_keyPress.Add(220, Int32.Parse(data_scraped[40]));
+
+                number_of_keyPress.Add(160, Int32.Parse(data_scraped[41]));
+                number_of_keyPress.Add(161, Int32.Parse(data_scraped[42]));
+                number_of_keyPress.Add(90, Int32.Parse(data_scraped[43]));
+                number_of_keyPress.Add(88, Int32.Parse(data_scraped[44]));
+                number_of_keyPress.Add(67, Int32.Parse(data_scraped[45]));
+                number_of_keyPress.Add(86, Int32.Parse(data_scraped[46]));
+                number_of_keyPress.Add(66, Int32.Parse(data_scraped[47]));
+                number_of_keyPress.Add(78, Int32.Parse(data_scraped[48]));
+                number_of_keyPress.Add(77, Int32.Parse(data_scraped[49]));
+                number_of_keyPress.Add(188, Int32.Parse(data_scraped[50]));
+                number_of_keyPress.Add(190, Int32.Parse(data_scraped[51]));
+                number_of_keyPress.Add(191, Int32.Parse(data_scraped[52]));
+
+                number_of_keyPress.Add(162, Int32.Parse(data_scraped[53]));
+                number_of_keyPress.Add(163, Int32.Parse(data_scraped[54]));
+                number_of_keyPress.Add(164, Int32.Parse(data_scraped[55]));
+                number_of_keyPress.Add(165, Int32.Parse(data_scraped[56]));
+                number_of_keyPress.Add(32, Int32.Parse(data_scraped[57]));
+
+                number_of_keyPress.Add(1, Int32.Parse(data_scraped[58]));
+                number_of_keyPress.Add(2, Int32.Parse(data_scraped[59]));
+                number_of_keyPress.Add(4, Int32.Parse(data_scraped[60]));
+
+                TOTAL_KEYPRESSES = Int32.Parse(data_scraped[61]);
+
+                data_scraped = null;
+            }
+            catch(Exception ex)
+            {
+                LABEL_total_number_of_keypresses.Text = "No keypresses yet";
+                MessageBox.Show($"Failed to open record file: {ex.Message}", "Operation Failed!", MessageBoxButtons.OK);
+                return false;
+            }
+            return true;
         }
 
         // Restart the program
@@ -353,7 +537,13 @@ namespace Keyboard_HeatMap
             _writeLogFile();
         }
 
+        public bool ReadLogFile(string file)
+        {
+            return _readLogFile(file);
+        }
+
         // Display On-Hover animation for a single key with the number of keypresses.
+        private Point Hovered_Key_Location;
         private void DisplayCursorOverKeypresses(object sender, EventArgs e)
         {
             /*
@@ -362,21 +552,59 @@ namespace Keyboard_HeatMap
              */
             foreach (var keyfound in keys_hashcodes)
             {
-                if (keyfound.Value == sender.GetHashCode())
+                if (keyfound.Value == sender.GetHashCode() && number_of_keyPress[keyfound.Key] > 0)
                 {
-                    if (number_of_keyPress[keyfound.Key] > 0)
-                    {
-                        panel_key_times_pressed.Controls[0].Text = number_of_keyPress[keyfound.Key].ToString();
+                    panel_key_times_pressed.Controls[0].Text = number_of_keyPress[keyfound.Key].ToString();
 
-                        // Set the location, visibility and the size of the panel.
-                        panel_key_times_pressed.Location = new System.Drawing.Point(keys[keyfound.Key].Location.X + 5, keys[keyfound.Key].Location.Y + 38);
-                        panel_key_times_pressed.Size = new System.Drawing.Size(panel_key_times_pressed.Controls[0].Width, panel_key_times_pressed.Controls[0].Height);
-                        panel_key_times_pressed.Visible = true;
+                    // Set the location, visibility and the size of the panel.
+                    Hovered_Key_Location = keys[keyfound.Key].Location;
+                    panel_key_times_pressed.Size = new System.Drawing.Size(panel_key_times_pressed.Controls[0].Width + 1, panel_key_times_pressed.Controls[0].Height + 1);
+                    panel_key_times_pressed.Visible = true;
 
-                        return;
-                    }
+                    return;
                 }
             }
+
+            foreach (var symbolfound in symbols_hashcodes)
+            {
+                if (symbolfound.Value == sender.GetHashCode() && number_of_keyPress[symbolfound.Key] > 0)
+                {
+                    panel_key_times_pressed.Controls[0].Text = number_of_keyPress[symbolfound.Key].ToString();
+
+                    // Set the location, visibility and the size of the panel.
+                    Hovered_Key_Location = keys[symbolfound.Key].Location;
+                    panel_key_times_pressed.Size = new System.Drawing.Size(panel_key_times_pressed.Controls[0].Width + 1, panel_key_times_pressed.Controls[0].Height + 1);
+                    panel_key_times_pressed.Visible = true;
+
+                    return;
+                }
+            }
+        }
+
+        private void UpdateCursorLocation(object sender, MouseEventArgs e)
+        {
+            int x = 0, y = 0;
+
+            if(keys_hashcodes.ContainsValue(sender.GetHashCode()))
+            {
+                x = Hovered_Key_Location.X + e.Location.X - panel_key_times_pressed.Width;
+                y = Hovered_Key_Location.Y + e.Location.Y - panel_key_times_pressed.Height;       
+            }
+            else
+            {
+                foreach (var symbolfound in symbols_hashcodes)
+                {
+                    if (symbolfound.Value == sender.GetHashCode())
+                    {
+                        x = Hovered_Key_Location.X + e.Location.X - panel_key_times_pressed.Width + keys[symbolfound.Key].Controls[0].Location.X;
+                        y = Hovered_Key_Location.Y + e.Location.Y - panel_key_times_pressed.Height + keys[symbolfound.Key].Controls[0].Location.Y;
+                    }
+                }   
+            }
+
+            if (x <= 0) x += panel_key_times_pressed.Width + 5;
+            if (y <= 0) { y = 15; x -= 5; }
+            panel_key_times_pressed.Location = new Point(x, y);
         }
 
         // Hide the animation.
