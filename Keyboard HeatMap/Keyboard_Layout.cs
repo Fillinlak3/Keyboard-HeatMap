@@ -569,7 +569,7 @@ namespace Keyboard_HeatMap
             {
                 if (keyfound.Value == sender.GetHashCode() && number_of_keyPress[keyfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[keyfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[keyfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[keyfound.Key]} - {(int)Math.Round((number_of_keyPress[keyfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[keyfound.Key].Location;
@@ -584,7 +584,7 @@ namespace Keyboard_HeatMap
             {
                 if (symbolfound.Value == sender.GetHashCode() && number_of_keyPress[symbolfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[symbolfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[symbolfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[symbolfound.Key]} - {(int)Math.Round((number_of_keyPress[symbolfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[symbolfound.Key].Location;
