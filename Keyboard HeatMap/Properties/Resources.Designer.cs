@@ -123,9 +123,9 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap setting {
+        internal static System.Drawing.Bitmap remastered_help_page {
             get {
-                object obj = ResourceManager.GetObject("setting", resourceCulture);
+                object obj = ResourceManager.GetObject("remastered_help_page", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap startup {
+        internal static System.Drawing.Bitmap setting {
             get {
-                object obj = ResourceManager.GetObject("startup", resourceCulture);
+                object obj = ResourceManager.GetObject("setting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

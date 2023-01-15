@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Markup;
 using Windows.Devices.SmartCards;
@@ -15,7 +16,10 @@ namespace Keyboard_HeatMap
         private Dictionary<int, int> keys_hashcodes;
         private Dictionary<int, int> symbols_hashcodes;
         public long TOTAL_KEYPRESSES = 0;
+        private bool DarkMode = false;
 
+        private Color Dark_Mode_Keys_Background = Color.FromArgb(67, 67, 67);
+        private Color Light_Mode_Keys_Background = Color.FromArgb(242, 243, 245);
 
         public Keyboard_Layout()
         {
@@ -30,6 +34,7 @@ namespace Keyboard_HeatMap
             _centerKeysSymbolInParentPanel();
             _assignHashCodes();
             _resetNumberOfKeyPresses();
+            _resetKeyboardColors();
 
             if (Directory.Exists(SavedRecordsPath) == false)
                 Directory.CreateDirectory(SavedRecordsPath);
@@ -105,6 +110,9 @@ namespace Keyboard_HeatMap
 
             keys.Add(1, LB_key);
             keys.Add(2, RB_key);
+
+            // Empty key
+            keys.Add(-1, EMPTY_key);
         }
 
         private void _centerKeysSymbolInParentPanel()
@@ -333,9 +341,11 @@ namespace Keyboard_HeatMap
         // Keypresses progress.
         private void _resetKeyboardColors()
         {
-            for (int i = 0; i < 256; i++)
-                if (keys.ContainsKey(i))
-                    keys[i].BackColor = Color.White;
+            foreach (var key in keys)
+            {
+                if (DarkMode) { key.Value.Controls[0].ForeColor = Color.White; key.Value.BackColor = Dark_Mode_Keys_Background; }
+                else { key.Value.Controls[0].ForeColor = Color.Black; key.Value.BackColor = Light_Mode_Keys_Background; }
+            }
         }
 
         private void _writeLogFile()
@@ -434,7 +444,7 @@ namespace Keyboard_HeatMap
                 if (data_scraped.Count != 62)
                     throw new Exception("Record file is corrupted.");
 
-                // Asign values.
+                #region Assign Values
                 if (number_of_keyPress.Count != 0)
                     number_of_keyPress.Clear();
 
@@ -506,6 +516,7 @@ namespace Keyboard_HeatMap
                 number_of_keyPress.Add(4, Int32.Parse(data_scraped[60]));
 
                 TOTAL_KEYPRESSES = Int32.Parse(data_scraped[61]);
+                #endregion
 
                 data_scraped = null;
             }
@@ -529,7 +540,11 @@ namespace Keyboard_HeatMap
         public void WriteLogFile()
         {
             if (TOTAL_KEYPRESSES <= 1)
+            {
+                LABEL_total_number_of_keypresses.Text = "No keypresses yet";
+                _resetKeyboardColors();
                 return;
+            }
 
             if (Directory.Exists(SavedRecordsPath) == false)
                 Directory.CreateDirectory(SavedRecordsPath);
@@ -554,7 +569,7 @@ namespace Keyboard_HeatMap
             {
                 if (keyfound.Value == sender.GetHashCode() && number_of_keyPress[keyfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = number_of_keyPress[keyfound.Key].ToString();
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[keyfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[keyfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[keyfound.Key].Location;
@@ -569,7 +584,7 @@ namespace Keyboard_HeatMap
             {
                 if (symbolfound.Value == sender.GetHashCode() && number_of_keyPress[symbolfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = number_of_keyPress[symbolfound.Key].ToString();
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[symbolfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[symbolfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[symbolfound.Key].Location;
@@ -621,6 +636,35 @@ namespace Keyboard_HeatMap
         private void BTN_Help_Click(object sender, EventArgs e)
         {
             SendKeys.SendWait("{F1}");
+        }
+    
+        public void SwitchToDarkMode(bool mode)
+        {
+            if (mode)
+            {
+                this.BackColor = keys_panel.BackColor = Color.FromArgb(45, 45, 45);
+                LABEL_total_number_of_keypresses.ForeColor = Color.White;
+
+                foreach (var key in keys)
+                {
+                    if (key.Value.BackColor == Light_Mode_Keys_Background)
+                    { key.Value.BackColor = Dark_Mode_Keys_Background; key.Value.Controls[0].ForeColor = Color.White; }
+                }
+            }
+            else
+            {
+                this.BackColor = keys_panel.BackColor = Color.FromArgb(167, 173, 186);
+                LABEL_total_number_of_keypresses.ForeColor = Color.Black;
+
+                foreach (var key in keys)
+                {
+                    if (key.Value.BackColor == Dark_Mode_Keys_Background)
+                        key.Value.BackColor = Light_Mode_Keys_Background;
+                    key.Value.Controls[0].ForeColor = Color.Black;
+                }
+            }
+            this.Invalidate();
+            DarkMode = mode;
         }
     }
 }

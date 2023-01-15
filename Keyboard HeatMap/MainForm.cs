@@ -1,13 +1,47 @@
 using System.Diagnostics;
 using System.Net;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Windows.UI.ViewManagement;
 
 namespace Keyboard_HeatMap
 {
     public partial class Form_Main : Form
     {
+        private static class DarkTitleBarClass
+        {
+            [DllImport("dwmapi.dll")]
+            private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr,
+            ref int attrValue, int attrSize);
+
+            private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
+            private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
+
+            internal static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
+            {
+                if (IsWindows10OrGreater(17763))
+                {
+                    var attribute = DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
+                    if (IsWindows10OrGreater(18985))
+                    {
+                        attribute = DWMWA_USE_IMMERSIVE_DARK_MODE;
+                    }
+
+                    int useImmersiveDarkMode = enabled ? 1 : 0;
+                    return DwmSetWindowAttribute(handle, attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
+                }
+
+                return false;
+            }
+
+            private static bool IsWindows10OrGreater(int build = -1)
+            {
+                return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
+            }
+        }
+
         [DllImport("User32.dll")]
         private static extern short GetAsyncKeyState(int vKey);
 
@@ -18,6 +52,7 @@ namespace Keyboard_HeatMap
 
         private readonly string URL = "https://pastebin.com/raw/kcDCqpgn";
         private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
+        private static IntPtr m_Handle;
 
         private void Form_Main_Load(object sender, EventArgs e)
         {  
@@ -98,6 +133,7 @@ namespace Keyboard_HeatMap
             // Lock program size.
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
             this.MaximumSize = new Size(this.Size.Width, this.Size.Height);
+            m_Handle = this.Handle;
         }
 
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -172,27 +208,27 @@ namespace Keyboard_HeatMap
 
             // Green Gradient. => some keypresses.
             if (number_of_presses < 10)
-            { keyboard_Layout.keys[key].BackColor = Color.LightGreen; return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.LightGreen; return; }
             else if (number_of_presses >= 10 && number_of_presses < 50)
-            { keyboard_Layout.keys[key].BackColor = Color.LimeGreen; return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.LimeGreen; return; }
             else if (number_of_presses >= 50 && number_of_presses < 100)
-            { keyboard_Layout.keys[key].BackColor = Color.Green; return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.Green; return; }
 
             // Yellow Gradient. => bag of keypresses.
             if (number_of_presses >= 100 && number_of_presses < 250)
-            { keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 255, 0); return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 255, 0); return; }
             else if (number_of_presses >= 250 && number_of_presses < 650)
-            { keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 146, 0); return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 146, 0); return; }
             else if (number_of_presses >= 650 && number_of_presses < 1000)
-            { keyboard_Layout.keys[key].BackColor = Color.IndianRed; return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.IndianRed; return; }
 
             // Red Gradient. => lot of keypresses.
             if (number_of_presses >= 1000 && number_of_presses < 2500)
-            { keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 85, 0); return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 85, 0); return; }
             else if (number_of_presses >= 2500 && number_of_presses < 6500)
-            { keyboard_Layout.keys[key].BackColor = Color.Red; return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.Red; return; }
             else if (number_of_presses >= 6500)
-            { keyboard_Layout.keys[key].BackColor = Color.FromArgb(136, 8, 8); return; }
+            { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(136, 8, 8); return; }
         }
 
         private void Frame_Update_Tick(object sender, EventArgs e)
@@ -217,7 +253,6 @@ namespace Keyboard_HeatMap
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
             #pragma warning restore CS8602
         }
-
         private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
         {
             #pragma warning disable CS8602
@@ -237,9 +272,19 @@ namespace Keyboard_HeatMap
             }
         }
 
+        public static void SwitchToDarkMode(bool mode)
+        {
+            DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
+            keyboard_Layout.SwitchToDarkMode(mode);
+        }
+        private void UpdateTitlebarColor(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            this.Visible = true;
+        }
+
         // Used this method to prevent helding down a key.
         private static readonly int DEFAULT = -1, HELD_DOWN = -32767, PRESSED = 1, UNPRESSED = 0;
-
         private int lastKeyPressed = DEFAULT, actionKeyPressed = UNPRESSED;
         private void detectKeyPress_Tick(object sender, EventArgs e)
         {

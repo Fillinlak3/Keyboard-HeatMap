@@ -231,7 +231,7 @@
             this.Controls.Add(this.PICBOX_logo);
             this.Controls.Add(this.LABEL_program_description);
             this.Name = "Help_Page";
-            this.Size = new System.Drawing.Size(845, 320);
+            this.Size = new System.Drawing.Size(845, 325);
             ((System.ComponentModel.ISupportInitialize)(this.PICBOX_logo)).EndInit();
             this.PANEL_program_cfg.ResumeLayout(false);
             this.PANEL_program_cfg.PerformLayout();

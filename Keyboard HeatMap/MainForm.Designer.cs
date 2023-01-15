@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.detectKeyPress = new System.Windows.Forms.Timer(this.components);
             this.Frame_Update = new System.Windows.Forms.Timer(this.components);
-            this.keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
-            this.help_Page = new Keyboard_HeatMap.Help_Page();
+            keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
+            this.help_Page = new Keyboard_HeatMap.Remastered_Help_Page();
             this.SuspendLayout();
             // 
             // detectKeyPress
@@ -48,23 +48,26 @@
             // 
             // keyboard_Layout
             // 
-            this.keyboard_Layout.AllowDrop = true;
-            this.keyboard_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keyboard_Layout.Location = new System.Drawing.Point(0, 0);
-            this.keyboard_Layout.Name = "keyboard_Layout";
-            this.keyboard_Layout.Size = new System.Drawing.Size(844, 321);
-            this.keyboard_Layout.TabIndex = 0;
-            this.keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragDrop);
-            this.keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragEnter);
+            keyboard_Layout.AllowDrop = true;
+            keyboard_Layout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            keyboard_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
+            keyboard_Layout.Location = new System.Drawing.Point(0, 0);
+            keyboard_Layout.Name = "keyboard_Layout";
+            keyboard_Layout.Size = new System.Drawing.Size(844, 321);
+            keyboard_Layout.TabIndex = 0;
+            keyboard_Layout.BackColorChanged += new System.EventHandler(this.UpdateTitlebarColor);
+            keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragDrop);
+            keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragEnter);
             // 
             // help_Page
             // 
-            this.help_Page.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
+            this.help_Page.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.help_Page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("help_Page.BackgroundImage")));
             this.help_Page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.help_Page.Location = new System.Drawing.Point(0, 0);
             this.help_Page.Name = "help_Page";
             this.help_Page.Size = new System.Drawing.Size(844, 321);
-            this.help_Page.TabIndex = 1;
+            this.help_Page.TabIndex = 0;
             this.help_Page.Visible = false;
             // 
             // Form_Main
@@ -73,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(844, 321);
-            this.Controls.Add(this.keyboard_Layout);
+            this.Controls.Add(keyboard_Layout);
             this.Controls.Add(this.help_Page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -81,6 +84,7 @@
             this.MaximizeBox = false;
             this.Name = "Form_Main";
             this.Opacity = 0.9D;
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Keyboard HeatMap";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
@@ -92,7 +96,7 @@
         #endregion
         private System.Windows.Forms.Timer detectKeyPress;
         private System.Windows.Forms.Timer Frame_Update;
-        private Keyboard_Layout keyboard_Layout;
-        private Help_Page help_Page;
+        private Remastered_Help_Page help_Page;
+        private static Keyboard_Layout keyboard_Layout;
     }
 }

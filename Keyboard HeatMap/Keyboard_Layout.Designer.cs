@@ -82,7 +82,7 @@
             this.FUNC_LALT = new System.Windows.Forms.Label();
             this.N_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
             this.LETTER_N = new System.Windows.Forms.Label();
-            this.panel65 = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
+            this.EMPTY_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
             this.label65 = new System.Windows.Forms.Label();
             this.K_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
             this.LETTER_K = new System.Windows.Forms.Label();
@@ -183,7 +183,7 @@
             this.SPACE_key.SuspendLayout();
             this.LALT_key.SuspendLayout();
             this.N_key.SuspendLayout();
-            this.panel65.SuspendLayout();
+            this.EMPTY_key.SuspendLayout();
             this.K_key.SuspendLayout();
             this.LCTRL_key.SuspendLayout();
             this.B_key.SuspendLayout();
@@ -253,7 +253,7 @@
             this.keys_panel.Controls.Add(this.SPACE_key);
             this.keys_panel.Controls.Add(this.LALT_key);
             this.keys_panel.Controls.Add(this.N_key);
-            this.keys_panel.Controls.Add(this.panel65);
+            this.keys_panel.Controls.Add(this.EMPTY_key);
             this.keys_panel.Controls.Add(this.K_key);
             this.keys_panel.Controls.Add(this.LCTRL_key);
             this.keys_panel.Controls.Add(this.B_key);
@@ -294,7 +294,7 @@
             this.keys_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keys_panel.Location = new System.Drawing.Point(0, 0);
             this.keys_panel.Name = "keys_panel";
-            this.keys_panel.Size = new System.Drawing.Size(845, 320);
+            this.keys_panel.Size = new System.Drawing.Size(845, 325);
             this.keys_panel.TabIndex = 1;
             // 
             // BTN_Help
@@ -318,7 +318,7 @@
             this.program_Status.Location = new System.Drawing.Point(762, 293);
             this.program_Status.Name = "program_Status";
             this.program_Status.Size = new System.Drawing.Size(70, 21);
-            this.program_Status.TabIndex = 48;
+            this.program_Status.TabIndex = 0;
             this.program_Status.Text = "Disabled";
             this.program_Status.Click += new System.EventHandler(this.program_Status_Click);
             // 
@@ -671,7 +671,7 @@
             // 
             this.FUNC_RCTRL.AutoSize = true;
             this.FUNC_RCTRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_RCTRL.Location = new System.Drawing.Point(3, 15);
+            this.FUNC_RCTRL.Location = new System.Drawing.Point(2, 15);
             this.FUNC_RCTRL.Name = "FUNC_RCTRL";
             this.FUNC_RCTRL.Size = new System.Drawing.Size(47, 21);
             this.FUNC_RCTRL.TabIndex = 0;
@@ -997,16 +997,16 @@
             this.LETTER_N.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             this.LETTER_N.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
             // 
-            // panel65
+            // EMPTY_key
             // 
-            this.panel65.BackColor = System.Drawing.Color.White;
-            this.panel65.BorderRadius = 20;
-            this.panel65.Controls.Add(this.label65);
-            this.panel65.ForeColor = System.Drawing.Color.Black;
-            this.panel65.Location = new System.Drawing.Point(68, 236);
-            this.panel65.Name = "panel65";
-            this.panel65.Size = new System.Drawing.Size(50, 50);
-            this.panel65.TabIndex = 0;
+            this.EMPTY_key.BackColor = System.Drawing.Color.White;
+            this.EMPTY_key.BorderRadius = 20;
+            this.EMPTY_key.Controls.Add(this.label65);
+            this.EMPTY_key.ForeColor = System.Drawing.Color.Black;
+            this.EMPTY_key.Location = new System.Drawing.Point(68, 236);
+            this.EMPTY_key.Name = "EMPTY_key";
+            this.EMPTY_key.Size = new System.Drawing.Size(50, 50);
+            this.EMPTY_key.TabIndex = 0;
             // 
             // label65
             // 
@@ -1062,7 +1062,7 @@
             // 
             this.FUNC_LCTRL.AutoSize = true;
             this.FUNC_LCTRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_LCTRL.Location = new System.Drawing.Point(3, 15);
+            this.FUNC_LCTRL.Location = new System.Drawing.Point(2, 15);
             this.FUNC_LCTRL.Name = "FUNC_LCTRL";
             this.FUNC_LCTRL.Size = new System.Drawing.Size(47, 21);
             this.FUNC_LCTRL.TabIndex = 0;
@@ -2020,9 +2020,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
             this.Controls.Add(this.keys_panel);
             this.Name = "Keyboard_Layout";
-            this.Size = new System.Drawing.Size(845, 320);
+            this.Size = new System.Drawing.Size(845, 325);
             this.keys_panel.ResumeLayout(false);
             this.keys_panel.PerformLayout();
             this.panel_key_times_pressed.ResumeLayout(false);
@@ -2073,8 +2074,8 @@
             this.LALT_key.PerformLayout();
             this.N_key.ResumeLayout(false);
             this.N_key.PerformLayout();
-            this.panel65.ResumeLayout(false);
-            this.panel65.PerformLayout();
+            this.EMPTY_key.ResumeLayout(false);
+            this.EMPTY_key.PerformLayout();
             this.K_key.ResumeLayout(false);
             this.K_key.PerformLayout();
             this.LCTRL_key.ResumeLayout(false);
@@ -2247,7 +2248,7 @@
         private Toolbox.RoundEdgesPanel SPACE_key;
         private Toolbox.RoundEdgesPanel LALT_key;
         private Toolbox.RoundEdgesPanel N_key;
-        private Toolbox.RoundEdgesPanel panel65;
+        private Toolbox.RoundEdgesPanel EMPTY_key;
         private Toolbox.RoundEdgesPanel K_key;
         private Toolbox.RoundEdgesPanel LCTRL_key;
         private Toolbox.RoundEdgesPanel B_key;
