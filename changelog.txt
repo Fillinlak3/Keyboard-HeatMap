@@ -42,3 +42,12 @@
 If you want to load an older version of a saved record, you should make this change this manually and after that it should work.
 
 -> Minor fixes: help page buttons alignment, rounded edges at keyboard keys, while hovering a button to show number of keypresses, it's panel now has round edges and the panel will follow mouse cursor and also you can hover over the entire button or the symbol of the key.
+
+	######################
+	# UPDATE - VER 1.8.4 #
+	######################
+
+-> Changed help page design entirely. Added two new buttons: Dark theme and Desktop shortcut.
+-> New functionality: switch from light mode to dark mode and the changes will be kept even if the program is closed.
+-> Now you can add/delete a program's shortcut on you desktop.
+-> NEW: Automatic setup installer of the program. A shortcut of it will be added on User's Dekstop and User's Programs Menu. You can unistall it from Control Panel -> Programs and Features.
