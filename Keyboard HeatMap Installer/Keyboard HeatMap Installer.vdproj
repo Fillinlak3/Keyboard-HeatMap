@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6C3B8178D87847AC9636462345A2FF28"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_A08ACE375DE8435E8F5CADEA09B726DA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -164,26 +158,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6C3B8178D87847AC9636462345A2FF28"
-            {
-            "SourcePath" = "8:..\\Keyboard HeatMap\\bin\\Release\\net6.0-windows10.0.22621.0\\source_code.zip"
-            "TargetName" = "8:source_code.zip"
-            "Tag" = "8:"
-            "Folder" = "8:_4D8B81E1ED414BB298A4CAE51C550D76"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:TRUE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A08ACE375DE8435E8F5CADEA09B726DA"
             {
             "SourcePath" = "8:..\\changelog.rtf"
@@ -261,7 +235,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Keyboard HeatMap"
         "ProductCode" = "8:{C4678539-1095-44A8-9905-9BA4D378B3D5}"
-        "PackageCode" = "8:{56E26EB4-F485-4F5F-A4B1-E1601B219554}"
+        "PackageCode" = "8:{76D77E11-12BB-47BC-9357-42AF5D77479A}"
         "UpgradeCode" = "8:{12B3A70D-D54E-472C-82BD-E69764C8427D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
