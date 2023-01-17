@@ -70,7 +70,7 @@
             // 
             // PICBOX_logo
             // 
-            this.PICBOX_logo.Image = global::Keyboard_HeatMap.Properties.Resources.keyboard_1_64x64;
+            this.PICBOX_logo.Image = global::Keyboard_HeatMap.Properties.Resources.keyboard_icon_help_page;
             this.PICBOX_logo.Location = new System.Drawing.Point(12, 3);
             this.PICBOX_logo.Name = "PICBOX_logo";
             this.PICBOX_logo.Size = new System.Drawing.Size(64, 64);
@@ -116,7 +116,7 @@
             this.BTN_GoBack.FlatAppearance.BorderSize = 0;
             this.BTN_GoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_GoBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_GoBack.Image = global::Keyboard_HeatMap.Properties.Resources.go_back;
+            this.BTN_GoBack.Image = global::Keyboard_HeatMap.Properties.Resources.go_back_black;
             this.BTN_GoBack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTN_GoBack.Location = new System.Drawing.Point(786, 3);
             this.BTN_GoBack.Name = "BTN_GoBack";

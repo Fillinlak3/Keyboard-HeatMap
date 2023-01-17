@@ -73,9 +73,19 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap go_back {
+        internal static System.Drawing.Bitmap go_back_black {
             get {
-                object obj = ResourceManager.GetObject("go_back", resourceCulture);
+                object obj = ResourceManager.GetObject("go_back_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap go_back_white {
+            get {
+                object obj = ResourceManager.GetObject("go_back_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,9 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap keyboard_1 {
+        internal static System.Drawing.Bitmap keyboard_icon_help_page {
             get {
-                object obj = ResourceManager.GetObject("keyboard_1", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard_icon_help_page", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +123,9 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap keyboard_1_64x64 {
+        internal static System.Drawing.Bitmap remastered_help_page_dark {
             get {
-                object obj = ResourceManager.GetObject("keyboard_1.64x64", resourceCulture);
+                object obj = ResourceManager.GetObject("remastered_help_page_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap remastered_help_page {
+        internal static System.Drawing.Bitmap remastered_help_page_light {
             get {
-                object obj = ResourceManager.GetObject("remastered_help_page", resourceCulture);
+                object obj = ResourceManager.GetObject("remastered_help_page_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

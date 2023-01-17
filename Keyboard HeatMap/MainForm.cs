@@ -1,47 +1,13 @@
 using System.Diagnostics;
 using System.Net;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using Windows.UI.ViewManagement;
 
 namespace Keyboard_HeatMap
 {
     public partial class Form_Main : Form
     {
-        private static class DarkTitleBarClass
-        {
-            [DllImport("dwmapi.dll")]
-            private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr,
-            ref int attrValue, int attrSize);
-
-            private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
-            private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
-
-            internal static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
-            {
-                if (IsWindows10OrGreater(17763))
-                {
-                    var attribute = DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
-                    if (IsWindows10OrGreater(18985))
-                    {
-                        attribute = DWMWA_USE_IMMERSIVE_DARK_MODE;
-                    }
-
-                    int useImmersiveDarkMode = enabled ? 1 : 0;
-                    return DwmSetWindowAttribute(handle, attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
-                }
-
-                return false;
-            }
-
-            private static bool IsWindows10OrGreater(int build = -1)
-            {
-                return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
-            }
-        }
-
         [DllImport("User32.dll")]
         private static extern short GetAsyncKeyState(int vKey);
 
@@ -50,10 +16,14 @@ namespace Keyboard_HeatMap
             InitializeComponent();
         }
 
+        // The URL of the Pastebin Server.
         private readonly string URL = "https://pastebin.com/raw/kcDCqpgn";
+        // Program's version.
         private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
+        // Static program's handle for switching to light/dark mode.
         private static IntPtr m_Handle;
 
+        // Before starting checkings.
         private void Form_Main_Load(object sender, EventArgs e)
         {  
             // Check for new version.
@@ -68,10 +38,13 @@ namespace Keyboard_HeatMap
                         #region WEB Scraper
                         List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
 
-                        // Remove comment lines --> lines that starts with '#'.
+                        // Remove comment lines --> lines that starts with '#' & blank lines.
                         for (int i = 0; i < data_scraped.Count; i++)
-                            if (data_scraped[i].StartsWith('#'))
+                        {
+                            // Remove comments and blank lines.
+                            if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
                                 data_scraped.Remove(data_scraped[i--]);
+                        }
 
                         // Parse values into the dictionary.
                         Regex regex = new Regex("\"(.*?)\"");
@@ -86,10 +59,10 @@ namespace Keyboard_HeatMap
                             }
                         }
                         data_scraped = null;
-                        #endregion
+                    #endregion
 
-                        // Check if data was gathered from the server.
-                        if (data_parsed == null || data_parsed.Count == 0)
+                    // Check if data was gathered from the server.
+                    if (data_parsed == null || data_parsed.Count == 0)
                             throw new Exception("Couldn't retrive data from server.");
 
                         // Check if versions have syntax: x.x.x where x is a digit.
@@ -134,8 +107,12 @@ namespace Keyboard_HeatMap
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
             this.MaximumSize = new Size(this.Size.Width, this.Size.Height);
             m_Handle = this.Handle;
+
+            // Load user settings.
+            help_Page.LoadSetup();
         }
 
+        // Autosave file on close.
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             // The progress is saved automacally if the program is closed.
@@ -145,6 +122,7 @@ namespace Keyboard_HeatMap
             Application.Exit();
         }
 
+        // Check for shortcut combinations pressed.
         private void Form_Main_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2) // Start/Stop Program.
@@ -186,6 +164,7 @@ namespace Keyboard_HeatMap
             }
             else if (e.KeyCode == Keys.F1) // Help Page.
             {
+                Thread.Sleep(50);
                 help_Page.Visible = !help_Page.Visible;
 
                 if (help_Page.Visible)
@@ -193,8 +172,37 @@ namespace Keyboard_HeatMap
                 else
                     help_Page.SendToBack();
             }
-        }
+        }     
 
+        #region Read Log File
+        private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
+        {
+            #pragma warning disable CS8602
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+            #pragma warning restore CS8602
+        }
+        private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
+        {
+            #pragma warning disable CS8602
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            #pragma warning restore CS8602
+
+            if (files.Length > 1)
+            {
+                MessageBox.Show("Cannot open more than 1 file at once.", "Operation Denied!", MessageBoxButtons.OK);
+                return;
+            }
+
+            keyboard_Layout.Reload();
+            if (keyboard_Layout.ReadLogFile(files[0]))
+            {
+                Frame_Update_Tick(sender, e);
+            }
+        }
+        #endregion
+
+        #region Record Keypresses Algorithm
+        // Update the keys panel colors.
         private void CheckNumberOfPresses(long number_of_presses, int key)
         {
             // If the key is not found in the dictionary, exit to avoid crashes.
@@ -231,6 +239,7 @@ namespace Keyboard_HeatMap
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(136, 8, 8); return; }
         }
 
+        // Checks for each key how many times was pressed.
         private void Frame_Update_Tick(object sender, EventArgs e)
         {
             /*
@@ -245,42 +254,6 @@ namespace Keyboard_HeatMap
             // Creating a new var to bypass 'marshal-by-reference' CS1690 warning.
             long _total_keypresses = keyboard_Layout.TOTAL_KEYPRESSES;
             keyboard_Layout.LABEL_total_number_of_keypresses.Text = "Total number of keypresses: " + _total_keypresses.ToString();
-        }
-
-        private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
-        {
-            #pragma warning disable CS8602
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-            #pragma warning restore CS8602
-        }
-        private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
-        {
-            #pragma warning disable CS8602
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            #pragma warning restore CS8602
-
-            if (files.Length > 1)
-            {
-                MessageBox.Show("Cannot open more than 1 file at once.", "Operation Denied!", MessageBoxButtons.OK);
-                return;
-            }
-
-            keyboard_Layout.Reload();
-            if (keyboard_Layout.ReadLogFile(files[0]))
-            {
-                Frame_Update_Tick(sender, e);
-            }
-        }
-
-        public static void SwitchToDarkMode(bool mode)
-        {
-            DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
-            keyboard_Layout.SwitchToDarkMode(mode);
-        }
-        private void UpdateTitlebarColor(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            this.Visible = true;
         }
 
         // Used this method to prevent helding down a key.
@@ -329,5 +302,50 @@ namespace Keyboard_HeatMap
                 { lastKeyPressed = DEFAULT; actionKeyPressed = UNPRESSED; }
             }
         }
+        #endregion
+
+        #region Switch to Dark-Mode
+        private static class DarkTitleBarClass
+        {
+            [DllImport("dwmapi.dll")]
+            private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr,
+            ref int attrValue, int attrSize);
+
+            private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
+            private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
+
+            internal static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
+            {
+                if (IsWindows10OrGreater(17763))
+                {
+                    var attribute = DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
+                    if (IsWindows10OrGreater(18985))
+                    {
+                        attribute = DWMWA_USE_IMMERSIVE_DARK_MODE;
+                    }
+
+                    int useImmersiveDarkMode = enabled ? 1 : 0;
+                    return DwmSetWindowAttribute(handle, attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
+                }
+
+                return false;
+            }
+
+            private static bool IsWindows10OrGreater(int build = -1)
+            {
+                return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
+            }
+        }
+        public static void SwitchToDarkMode(bool mode)
+        {
+            DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
+            keyboard_Layout.SwitchToDarkMode(mode);
+        }
+        private void UpdateTitlebarColor(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            this.Visible = true;
+        }
+        #endregion
     }
 }

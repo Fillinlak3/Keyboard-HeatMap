@@ -299,6 +299,7 @@
             // 
             // BTN_Help
             // 
+            this.BTN_Help.Cursor = System.Windows.Forms.Cursors.Help;
             this.BTN_Help.FlatAppearance.BorderSize = 0;
             this.BTN_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Help.Image = global::Keyboard_HeatMap.Properties.Resources.info;

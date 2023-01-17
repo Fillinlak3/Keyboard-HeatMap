@@ -1,9 +1,5 @@
-﻿using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices;
+﻿using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows.Markup;
-using Windows.Devices.SmartCards;
 
 namespace Keyboard_HeatMap
 {
@@ -11,15 +7,20 @@ namespace Keyboard_HeatMap
     {
         public readonly static string SavedRecordsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $@"\Keyboard HeatMap\Saves\";
 
-        public Dictionary<int, Panel> keys;
-        public Dictionary<int, long> number_of_keyPress;
+        // Store the keys panel.
+        public  Dictionary<int, Panel> keys;
+        // Store the number of keypresses of each key.
+        public  Dictionary<int, long> number_of_keyPress;
+        // Store the hashes for finding the mouse-hover object.
         private Dictionary<int, int> keys_hashcodes;
         private Dictionary<int, int> symbols_hashcodes;
+        // Store the total number of keypresses.
         public long TOTAL_KEYPRESSES = 0;
-        private bool DarkMode = false;
-
+        
+        // Dark/Light Mode Settings.
         private Color Dark_Mode_Keys_Background = Color.FromArgb(67, 67, 67);
         private Color Light_Mode_Keys_Background = Color.FromArgb(242, 243, 245);
+        private bool DarkMode = false;
 
         public Keyboard_Layout()
         {
@@ -40,6 +41,17 @@ namespace Keyboard_HeatMap
                 Directory.CreateDirectory(SavedRecordsPath);
         }
 
+        // Center the symbol of the key in it's parent panel.
+        private void _centerKeysSymbolInParentPanel()
+        {
+            foreach (var key in keys)
+            {
+                key.Value.Controls[0].Location = new Point((int)Math.Ceiling((key.Value.Size.Width - key.Value.Controls[0].Width) / 2.0), (int)Math.Ceiling((key.Value.Size.Height - key.Value.Controls[0].Height) / 2.0));
+            }
+        }
+
+        #region Dictionary Assignments
+        // Assign keys panels.
         private void _assignKeysToDict()
         {
             if (keys.Count != 0)
@@ -115,15 +127,7 @@ namespace Keyboard_HeatMap
             keys.Add(-1, EMPTY_key);
         }
 
-        private void _centerKeysSymbolInParentPanel()
-        {
-            foreach (var key in keys)
-            {
-                key.Value.Controls[0].Location = new Point((int)Math.Ceiling((key.Value.Size.Width - key.Value.Controls[0].Width) / 2.0), (int)Math.Ceiling((key.Value.Size.Height - key.Value.Controls[0].Height) / 2.0));
-            }
-        }
-
-        // Number of keypresses.
+        // Assign/Reset number of keypresses.
         private void _resetNumberOfKeyPresses()
         {
             if (number_of_keyPress.Count != 0)
@@ -198,6 +202,7 @@ namespace Keyboard_HeatMap
         }
 
         // To get the on-hover animation to work.
+        // Assign keys and symbols hashcodes.
         private void _assignHashCodes()
         {
             if (keys_hashcodes.Count != 0)
@@ -337,8 +342,9 @@ namespace Keyboard_HeatMap
             symbols_hashcodes.Add(1, MOUSE_LB.GetHashCode());
             symbols_hashcodes.Add(2, MOUSE_RB.GetHashCode());
         }
+        #endregion
 
-        // Keypresses progress.
+        // Reset keypresses progress.
         private void _resetKeyboardColors()
         {
             foreach (var key in keys)
@@ -348,6 +354,15 @@ namespace Keyboard_HeatMap
             }
         }
 
+        // Restart the program
+        public void Reload()
+        {
+            TOTAL_KEYPRESSES = 0;
+            _resetNumberOfKeyPresses();
+            _resetKeyboardColors();
+        }
+
+        #region Read/Write Log File
         private void _writeLogFile()
         {
             string data = "#========== <KEYBOARD> ==========#\n";
@@ -426,24 +441,48 @@ namespace Keyboard_HeatMap
             File.WriteAllText(SavedRecordsPath + LogFileName, data);
         }
 
+        // Write Log File.
+        public void WriteLogFile()
+        {
+            // If accidentally the program registers only 1 press which means the closing,
+            // it will be ignored and no new log file will be written.
+            if (TOTAL_KEYPRESSES <= 1)
+            {
+                LABEL_total_number_of_keypresses.Text = "No keypresses yet";
+                _resetKeyboardColors();
+                return;
+            }
+
+            // If first-time use and the saved records folder doesn't exist, create it.
+            if (Directory.Exists(SavedRecordsPath) == false)
+                Directory.CreateDirectory(SavedRecordsPath);
+
+            // Write the log file itself and save in the saved records folder.
+            _writeLogFile();
+        }
+
         private bool _readLogFile(string filepath)
         {
             try
             {
                 List<string>? data_scraped = new List<string>(System.IO.File.ReadAllText(filepath).Split('\n', StringSplitOptions.TrimEntries).ToArray());
 
-                // Remove comment and blank lines.
+                // Remove comments and blank lines and add to list the values.
                 Regex sWhitespace = new Regex(@"\s+");
                 for (int i = 0; i < data_scraped.Count; i++)
                 {
+                    // Remove comments and blank lines.
                     if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
                         data_scraped.Remove(data_scraped[i--]);
+                    // Add to the list the corespondent values.
                     else data_scraped[i] = sWhitespace.Replace(data_scraped[i], "").Split(':')[1];
                 }
 
+                // Check if the file is corrupted: it doesn't have all the 61 keys + the total keypresses number.
                 if (data_scraped.Count != 62)
                     throw new Exception("Record file is corrupted.");
 
+                // If the file is ok, then assign the values to number_of_keyPress list.
                 #region Assign Values
                 if (number_of_keyPress.Count != 0)
                     number_of_keyPress.Clear();
@@ -518,6 +557,7 @@ namespace Keyboard_HeatMap
                 TOTAL_KEYPRESSES = Int32.Parse(data_scraped[61]);
                 #endregion
 
+                // Finally clean the mem.
                 data_scraped = null;
             }
             catch(Exception ex)
@@ -529,34 +569,14 @@ namespace Keyboard_HeatMap
             return true;
         }
 
-        // Restart the program
-        public void Reload()
-        {
-            TOTAL_KEYPRESSES = 0;
-            _resetNumberOfKeyPresses();
-            _resetKeyboardColors();
-        }
-
-        public void WriteLogFile()
-        {
-            if (TOTAL_KEYPRESSES <= 1)
-            {
-                LABEL_total_number_of_keypresses.Text = "No keypresses yet";
-                _resetKeyboardColors();
-                return;
-            }
-
-            if (Directory.Exists(SavedRecordsPath) == false)
-                Directory.CreateDirectory(SavedRecordsPath);
-
-            _writeLogFile();
-        }
-
+        // Read Log File.
         public bool ReadLogFile(string file)
         {
             return _readLogFile(file);
         }
+        #endregion
 
+        #region Hover Animation
         // Display On-Hover animation for a single key with the number of keypresses.
         private Point Hovered_Key_Location;
         private void DisplayCursorOverKeypresses(object sender, EventArgs e)
@@ -569,7 +589,7 @@ namespace Keyboard_HeatMap
             {
                 if (keyfound.Value == sender.GetHashCode() && number_of_keyPress[keyfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[keyfound.Key]} - {(int)Math.Round((number_of_keyPress[keyfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[keyfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[keyfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[keyfound.Key].Location;
@@ -584,7 +604,7 @@ namespace Keyboard_HeatMap
             {
                 if (symbolfound.Value == sender.GetHashCode() && number_of_keyPress[symbolfound.Key] > 0)
                 {
-                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[symbolfound.Key]} - {(int)Math.Round((number_of_keyPress[symbolfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
+                    panel_key_times_pressed.Controls[0].Text = $"{number_of_keyPress[symbolfound.Key]} - {(int)Math.Ceiling((number_of_keyPress[symbolfound.Key] * 100.0) / TOTAL_KEYPRESSES)}%";
 
                     // Set the location, visibility and the size of the panel.
                     Hovered_Key_Location = keys[symbolfound.Key].Location;
@@ -595,7 +615,7 @@ namespace Keyboard_HeatMap
                 }
             }
         }
-
+        // Move along the mouse cursor.
         private void UpdateCursorLocation(object sender, MouseEventArgs e)
         {
             int x = 0, y = 0;
@@ -621,12 +641,12 @@ namespace Keyboard_HeatMap
             if (y <= 0) { y = 15; x -= 5; }
             panel_key_times_pressed.Location = new Point(x, y);
         }
-
         // Hide the animation.
         private void HideCursorOverKeypresses(object sender, EventArgs e)
         {
             panel_key_times_pressed.Visible = false;
         }
+        #endregion
 
         private void program_Status_Click(object sender, EventArgs e)
         {
@@ -638,6 +658,7 @@ namespace Keyboard_HeatMap
             SendKeys.SendWait("{F1}");
         }
     
+        // Switch from Light-Mode to Dark-Mode
         public void SwitchToDarkMode(bool mode)
         {
             if (mode)

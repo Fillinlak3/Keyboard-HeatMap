@@ -12,7 +12,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>icons\keyboard_1.3.ico</ApplicationIcon>
+    <ApplicationIcon>icons\keyboard_build.ico</ApplicationIcon>
     <StartupObject>Keyboard_HeatMap.Program</StartupObject>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <Authors>FillInHack Inc</Authors>
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="icons\keyboard_1.3.ico" />
+    <Content Include="icons\keyboard_build.ico" />
   </ItemGroup>
 
   <ItemGroup>
