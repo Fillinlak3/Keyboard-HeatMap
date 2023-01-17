@@ -305,7 +305,7 @@ namespace Keyboard_HeatMap
         #endregion
 
         #region Switch to Dark-Mode
-        private static class DarkTitleBarClass
+        private class DarkTitleBarClass
         {
             [DllImport("dwmapi.dll")]
             private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr,

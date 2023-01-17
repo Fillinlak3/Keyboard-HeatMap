@@ -329,7 +329,7 @@
             this.panel_key_times_pressed.BorderRadius = 20;
             this.panel_key_times_pressed.Controls.Add(this.LB_times_pressed);
             this.panel_key_times_pressed.ForeColor = System.Drawing.Color.Black;
-            this.panel_key_times_pressed.Location = new System.Drawing.Point(309, 291);
+            this.panel_key_times_pressed.Location = new System.Drawing.Point(326, 296);
             this.panel_key_times_pressed.Name = "panel_key_times_pressed";
             this.panel_key_times_pressed.Size = new System.Drawing.Size(151, 18);
             this.panel_key_times_pressed.TabIndex = 47;
@@ -937,9 +937,9 @@
             this.FUNC_SPACE.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FUNC_SPACE.Location = new System.Drawing.Point(170, 15);
             this.FUNC_SPACE.Name = "FUNC_SPACE";
-            this.FUNC_SPACE.Size = new System.Drawing.Size(80, 21);
+            this.FUNC_SPACE.Size = new System.Drawing.Size(115, 21);
             this.FUNC_SPACE.TabIndex = 0;
-            this.FUNC_SPACE.Text = "__________";
+            this.FUNC_SPACE.Text = "_______________";
             this.FUNC_SPACE.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
             this.FUNC_SPACE.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
             this.FUNC_SPACE.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
