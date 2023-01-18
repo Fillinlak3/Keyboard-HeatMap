@@ -66,7 +66,7 @@ namespace Keyboard_HeatMap
                             throw new Exception("Couldn't retrive data from server.");
 
                         // Check if versions have syntax: x.x.x where x is a digit.
-                        regex = new Regex("^[1-9].[0-9].[0-9]$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                        regex = new Regex("^[1-9].[0-9].[0-9][0-9]?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
                         if (regex.IsMatch(data_parsed["Version"]) == false)
                             throw new Exception("Corrupted or invalid data retrieved.");
 

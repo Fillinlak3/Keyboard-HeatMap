@@ -57,11 +57,12 @@
             keyboard_Layout.TabIndex = 0;
             keyboard_Layout.TabStop = false;
             keyboard_Layout.BackColorChanged += new System.EventHandler(this.UpdateTitlebarColor);
-            keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragDrop);
-            keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(this.keyboard_Layout_DragEnter);
+            keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(keyboard_Layout_DragDrop);
+            keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(keyboard_Layout_DragEnter);
             // 
             // help_Page
             // 
+            this.help_Page.AutoSize = true;
             this.help_Page.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
             this.help_Page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("help_Page.BackgroundImage")));
             this.help_Page.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,6 +93,7 @@
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_Main_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -58,7 +58,7 @@
             this.BTN_open_saves_folder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_open_saves_folder.Location = new System.Drawing.Point(488, 207);
             this.BTN_open_saves_folder.Name = "BTN_open_saves_folder";
-            this.BTN_open_saves_folder.Size = new System.Drawing.Size(245, 38);
+            this.BTN_open_saves_folder.Size = new System.Drawing.Size(255, 38);
             this.BTN_open_saves_folder.TabIndex = 0;
             this.BTN_open_saves_folder.TabStop = false;
             this.BTN_open_saves_folder.Text = "Open saves folder";
@@ -244,6 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
             this.BackgroundImage = global::Keyboard_HeatMap.Properties.Resources.remastered_help_page_light;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.LABEL_desktop_shortcut);
             this.Controls.Add(this.CHECKBOX_desktop_shortcut);
             this.Controls.Add(this.BTN_GoBack);
