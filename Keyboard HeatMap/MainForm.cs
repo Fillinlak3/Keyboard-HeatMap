@@ -1,15 +1,21 @@
 using System.Diagnostics;
 using System.Net;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Keyboard_HeatMap
 {
+    // Find: this\.(keyboard_Layout|MenuBar|BTN_Minimize|BTN_Close)        Replace: $1
     public partial class Form_Main : Form
     {
-        [DllImport("User32.dll")]
-        private static extern short GetAsyncKeyState(int vKey);
+        [DllImport("User32.dll", EntryPoint = "GetAsyncKeyState")]
+        private extern static short GetAsyncKeyState(int vKey);
+        [DllImport("User32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("User32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         public Form_Main()
         {
@@ -22,10 +28,11 @@ namespace Keyboard_HeatMap
         private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
         // Static program's handle for switching to light/dark mode.
         private static IntPtr m_Handle;
+        private bool ApplicationStarted = false;
 
         // Before starting checkings.
-        private void Form_Main_Load(object sender, EventArgs e)
-        {  
+        private async void Form_Main_Load(object sender, EventArgs e)
+        {
             // Check for new version.
             #if RELEASE
                 Dictionary<string, string>? data_parsed = new Dictionary<string, string>();
@@ -61,36 +68,39 @@ namespace Keyboard_HeatMap
                         data_scraped = null;
                     #endregion
 
-                    // Check if data was gathered from the server.
-                    if (data_parsed == null || data_parsed.Count == 0)
-                            throw new Exception("Couldn't retrive data from server.");
+                        // Check if data was gathered from the server.
+                        if (data_parsed == null || data_parsed.Count == 0)
+                                throw new Exception("Couldn't retrive data from server.");
 
-                        // Check if versions have syntax: x.x.x where x is a digit.
-                        regex = new Regex("^[1-9].[0-9].[0-9][0-9]?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                        if (regex.IsMatch(data_parsed["Version"]) == false)
-                            throw new Exception("Corrupted or invalid data retrieved.");
+                            // Check if versions have syntax: x.x.x where x is a digit.
+                            regex = new Regex("^[1-9].[0-9].[0-9][0-9]?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                            if (regex.IsMatch(data_parsed["Version"]) == false)
+                                throw new Exception("Corrupted or invalid data retrieved.");
 
                         // After all check if there is an downgrade / upgrade.
-                        if (data_parsed["Version"] != Program_Version)
+                        await Task.Run(() =>
                         {
-                            DialogResult dialogResult;
-
-                            // It's a downgrade.
-                            if (data_parsed["Version"].CompareTo(Program_Version) < 0)
-                                dialogResult = MessageBox.Show($"The current update encountered a manufacturing problem. Please download the previous package version. (prev: {data_parsed["Version"]}). Reason: {(data_parsed.ContainsKey("Downgrade-Reason") ? data_parsed["Downgrade-Reason"] : "undefined")}.", "Immediate Downgrade Needed!", MessageBoxButtons.YesNo);
-                            // It's an upgrade.
-                            else
-                                dialogResult = MessageBox.Show($"New version of Keyboard HeatMap found! (latest: {data_parsed["Version"]} | current: {Program_Version}) Would you like to download the new package?", "New Version Found!", MessageBoxButtons.YesNo);
-
-                            // If user wants to download the new package.
-                            if (dialogResult == DialogResult.Yes)
+                            if (data_parsed["Version"] != Program_Version)
                             {
-                                // Open google drive with the newest update for the program for user to download.
-                                Process.Start(new ProcessStartInfo(data_parsed["Download-Link"]) { UseShellExecute = true });
-                                // Kill the process.
-                                Application.Exit();
+                                DialogResult dialogResult;
+
+                                // It's a downgrade.
+                                if (data_parsed["Version"].CompareTo(Program_Version) < 0)
+                                    dialogResult = MessageBox.Show($"The current update encountered a manufacturing problem. Please download the previous package version. (prev: {data_parsed["Version"]}). Reason: {(data_parsed.ContainsKey("Downgrade-Reason") ? data_parsed["Downgrade-Reason"] : "undefined")}.", "Immediate Downgrade Needed!", MessageBoxButtons.YesNo);
+                                // It's an upgrade.
+                                else
+                                    dialogResult = MessageBox.Show($"New version of Keyboard HeatMap found! (latest: {data_parsed["Version"]} | current: {Program_Version}) Would you like to download the new package?", "New Version Found!", MessageBoxButtons.YesNo);
+
+                                // If user wants to download the new package.
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    // Open google drive with the newest update for the program for user to download.
+                                    Process.Start(new ProcessStartInfo(data_parsed["Download-Link"]) { UseShellExecute = true });
+                                    // Kill the process.
+                                    Application.Exit();
+                                }
                             }
-                        }
+                        });
                     }
                 }
                 catch(Exception ex)
@@ -109,10 +119,10 @@ namespace Keyboard_HeatMap
             m_Handle = this.Handle;
 
             // Load user settings.
-            help_Page.LoadSetup();
+            await Task.Run(() => help_Page.LoadSetup());
+            ApplicationStarted = true;
         }
-
-        // Autosave file on close.
+        // Autosave file on close (ALT+F4 or task kill because button is disabled).
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             // The progress is saved automacally if the program is closed.
@@ -121,7 +131,6 @@ namespace Keyboard_HeatMap
 
             Application.Exit();
         }
-
         // Check for shortcut combinations pressed.
         private void Form_Main_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
@@ -137,7 +146,7 @@ namespace Keyboard_HeatMap
                 if (keyboard_Layout.program_Status.Text == "Disabled")
                 {
                     // Disable the X button to prevent closing while program running.
-                    this.ControlBox = false;
+                    BTN_Close.Enabled = false;
                     // Disable user action to drop a saved record.
                     keyboard_Layout.AllowDrop = false;
                     keyboard_Layout.program_Status.Text = "Enabled";
@@ -149,7 +158,7 @@ namespace Keyboard_HeatMap
                 else
                 {
                     // Enable the X button when program is stopped.
-                    this.ControlBox = true;
+                    BTN_Close.Enabled = true;
                     // Enable user action to drop a saved record.
                     keyboard_Layout.AllowDrop = true;
                     keyboard_Layout.program_Status.Text = "Disabled";
@@ -173,6 +182,88 @@ namespace Keyboard_HeatMap
                     help_Page.SendToBack();
             }
         }     
+
+        #region MenuBar Buttons
+        // Fade-In animation on form restore.
+        private async void FadeIn(Form o, int interval = 80)
+        {
+            //Object is not fully invisible. Fade it in
+            if (o.InvokeRequired)
+            {
+                Action safeFade = delegate { FadeIn(o, interval); };
+                await Task.Run(() => o.Invoke(safeFade));
+            }
+            else
+            {
+                while (o.Opacity < 1.0)
+                {
+                    await Task.Delay(interval);
+                    o.Opacity += 0.05;
+                }
+                o.Opacity = 0.9; //make fully visible
+                o.WindowState = FormWindowState.Normal;
+            }
+        }
+        // Fade-Out animation on form minimize.
+        private async void FadeOut(Form o, int interval = 80)
+        {
+            //Object is fully visible. Fade it out
+            if(o.InvokeRequired)
+            {
+                Action safeFade = delegate { FadeOut(o, interval); };
+                await Task.Run(() => o.Invoke(safeFade));
+            }
+            else { 
+                while (o.Opacity > 0.0)
+                {
+                    await Task.Delay(interval);
+                    o.Opacity -= 0.05;
+                }
+                o.Opacity = 0; //make fully invisible
+                o.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private async void RestoreForm(object sender, EventArgs e)
+        {
+            if (ApplicationStarted == false)
+                return;
+
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                await Task.Run(() => FadeIn(this, 25));
+                await Task.Delay(1000);
+                Debug.WriteLine("FadeIN");
+            }
+        }
+        private async void MinimizeForm(object sender, EventArgs e)
+        {
+            await Task.Run(() => FadeOut(this, 25));
+            await Task.Delay(1000);
+        }
+        // Turn close button red.
+        private void FocusCloseButton(object sender, EventArgs e)
+        {
+            BTN_Close.BackColor = Color.Red;
+        }
+        private void UnfocusCloseButton(object sender, EventArgs e)
+        {
+            BTN_Close.BackColor = Color.Transparent;
+        }
+        private void CloseForm(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        // Drag & move form.
+        private void MoveForm(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+        }
+        #endregion 
 
         #region Read Log File
         private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
@@ -330,7 +421,6 @@ namespace Keyboard_HeatMap
 
                 return false;
             }
-
             private static bool IsWindows10OrGreater(int build = -1)
             {
                 return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
@@ -338,11 +428,27 @@ namespace Keyboard_HeatMap
         }
         public static void SwitchToDarkMode(bool mode)
         {
-            DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
+            //DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
+            if(mode == true)
+            {
+                MenuBar.BackColor = Color.FromArgb(27, 27, 27);
+                MenuBar.ForeColor = Color.White;
+            }
+            else
+            {
+                MenuBar.BackColor = Color.FromArgb(242, 243, 245);
+                MenuBar.ForeColor = Color.Black;
+            }
+
             keyboard_Layout.SwitchToDarkMode(mode);
         }
         private void UpdateTitlebarColor(object sender, EventArgs e)
         {
+            if (ApplicationStarted == false)
+                return;
+
+            BTN_Minimize.BackColor = MenuBar.BackColor;
+
             this.Visible = false;
             this.Visible = true;
         }

@@ -38,14 +38,22 @@ namespace Keyboard_HeatMap
         }
 
         // Load theme and settings.
-        public void LoadSetup()
+        public async void LoadSetup()
         {
-            _CheckUserConfig();
+            if (this.InvokeRequired)
+            {
+                Action safeChange = delegate { LoadSetup(); };
+                await Task.Run(() => this.Invoke(safeChange));
+            }
+            else
+            {
+                _CheckUserConfig();
 
-            // Checkbox checked if the ShortcutExists in startup folder.
-            CHECKBOX_open_on_startup.Checked = StartupShortcutExists = System.IO.File.Exists(ApplicationStartupShortcut);
-            CHECKBOX_desktop_shortcut.Checked = DesktopShortcutExists = System.IO.File.Exists(ApplicationDesktopShortcut);
-            CHECKBOX_dark_theme.Checked = bool.Parse(user_settings["Dark-Mode"]);
+                // Checkbox checked if the ShortcutExists in startup folder.
+                CHECKBOX_open_on_startup.Checked = StartupShortcutExists = System.IO.File.Exists(ApplicationStartupShortcut);
+                CHECKBOX_desktop_shortcut.Checked = DesktopShortcutExists = System.IO.File.Exists(ApplicationDesktopShortcut);
+                CHECKBOX_dark_theme.Checked = bool.Parse(user_settings["Dark-Mode"]);
+            }
         }
 
         #region User Config File

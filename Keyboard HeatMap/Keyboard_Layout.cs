@@ -354,7 +354,7 @@ namespace Keyboard_HeatMap
             }
         }
 
-        // Restart the program
+        // Restart the program.
         public void Reload()
         {
             TOTAL_KEYPRESSES = 0;
@@ -658,7 +658,7 @@ namespace Keyboard_HeatMap
             SendKeys.SendWait("{F1}");
         }
     
-        // Switch from Light-Mode to Dark-Mode
+        // Switch from Light-Mode to Dark-Mode.
         public void SwitchToDarkMode(bool mode)
         {
             if (mode)
