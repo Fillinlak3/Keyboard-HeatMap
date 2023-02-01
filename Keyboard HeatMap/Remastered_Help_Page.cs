@@ -63,7 +63,9 @@ namespace Keyboard_HeatMap
                 user_settings.Clear();
 
             user_settings.Add("Application-Exe-Path", ApplicationExecutablePath);
+            #pragma warning disable CS8604
             user_settings.Add("Version", Program_Version);
+            #pragma warning restore
             user_settings.Add("Dark-Mode", DarkMode.ToString());
 
             string data = $"# User Settings Config File #\n";
@@ -120,12 +122,18 @@ namespace Keyboard_HeatMap
 
         private void GoBack(object sender, EventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             this.Visible = false;
             this.SendToBack();
         }
 
         private void OpenInstagramPage(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             Process.Start(new ProcessStartInfo("https://www.instagram.com/iambucuriee") { UseShellExecute = true });
         }
 
@@ -133,41 +141,47 @@ namespace Keyboard_HeatMap
         // Startup folder shortcut.
         private void CHECKBOX_open_on_startup_CheckedChanged(object sender, EventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             #if RELEASE
-            // Check if user had interaction.
-            if (CHECKBOX_open_on_startup.Checked == true)
-            {
-                if (StartupShortcutExists == false)
-                    // Create shortcut.
-                    CreateShortcut("Keyboard HeatMap", Startup_Folder, ApplicationExecutablePath);
-            }
-            else if (StartupShortcutExists == true)
-            {
-                // Delete shortcut.
-                System.IO.File.Delete(ApplicationStartupShortcut);
-            }
-            // Finally, update the ShortcutExists.
-            StartupShortcutExists = System.IO.File.Exists(ApplicationStartupShortcut);
+                // Check if user had interaction.
+                if (CHECKBOX_open_on_startup.Checked == true)
+                {
+                    if (StartupShortcutExists == false)
+                        // Create shortcut.
+                        CreateShortcut("Keyboard HeatMap", Startup_Folder, ApplicationExecutablePath);
+                }
+                else if (StartupShortcutExists == true)
+                {
+                    // Delete shortcut.
+                    System.IO.File.Delete(ApplicationStartupShortcut);
+                }
+                // Finally, update the ShortcutExists.
+                StartupShortcutExists = System.IO.File.Exists(ApplicationStartupShortcut);
             #endif
         }
         // Desktop folder shortcut.
         private void CHECKBOX_desktop_shortcut_CheckedChanged(object sender, EventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             #if RELEASE
-            // Check if user had interaction.
-            if (CHECKBOX_desktop_shortcut.Checked == true)
-            {
-                if (DesktopShortcutExists == false)
-                    // Create shortcut.
-                    CreateShortcut("Keyboard HeatMap", Desktop_Folder, ApplicationExecutablePath);
-            }
-            else if (DesktopShortcutExists == true)
-            {
-                // Delete shortcut.
-                System.IO.File.Delete(ApplicationDesktopShortcut);
-            }
-            // Finally, update the ShortcutExists.
-            DesktopShortcutExists = System.IO.File.Exists(ApplicationDesktopShortcut);
+                // Check if user had interaction.
+                if (CHECKBOX_desktop_shortcut.Checked == true)
+                {
+                    if (DesktopShortcutExists == false)
+                        // Create shortcut.
+                        CreateShortcut("Keyboard HeatMap", Desktop_Folder, ApplicationExecutablePath);
+                }
+                else if (DesktopShortcutExists == true)
+                {
+                    // Delete shortcut.
+                    System.IO.File.Delete(ApplicationDesktopShortcut);
+                }
+                // Finally, update the ShortcutExists.
+                DesktopShortcutExists = System.IO.File.Exists(ApplicationDesktopShortcut);
             #endif
         }
 
@@ -191,6 +205,9 @@ namespace Keyboard_HeatMap
 
         private void BTN_open_saves_folder_Click(object sender, EventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             try
             {
                 if (System.IO.Directory.Exists(Keyboard_Layout.SavedRecordsPath))
@@ -202,6 +219,9 @@ namespace Keyboard_HeatMap
 
         public void ChangeTheme(object sender, EventArgs e)
         {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
             DarkMode = CHECKBOX_dark_theme.Checked;
 
             if (DarkMode)
@@ -242,7 +262,9 @@ namespace Keyboard_HeatMap
             }
 
             Form_Main.SwitchToDarkMode(DarkMode);
-            _UserConfig_WriteSettings();
+            #if RELEASE
+                _UserConfig_WriteSettings();
+            #endif
         }
     }
 }

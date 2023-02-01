@@ -20,6 +20,8 @@ namespace Keyboard_HeatMap
         public Form_Main()
         {
             InitializeComponent();
+
+            this.Opacity = 0;
         }
 
         // The URL of the Pastebin Server.
@@ -27,10 +29,9 @@ namespace Keyboard_HeatMap
         // Program's version.
         private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
         // Static program's handle for switching to light/dark mode.
-        private static IntPtr m_Handle;
         private bool ApplicationStarted = false;
 
-        // Before starting checkings.
+        // Before starting (on load) checkings.
         private async void Form_Main_Load(object sender, EventArgs e)
         {
             // Check for new version.
@@ -43,30 +44,30 @@ namespace Keyboard_HeatMap
                     #pragma warning restore SYSLIB0014
                     {
                         #region WEB Scraper
-                        List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
+                            List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
 
-                        // Remove comment lines --> lines that starts with '#' & blank lines.
-                        for (int i = 0; i < data_scraped.Count; i++)
-                        {
-                            // Remove comments and blank lines.
-                            if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
-                                data_scraped.Remove(data_scraped[i--]);
-                        }
-
-                        // Parse values into the dictionary.
-                        Regex regex = new Regex("\"(.*?)\"");
-                        foreach (string data in data_scraped)
-                        {
-                            var matches = regex.Matches(data);
-                            if (matches.Count == 2)
+                            // Remove comment lines --> lines that starts with '#' & blank lines.
+                            for (int i = 0; i < data_scraped.Count; i++)
                             {
-                                string key = matches[0].Groups[1].ToString();
-                                string value = matches[1].Groups[1].ToString();
-                                data_parsed.Add(key, value);
+                                // Remove comments and blank lines.
+                                if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
+                                    data_scraped.Remove(data_scraped[i--]);
                             }
-                        }
-                        data_scraped = null;
-                    #endregion
+
+                            // Parse values into the dictionary.
+                            Regex regex = new Regex("\"(.*?)\"");
+                            foreach (string data in data_scraped)
+                            {
+                                var matches = regex.Matches(data);
+                                if (matches.Count == 2)
+                                {
+                                    string key = matches[0].Groups[1].ToString();
+                                    string value = matches[1].Groups[1].ToString();
+                                    data_parsed.Add(key, value);
+                                }
+                            }
+                            data_scraped = null;
+                        #endregion
 
                         // Check if data was gathered from the server.
                         if (data_parsed == null || data_parsed.Count == 0)
@@ -103,6 +104,10 @@ namespace Keyboard_HeatMap
                         });
                     }
                 }
+                catch(System.Net.WebException)
+                {
+                    MessageBox.Show("No internet connection. Couldn't retrive server information.", "Server Error", MessageBoxButtons.OK);
+                }
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Server Error", MessageBoxButtons.OK);
@@ -116,11 +121,13 @@ namespace Keyboard_HeatMap
             // Lock program size.
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
             this.MaximumSize = new Size(this.Size.Width, this.Size.Height);
-            m_Handle = this.Handle;
 
             // Load user settings.
             await Task.Run(() => help_Page.LoadSetup());
+            // Update title bar to current settings.
+            await Task.Run(() => UpdateTitlebarColor(sender, e));
             ApplicationStarted = true;
+            RestoreForm(sender, e);
         }
         // Autosave file on close (ALT+F4 or task kill because button is disabled).
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -128,14 +135,15 @@ namespace Keyboard_HeatMap
             // The progress is saved automacally if the program is closed.
             if (detectKeyPress.Enabled == true)
                 keyboard_Layout.WriteLogFile();
-
-            Application.Exit();
         }
         // Check for shortcut combinations pressed.
         private void Form_Main_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2) // Start/Stop Program.
             {
+                // Remove focus from any button.
+                this.ApplicationTitle.Focus();
+
                 // If user on help page hide and show kb_layout.
                 if (help_Page.Visible)
                 {
@@ -179,7 +187,7 @@ namespace Keyboard_HeatMap
                 if (help_Page.Visible)
                     help_Page.BringToFront();
                 else
-                    help_Page.SendToBack();
+                { /*Remove focus from any button.*/ this.ApplicationTitle.Focus(); help_Page.SendToBack(); }
             }
         }     
 
@@ -198,7 +206,7 @@ namespace Keyboard_HeatMap
                 while (o.Opacity < 1.0)
                 {
                     await Task.Delay(interval);
-                    o.Opacity += 0.05;
+                    o.Opacity += 0.08;
                 }
                 o.Opacity = 0.9; //make fully visible
                 o.WindowState = FormWindowState.Normal;
@@ -217,7 +225,7 @@ namespace Keyboard_HeatMap
                 while (o.Opacity > 0.0)
                 {
                     await Task.Delay(interval);
-                    o.Opacity -= 0.05;
+                    o.Opacity -= 0.08;
                 }
                 o.Opacity = 0; //make fully invisible
                 o.WindowState = FormWindowState.Minimized;
@@ -231,15 +239,17 @@ namespace Keyboard_HeatMap
 
             if (this.WindowState == FormWindowState.Normal)
             {
-                await Task.Run(() => FadeIn(this, 25));
-                await Task.Delay(1000);
-                Debug.WriteLine("FadeIN");
+                // Remove focus from any button.
+                this.ApplicationTitle.Focus();
+
+                await Task.Run(() => FadeIn(this, 5));
+                await Task.Delay(200);
             }
         }
         private async void MinimizeForm(object sender, EventArgs e)
         {
-            await Task.Run(() => FadeOut(this, 25));
-            await Task.Delay(1000);
+            await Task.Run(() => FadeOut(this, 5));
+            await Task.Delay(200);
         }
         // Turn close button red.
         private void FocusCloseButton(object sender, EventArgs e)
@@ -250,8 +260,10 @@ namespace Keyboard_HeatMap
         {
             BTN_Close.BackColor = Color.Transparent;
         }
-        private void CloseForm(object sender, EventArgs e)
+        private async void CloseForm(object sender, EventArgs e)
         {
+            await Task.Run(() => MinimizeForm(sender, e));
+            await Task.Delay(200);
             Application.Exit();
         }
         // Drag & move form.
@@ -263,7 +275,7 @@ namespace Keyboard_HeatMap
                 SendMessage(this.Handle, 0x112, 0xf012, 0);
             }
         }
-        #endregion 
+        #endregion
 
         #region Read Log File
         private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
@@ -428,7 +440,6 @@ namespace Keyboard_HeatMap
         }
         public static void SwitchToDarkMode(bool mode)
         {
-            //DarkTitleBarClass.UseImmersiveDarkMode(m_Handle, mode);
             if(mode == true)
             {
                 MenuBar.BackColor = Color.FromArgb(27, 27, 27);
@@ -442,15 +453,20 @@ namespace Keyboard_HeatMap
 
             keyboard_Layout.SwitchToDarkMode(mode);
         }
-        private void UpdateTitlebarColor(object sender, EventArgs e)
+        private async void UpdateTitlebarColor(object sender, EventArgs e)
         {
-            if (ApplicationStarted == false)
-                return;
+            if (this.InvokeRequired)
+            {
+                Action safeUpdate = delegate { UpdateTitlebarColor(sender, e); };
+                await Task.Run(() => this.Invoke(safeUpdate));
+            }
+            else
+            {
+                this.BackColor = BTN_Minimize.BackColor = MenuBar.BackColor;
 
-            BTN_Minimize.BackColor = MenuBar.BackColor;
-
-            this.Visible = false;
-            this.Visible = true;
+                this.Visible = false;
+                this.Visible = true;
+            }
         }
         #endregion
     }

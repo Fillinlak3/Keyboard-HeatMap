@@ -94,7 +94,7 @@
             // 
             this.PICBOX_logo.BackColor = System.Drawing.Color.Transparent;
             this.PICBOX_logo.Image = ((System.Drawing.Image)(resources.GetObject("PICBOX_logo.Image")));
-            this.PICBOX_logo.Location = new System.Drawing.Point(438, 16);
+            this.PICBOX_logo.Location = new System.Drawing.Point(438, 7);
             this.PICBOX_logo.Name = "PICBOX_logo";
             this.PICBOX_logo.Size = new System.Drawing.Size(64, 64);
             this.PICBOX_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -159,9 +159,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(55, 218);
+            this.panel1.Location = new System.Drawing.Point(56, 218);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 53);
+            this.panel1.Size = new System.Drawing.Size(275, 53);
             this.panel1.TabIndex = 12;
             // 
             // LABEL_dark_theme

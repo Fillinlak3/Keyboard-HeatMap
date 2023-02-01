@@ -35,9 +35,9 @@
             keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
             this.help_Page = new Keyboard_HeatMap.Remastered_Help_Page();
             MenuBar = new System.Windows.Forms.Panel();
-            this.BTN_Minimize = new System.Windows.Forms.Button();
+            BTN_Minimize = new System.Windows.Forms.Button();
             this.BTN_Maximize = new System.Windows.Forms.Button();
-            this.BTN_Close = new System.Windows.Forms.Button();
+            BTN_Close = new System.Windows.Forms.Button();
             this.ApplicationTitle = new System.Windows.Forms.Label();
             this.ApplicationLogo = new System.Windows.Forms.PictureBox();
             MenuBar.SuspendLayout();
@@ -84,9 +84,9 @@
             // 
             // MenuBar
             // 
-            MenuBar.Controls.Add(this.BTN_Minimize);
+            MenuBar.Controls.Add(BTN_Minimize);
             MenuBar.Controls.Add(this.BTN_Maximize);
-            MenuBar.Controls.Add(this.BTN_Close);
+            MenuBar.Controls.Add(BTN_Close);
             MenuBar.Controls.Add(this.ApplicationTitle);
             MenuBar.Controls.Add(this.ApplicationLogo);
             MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -98,19 +98,19 @@
             // 
             // BTN_Minimize
             // 
-            this.BTN_Minimize.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_Minimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BTN_Minimize.FlatAppearance.BorderSize = 0;
-            this.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Minimize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_Minimize.Location = new System.Drawing.Point(710, 0);
-            this.BTN_Minimize.Name = "BTN_Minimize";
-            this.BTN_Minimize.Size = new System.Drawing.Size(45, 29);
-            this.BTN_Minimize.TabIndex = 0;
-            this.BTN_Minimize.TabStop = false;
-            this.BTN_Minimize.Text = "─";
-            this.BTN_Minimize.UseVisualStyleBackColor = false;
-            this.BTN_Minimize.Click += new System.EventHandler(this.MinimizeForm);
+            BTN_Minimize.BackColor = System.Drawing.Color.Transparent;
+            BTN_Minimize.Dock = System.Windows.Forms.DockStyle.Right;
+            BTN_Minimize.FlatAppearance.BorderSize = 0;
+            BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTN_Minimize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            BTN_Minimize.Location = new System.Drawing.Point(710, 0);
+            BTN_Minimize.Name = "BTN_Minimize";
+            BTN_Minimize.Size = new System.Drawing.Size(45, 29);
+            BTN_Minimize.TabIndex = 1;
+            BTN_Minimize.TabStop = false;
+            BTN_Minimize.Text = "─";
+            BTN_Minimize.UseVisualStyleBackColor = false;
+            BTN_Minimize.Click += new System.EventHandler(this.MinimizeForm);
             // 
             // BTN_Maximize
             // 
@@ -123,28 +123,28 @@
             this.BTN_Maximize.Location = new System.Drawing.Point(755, 0);
             this.BTN_Maximize.Name = "BTN_Maximize";
             this.BTN_Maximize.Size = new System.Drawing.Size(45, 29);
-            this.BTN_Maximize.TabIndex = 0;
+            this.BTN_Maximize.TabIndex = 2;
             this.BTN_Maximize.TabStop = false;
             this.BTN_Maximize.Text = "▢";
             this.BTN_Maximize.UseVisualStyleBackColor = false;
             // 
             // BTN_Close
             // 
-            this.BTN_Close.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_Close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BTN_Close.FlatAppearance.BorderSize = 0;
-            this.BTN_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Close.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_Close.Location = new System.Drawing.Point(800, 0);
-            this.BTN_Close.Name = "BTN_Close";
-            this.BTN_Close.Size = new System.Drawing.Size(45, 29);
-            this.BTN_Close.TabIndex = 0;
-            this.BTN_Close.TabStop = false;
-            this.BTN_Close.Text = "⨉";
-            this.BTN_Close.UseVisualStyleBackColor = false;
-            this.BTN_Close.Click += new System.EventHandler(this.CloseForm);
-            this.BTN_Close.MouseEnter += new System.EventHandler(this.FocusCloseButton);
-            this.BTN_Close.MouseLeave += new System.EventHandler(this.UnfocusCloseButton);
+            BTN_Close.BackColor = System.Drawing.Color.Transparent;
+            BTN_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            BTN_Close.FlatAppearance.BorderSize = 0;
+            BTN_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTN_Close.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            BTN_Close.Location = new System.Drawing.Point(800, 0);
+            BTN_Close.Name = "BTN_Close";
+            BTN_Close.Size = new System.Drawing.Size(45, 29);
+            BTN_Close.TabIndex = 3;
+            BTN_Close.TabStop = false;
+            BTN_Close.Text = "⨉";
+            BTN_Close.UseVisualStyleBackColor = false;
+            BTN_Close.Click += new System.EventHandler(this.CloseForm);
+            BTN_Close.MouseEnter += new System.EventHandler(this.FocusCloseButton);
+            BTN_Close.MouseLeave += new System.EventHandler(this.UnfocusCloseButton);
             // 
             // ApplicationTitle
             // 
