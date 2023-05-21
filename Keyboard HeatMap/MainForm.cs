@@ -318,6 +318,7 @@ namespace Keyboard_HeatMap
              */
 
             // Green Gradient. => some keypresses.
+            // 0-99 kps.
             if (number_of_presses < 10)
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.LightGreen; return; }
             else if (number_of_presses >= 10 && number_of_presses < 50)
@@ -326,6 +327,7 @@ namespace Keyboard_HeatMap
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.Green; return; }
 
             // Yellow Gradient. => bag of keypresses.
+            // 100 - 999 kps.
             if (number_of_presses >= 100 && number_of_presses < 250)
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 255, 0); return; }
             else if (number_of_presses >= 250 && number_of_presses < 650)
@@ -334,6 +336,7 @@ namespace Keyboard_HeatMap
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.IndianRed; return; }
 
             // Red Gradient. => lot of keypresses.
+            // 1000 - 6500 kps.
             if (number_of_presses >= 1000 && number_of_presses < 2500)
             { keyboard_Layout.keys[key].Controls[0].ForeColor = Color.Black; keyboard_Layout.keys[key].BackColor = Color.FromArgb(255, 85, 0); return; }
             else if (number_of_presses >= 2500 && number_of_presses < 6500)
