@@ -28,173 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
-            this.detectKeyPress = new System.Windows.Forms.Timer(this.components);
-            this.Frame_Update = new System.Windows.Forms.Timer(this.components);
-            keyboard_Layout = new Keyboard_HeatMap.Keyboard_Layout();
-            this.help_Page = new Keyboard_HeatMap.Remastered_Help_Page();
-            MenuBar = new System.Windows.Forms.Panel();
-            BTN_Minimize = new System.Windows.Forms.Button();
-            this.BTN_Maximize = new System.Windows.Forms.Button();
-            BTN_Close = new System.Windows.Forms.Button();
-            this.ApplicationTitle = new System.Windows.Forms.Label();
-            this.ApplicationLogo = new System.Windows.Forms.PictureBox();
+            detectKeyPress = new System.Windows.Forms.Timer(components);
+            Frame_Update = new System.Windows.Forms.Timer(components);
+            keyboard_Layout = new Keyboard_Layout();
+            help_Page = new Remastered_Help_Page();
+            MenuBar = new Panel();
+            BTN_Minimize = new Button();
+            BTN_Maximize = new Button();
+            BTN_Close = new Button();
+            ApplicationTitle = new Label();
+            ApplicationLogo = new PictureBox();
             MenuBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ApplicationLogo)).BeginInit();
-            this.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ApplicationLogo).BeginInit();
+            SuspendLayout();
             // 
             // detectKeyPress
             // 
-            this.detectKeyPress.Interval = 1;
-            this.detectKeyPress.Tick += new System.EventHandler(this.detectKeyPress_Tick);
+            detectKeyPress.Interval = 1;
+            detectKeyPress.Tick += detectKeyPress_Tick;
             // 
             // Frame_Update
             // 
-            this.Frame_Update.Interval = 20;
-            this.Frame_Update.Tick += new System.EventHandler(this.Frame_Update_Tick);
+            Frame_Update.Interval = 20;
+            Frame_Update.Tick += Frame_Update_Tick;
             // 
             // keyboard_Layout
             // 
             keyboard_Layout.AllowDrop = true;
-            keyboard_Layout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
-            keyboard_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
-            keyboard_Layout.Location = new System.Drawing.Point(0, 29);
+            keyboard_Layout.BackColor = Color.FromArgb(167, 173, 186);
+            keyboard_Layout.Dock = DockStyle.Fill;
+            keyboard_Layout.Location = new Point(0, 29);
             keyboard_Layout.Name = "keyboard_Layout";
-            keyboard_Layout.Size = new System.Drawing.Size(845, 326);
+            keyboard_Layout.Size = new Size(845, 326);
             keyboard_Layout.TabIndex = 0;
             keyboard_Layout.TabStop = false;
-            keyboard_Layout.BackColorChanged += new System.EventHandler(this.UpdateTitlebarColor);
-            keyboard_Layout.DragDrop += new System.Windows.Forms.DragEventHandler(keyboard_Layout_DragDrop);
-            keyboard_Layout.DragEnter += new System.Windows.Forms.DragEventHandler(keyboard_Layout_DragEnter);
+            keyboard_Layout.BackColorChanged += UpdateTitlebarColor;
+            keyboard_Layout.DragDrop += keyboard_Layout_DragDrop;
+            keyboard_Layout.DragEnter += keyboard_Layout_DragEnter;
             // 
             // help_Page
             // 
-            this.help_Page.AutoSize = true;
-            this.help_Page.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
-            this.help_Page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("help_Page.BackgroundImage")));
-            this.help_Page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.help_Page.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.help_Page.Location = new System.Drawing.Point(0, 29);
-            this.help_Page.Name = "help_Page";
-            this.help_Page.Size = new System.Drawing.Size(845, 326);
-            this.help_Page.TabIndex = 0;
-            this.help_Page.TabStop = false;
-            this.help_Page.Visible = false;
+            help_Page.AutoSize = true;
+            help_Page.BackColor = Color.FromArgb(167, 173, 186);
+            help_Page.BackgroundImage = (Image)resources.GetObject("help_Page.BackgroundImage");
+            help_Page.BackgroundImageLayout = ImageLayout.Stretch;
+            help_Page.Dock = DockStyle.Fill;
+            help_Page.Location = new Point(0, 29);
+            help_Page.Name = "help_Page";
+            help_Page.Size = new Size(845, 326);
+            help_Page.TabIndex = 0;
+            help_Page.TabStop = false;
+            help_Page.Visible = false;
             // 
             // MenuBar
             // 
             MenuBar.Controls.Add(BTN_Minimize);
-            MenuBar.Controls.Add(this.BTN_Maximize);
+            MenuBar.Controls.Add(BTN_Maximize);
             MenuBar.Controls.Add(BTN_Close);
-            MenuBar.Controls.Add(this.ApplicationTitle);
-            MenuBar.Controls.Add(this.ApplicationLogo);
-            MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
-            MenuBar.Location = new System.Drawing.Point(0, 0);
+            MenuBar.Controls.Add(ApplicationTitle);
+            MenuBar.Controls.Add(ApplicationLogo);
+            MenuBar.Dock = DockStyle.Top;
+            MenuBar.Location = new Point(0, 0);
             MenuBar.Name = "MenuBar";
-            MenuBar.Size = new System.Drawing.Size(845, 29);
+            MenuBar.Size = new Size(845, 29);
             MenuBar.TabIndex = 1;
-            MenuBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveForm);
+            MenuBar.MouseMove += MoveForm;
             // 
             // BTN_Minimize
             // 
-            BTN_Minimize.BackColor = System.Drawing.Color.Transparent;
-            BTN_Minimize.Dock = System.Windows.Forms.DockStyle.Right;
+            BTN_Minimize.BackColor = Color.Transparent;
+            BTN_Minimize.Dock = DockStyle.Right;
             BTN_Minimize.FlatAppearance.BorderSize = 0;
-            BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BTN_Minimize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            BTN_Minimize.Location = new System.Drawing.Point(710, 0);
+            BTN_Minimize.FlatStyle = FlatStyle.Flat;
+            BTN_Minimize.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            BTN_Minimize.Location = new Point(710, 0);
             BTN_Minimize.Name = "BTN_Minimize";
-            BTN_Minimize.Size = new System.Drawing.Size(45, 29);
+            BTN_Minimize.Size = new Size(45, 29);
             BTN_Minimize.TabIndex = 1;
             BTN_Minimize.TabStop = false;
             BTN_Minimize.Text = "─";
             BTN_Minimize.UseVisualStyleBackColor = false;
-            BTN_Minimize.Click += new System.EventHandler(this.MinimizeForm);
+            BTN_Minimize.Click += MinimizeForm;
             // 
             // BTN_Maximize
             // 
-            this.BTN_Maximize.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_Maximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BTN_Maximize.Enabled = false;
-            this.BTN_Maximize.FlatAppearance.BorderSize = 0;
-            this.BTN_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Maximize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BTN_Maximize.Location = new System.Drawing.Point(755, 0);
-            this.BTN_Maximize.Name = "BTN_Maximize";
-            this.BTN_Maximize.Size = new System.Drawing.Size(45, 29);
-            this.BTN_Maximize.TabIndex = 2;
-            this.BTN_Maximize.TabStop = false;
-            this.BTN_Maximize.Text = "▢";
-            this.BTN_Maximize.UseVisualStyleBackColor = false;
+            BTN_Maximize.BackColor = Color.Transparent;
+            BTN_Maximize.Dock = DockStyle.Right;
+            BTN_Maximize.Enabled = false;
+            BTN_Maximize.FlatAppearance.BorderSize = 0;
+            BTN_Maximize.FlatStyle = FlatStyle.Flat;
+            BTN_Maximize.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            BTN_Maximize.Location = new Point(755, 0);
+            BTN_Maximize.Name = "BTN_Maximize";
+            BTN_Maximize.Size = new Size(45, 29);
+            BTN_Maximize.TabIndex = 2;
+            BTN_Maximize.TabStop = false;
+            BTN_Maximize.Text = "▢";
+            BTN_Maximize.UseVisualStyleBackColor = false;
             // 
             // BTN_Close
             // 
-            BTN_Close.BackColor = System.Drawing.Color.Transparent;
-            BTN_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            BTN_Close.BackColor = Color.Transparent;
+            BTN_Close.Dock = DockStyle.Right;
             BTN_Close.FlatAppearance.BorderSize = 0;
-            BTN_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            BTN_Close.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            BTN_Close.Location = new System.Drawing.Point(800, 0);
+            BTN_Close.FlatStyle = FlatStyle.Flat;
+            BTN_Close.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            BTN_Close.Location = new Point(800, 0);
             BTN_Close.Name = "BTN_Close";
-            BTN_Close.Size = new System.Drawing.Size(45, 29);
+            BTN_Close.Size = new Size(45, 29);
             BTN_Close.TabIndex = 3;
             BTN_Close.TabStop = false;
             BTN_Close.Text = "⨉";
             BTN_Close.UseVisualStyleBackColor = false;
-            BTN_Close.Click += new System.EventHandler(this.CloseForm);
-            BTN_Close.MouseEnter += new System.EventHandler(this.FocusCloseButton);
-            BTN_Close.MouseLeave += new System.EventHandler(this.UnfocusCloseButton);
+            BTN_Close.Click += CloseForm;
+            BTN_Close.MouseEnter += FocusCloseButton;
+            BTN_Close.MouseLeave += UnfocusCloseButton;
             // 
             // ApplicationTitle
             // 
-            this.ApplicationTitle.AutoSize = true;
-            this.ApplicationTitle.Location = new System.Drawing.Point(29, 7);
-            this.ApplicationTitle.Name = "ApplicationTitle";
-            this.ApplicationTitle.Size = new System.Drawing.Size(109, 15);
-            this.ApplicationTitle.TabIndex = 0;
-            this.ApplicationTitle.Text = "Keyboard HeatMap";
+            ApplicationTitle.AutoSize = true;
+            ApplicationTitle.Location = new Point(29, 7);
+            ApplicationTitle.Name = "ApplicationTitle";
+            ApplicationTitle.Size = new Size(109, 15);
+            ApplicationTitle.TabIndex = 0;
+            ApplicationTitle.Text = "Keyboard HeatMap";
             // 
             // ApplicationLogo
             // 
-            this.ApplicationLogo.BackgroundImage = global::Keyboard_HeatMap.Properties.Resources.keyboard_icon_help_page;
-            this.ApplicationLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ApplicationLogo.Location = new System.Drawing.Point(6, 3);
-            this.ApplicationLogo.Name = "ApplicationLogo";
-            this.ApplicationLogo.Size = new System.Drawing.Size(20, 20);
-            this.ApplicationLogo.TabIndex = 0;
-            this.ApplicationLogo.TabStop = false;
+            ApplicationLogo.BackgroundImage = Properties.Resources.keyboard_icon_help_page;
+            ApplicationLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            ApplicationLogo.Location = new Point(6, 3);
+            ApplicationLogo.Name = "ApplicationLogo";
+            ApplicationLogo.Size = new Size(20, 20);
+            ApplicationLogo.TabIndex = 0;
+            ApplicationLogo.TabStop = false;
             // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(845, 355);
-            this.ControlBox = false;
-            this.Controls.Add(keyboard_Layout);
-            this.Controls.Add(this.help_Page);
-            this.Controls.Add(MenuBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form_Main";
-            this.Opacity = 0.9D;
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Keyboard HeatMap";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
-            this.Load += new System.EventHandler(this.Form_Main_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_Main_KeyDown);
-            this.Resize += new System.EventHandler(this.RestoreForm);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            ClientSize = new Size(845, 355);
+            ControlBox = false;
+            Controls.Add(keyboard_Layout);
+            Controls.Add(help_Page);
+            Controls.Add(MenuBar);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Form_Main";
+            Opacity = 0.9D;
+            RightToLeft = RightToLeft.No;
+            SizeGripStyle = SizeGripStyle.Hide;
+            Text = "Keyboard HeatMap";
+            FormClosing += Form_Main_FormClosing;
+            Load += Form_Main_Load;
+            KeyDown += Form_Main_KeyDown;
+            Resize += RestoreForm;
             MenuBar.ResumeLayout(false);
             MenuBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ApplicationLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            ((System.ComponentModel.ISupportInitialize)ApplicationLogo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

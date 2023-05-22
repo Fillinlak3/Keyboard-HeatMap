@@ -31,91 +31,116 @@ namespace Keyboard_HeatMap
         // Static program's handle for switching to light/dark mode.
         private bool ApplicationStarted = false;
 
+        private bool IsAnotherInstanceRunning()
+        {
+            Process currentProcess = Process.GetCurrentProcess();
+            Process[] runningProcesses = Process.GetProcessesByName(currentProcess.ProcessName);
+
+            // Check if there is another running process with the same process name
+            foreach (Process process in runningProcesses)
+            {
+                // Ignore the current process
+                if (process.Id != currentProcess.Id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         // Before starting (on load) checkings.
         private async void Form_Main_Load(object sender, EventArgs e)
         {
-            // Check for new version.
             #if RELEASE
-                Dictionary<string, string>? data_parsed = new Dictionary<string, string>();
-                try
+            // Check if another instance of the program is already running.
+            if (IsAnotherInstanceRunning())
+            {
+                MessageBox.Show("Another instance of the program is already running.", "Program Already Running", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(1);
+            }
+
+            // Check for new version.
+            Dictionary<string, string>? data_parsed = new Dictionary<string, string>();
+            try
+            {
+                #pragma warning disable SYSLIB0014
+                using (WebClient web = new WebClient())
+                #pragma warning restore SYSLIB0014
                 {
-                    #pragma warning disable SYSLIB0014
-                    using (WebClient web = new WebClient())
-                    #pragma warning restore SYSLIB0014
+                    #region WEB Scraper
+                    List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
+
+                    // Remove comment lines --> lines that starts with '#' & blank lines.
+                    for (int i = 0; i < data_scraped.Count; i++)
                     {
-                        #region WEB Scraper
-                            List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
-
-                            // Remove comment lines --> lines that starts with '#' & blank lines.
-                            for (int i = 0; i < data_scraped.Count; i++)
-                            {
-                                // Remove comments and blank lines.
-                                if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
-                                    data_scraped.Remove(data_scraped[i--]);
-                            }
-
-                            // Parse values into the dictionary.
-                            Regex regex = new Regex("\"(.*?)\"");
-                            foreach (string data in data_scraped)
-                            {
-                                var matches = regex.Matches(data);
-                                if (matches.Count == 2)
-                                {
-                                    string key = matches[0].Groups[1].ToString();
-                                    string value = matches[1].Groups[1].ToString();
-                                    data_parsed.Add(key, value);
-                                }
-                            }
-                            data_scraped = null;
-                        #endregion
-
-                        // Check if data was gathered from the server.
-                        if (data_parsed == null || data_parsed.Count == 0)
-                                throw new Exception("Couldn't retrive data from server.");
-
-                            // Check if versions have syntax: x.x.x where x is a digit.
-                            regex = new Regex("^[1-9].[0-9].[0-9][0-9]?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                            if (regex.IsMatch(data_parsed["Version"]) == false)
-                                throw new Exception("Corrupted or invalid data retrieved.");
-
-                        // After all check if there is an downgrade / upgrade.
-                        await Task.Run(() =>
-                        {
-                            if (data_parsed["Version"] != Program_Version)
-                            {
-                                DialogResult dialogResult;
-
-                                // It's a downgrade.
-                                if (data_parsed["Version"].CompareTo(Program_Version) < 0)
-                                    dialogResult = MessageBox.Show($"The current update encountered a manufacturing problem. Please download the previous package version. (prev: {data_parsed["Version"]}). Reason: {(data_parsed.ContainsKey("Downgrade-Reason") ? data_parsed["Downgrade-Reason"] : "undefined")}.", "Immediate Downgrade Needed!", MessageBoxButtons.YesNo);
-                                // It's an upgrade.
-                                else
-                                    dialogResult = MessageBox.Show($"New version of Keyboard HeatMap found! (latest: {data_parsed["Version"]} | current: {Program_Version}) Would you like to download the new package?", "New Version Found!", MessageBoxButtons.YesNo);
-
-                                // If user wants to download the new package.
-                                if (dialogResult == DialogResult.Yes)
-                                {
-                                    // Open google drive with the newest update for the program for user to download.
-                                    Process.Start(new ProcessStartInfo(data_parsed["Download-Link"]) { UseShellExecute = true });
-                                    // Kill the process.
-                                    Application.Exit();
-                                }
-                            }
-                        });
+                        // Remove comments and blank lines.
+                        if (data_scraped[i].StartsWith('#') || String.IsNullOrWhiteSpace(data_scraped[i]))
+                            data_scraped.Remove(data_scraped[i--]);
                     }
+
+                    // Parse values into the dictionary.
+                    Regex regex = new Regex("\"(.*?)\"");
+                    foreach (string data in data_scraped)
+                    {
+                        var matches = regex.Matches(data);
+                        if (matches.Count == 2)
+                        {
+                            string key = matches[0].Groups[1].ToString();
+                            string value = matches[1].Groups[1].ToString();
+                            data_parsed.Add(key, value);
+                        }
+                    }
+                    data_scraped = null;
+                    #endregion
+
+                    // Check if data was gathered from the server.
+                    if (data_parsed == null || data_parsed.Count == 0)
+                        throw new Exception("Couldn't retrive data from server.");
+
+                    // Check if versions have syntax: x.x.x where x is a digit.
+                    regex = new Regex("^[1-9].[0-9].[0-9][0-9]?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                    if (regex.IsMatch(data_parsed["Version"]) == false)
+                        throw new Exception("Corrupted or invalid data retrieved.");
+
+                    // After all check if there is an downgrade / upgrade.
+                    await Task.Run(() =>
+                    {
+                        if (data_parsed["Version"] != Program_Version)
+                        {
+                            DialogResult dialogResult;
+
+                            // It's a downgrade.
+                            if (data_parsed["Version"].CompareTo(Program_Version) < 0)
+                                dialogResult = MessageBox.Show($"The current update encountered a manufacturing problem. Please download the previous package version. (prev: {data_parsed["Version"]}). Reason: {(data_parsed.ContainsKey("Downgrade-Reason") ? data_parsed["Downgrade-Reason"] : "undefined")}.", "Immediate Downgrade Needed!", MessageBoxButtons.YesNo);
+                            // It's an upgrade.
+                            else
+                                dialogResult = MessageBox.Show($"New version of Keyboard HeatMap found! (latest: {data_parsed["Version"]} | current: {Program_Version}) Would you like to download the new package?", "New Version Found!", MessageBoxButtons.YesNo);
+
+                            // If user wants to download the new package.
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                // Open google drive with the newest update for the program for user to download.
+                                Process.Start(new ProcessStartInfo(data_parsed["Download-Link"]) { UseShellExecute = true });
+                                // Kill the process.
+                                Application.Exit();
+                            }
+                        }
+                    });
                 }
-                catch(System.Net.WebException)
-                {
-                    MessageBox.Show("No internet connection. Couldn't retrive server information.", "Server Error", MessageBoxButtons.OK);
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Server Error", MessageBoxButtons.OK);
-                }
-                finally
-                {
-                    data_parsed = null;
-                }
+            }
+            catch (System.Net.WebException)
+            {
+                MessageBox.Show("No internet connection. Couldn't retrive server information.", "Server Error", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Server Error", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                data_parsed = null;
+            }
             #endif
 
             // Lock program size.
@@ -128,6 +153,21 @@ namespace Keyboard_HeatMap
             await Task.Run(() => UpdateTitlebarColor(sender, e));
             ApplicationStarted = true;
             RestoreForm(sender, e);
+
+            // Check if an `.keymap` file was opened.
+            string[] args = Environment.GetCommandLineArgs();
+            // arg[0] is the dll file and arg[1] is the `.keymap` file if it was opened.
+            string? keymap_file = args.Length > 1 ? (args[1].EndsWith(".keymap") ? args[1] : null) : null;
+
+            // If there is a `.keymap` file found, load in into the program.
+            if (!String.IsNullOrEmpty(keymap_file))
+            {
+                keyboard_Layout.Reload();
+                if (keyboard_Layout.ReadLogFile(keymap_file))
+                {
+                    Frame_Update_Tick(sender, e);
+                }
+            }
         }
         // Autosave file on close (ALT+F4 or task kill because button is disabled).
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -189,7 +229,7 @@ namespace Keyboard_HeatMap
                 else
                 { /*Remove focus from any button.*/ this.ApplicationTitle.Focus(); help_Page.SendToBack(); }
             }
-        }     
+        }
 
         #region MenuBar Buttons
         // Fade-In animation on form restore.
@@ -216,12 +256,13 @@ namespace Keyboard_HeatMap
         private async void FadeOut(Form o, int interval = 80)
         {
             //Object is fully visible. Fade it out
-            if(o.InvokeRequired)
+            if (o.InvokeRequired)
             {
                 Action safeFade = delegate { FadeOut(o, interval); };
                 await Task.Run(() => o.Invoke(safeFade));
             }
-            else { 
+            else
+            {
                 while (o.Opacity > 0.0)
                 {
                     await Task.Delay(interval);
@@ -280,15 +321,15 @@ namespace Keyboard_HeatMap
         #region Read Log File
         private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
         {
-            #pragma warning disable CS8602
+#pragma warning disable CS8602
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-            #pragma warning restore CS8602
+#pragma warning restore CS8602
         }
         private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
         {
-            #pragma warning disable CS8602
+#pragma warning disable CS8602
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            #pragma warning restore CS8602
+#pragma warning restore CS8602
 
             if (files.Length > 1)
             {
@@ -443,7 +484,7 @@ namespace Keyboard_HeatMap
         }
         public static void SwitchToDarkMode(bool mode)
         {
-            if(mode == true)
+            if (mode == true)
             {
                 MenuBar.BackColor = Color.FromArgb(27, 27, 27);
                 MenuBar.ForeColor = Color.White;

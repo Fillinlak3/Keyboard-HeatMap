@@ -437,7 +437,7 @@ namespace Keyboard_HeatMap
 
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
-            string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
+            string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.keymap";
             File.WriteAllText(SavedRecordsPath + LogFileName, data);
         }
 

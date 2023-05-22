@@ -207,6 +207,29 @@
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_B0AB558690BD43579DFB10037D6ACF03"
+            {
+            "Name" = "8:Keymap Files"
+            "Description" = "8:KeyboardHeatMapFile"
+            "Extensions" = "8:keymap"
+            "MIME" = "8:"
+            "Icon" = "8:"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_F41B5B415F694DEFAF8E4600BF68AC41"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_962FC98EA3DF4440B0BBDCB58468316E"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
         }
         "Folder"
         {
@@ -261,7 +284,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Keyboard HeatMap"
         "ProductCode" = "8:{CBC4567B-7D90-4AAB-BFE6-B07F641278D6}"
-        "PackageCode" = "8:{39D16761-3AC7-4D3D-A879-00E18F67DBF8}"
+        "PackageCode" = "8:{C33F9B1F-6A92-4FF2-9AFA-7411A226AB5E}"
         "UpgradeCode" = "8:{12B3A70D-D54E-472C-82BD-E69764C8427D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
