@@ -154,6 +154,7 @@
             ApplicationTitle.Size = new Size(109, 15);
             ApplicationTitle.TabIndex = 0;
             ApplicationTitle.Text = "Keyboard HeatMap";
+            ApplicationTitle.MouseMove += MoveForm;
             // 
             // ApplicationLogo
             // 
@@ -164,6 +165,7 @@
             ApplicationLogo.Size = new Size(20, 20);
             ApplicationLogo.TabIndex = 0;
             ApplicationLogo.TabStop = false;
+            ApplicationLogo.MouseMove += MoveForm;
             // 
             // Form_Main
             // 

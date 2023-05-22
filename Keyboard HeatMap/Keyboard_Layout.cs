@@ -435,6 +435,7 @@ namespace Keyboard_HeatMap
             data += "RB: " + number_of_keyPress[2].ToString() + "\n";
             data += "MB: " + number_of_keyPress[4].ToString() + "\n\n";
 
+            data += "#======= <TOTAL> =======#\n";
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
             string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.keymap";
@@ -484,8 +485,8 @@ namespace Keyboard_HeatMap
 
                 // If the file is ok, then assign the values to number_of_keyPress list.
                 #region Assign Values
-                if (number_of_keyPress.Count != 0)
-                    number_of_keyPress.Clear();
+                number_of_keyPress.Clear();
+                TOTAL_KEYPRESSES = 0;
 
                 number_of_keyPress.Add(192, Int32.Parse(data_scraped[0]));
                 number_of_keyPress.Add(49, Int32.Parse(data_scraped[1]));

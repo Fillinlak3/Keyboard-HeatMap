@@ -210,7 +210,7 @@
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_B0AB558690BD43579DFB10037D6ACF03"
             {
             "Name" = "8:Keymap Files"
-            "Description" = "8:KeyboardHeatMapFile"
+            "Description" = "8:Keyboard HeatMap Record File"
             "Extensions" = "8:keymap"
             "MIME" = "8:"
             "Icon" = "8:"
@@ -284,7 +284,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Keyboard HeatMap"
         "ProductCode" = "8:{CBC4567B-7D90-4AAB-BFE6-B07F641278D6}"
-        "PackageCode" = "8:{C33F9B1F-6A92-4FF2-9AFA-7411A226AB5E}"
+        "PackageCode" = "8:{50A413D1-44E0-4DEF-B33C-FD038AF94298}"
         "UpgradeCode" = "8:{12B3A70D-D54E-472C-82BD-E69764C8427D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

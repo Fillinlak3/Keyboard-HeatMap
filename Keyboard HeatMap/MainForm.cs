@@ -52,7 +52,7 @@ namespace Keyboard_HeatMap
         // Before starting (on load) checkings.
         private async void Form_Main_Load(object sender, EventArgs e)
         {
-            #if RELEASE
+#if RELEASE
             // Check if another instance of the program is already running.
             if (IsAnotherInstanceRunning())
             {
@@ -64,9 +64,9 @@ namespace Keyboard_HeatMap
             Dictionary<string, string>? data_parsed = new Dictionary<string, string>();
             try
             {
-                #pragma warning disable SYSLIB0014
+#pragma warning disable SYSLIB0014
                 using (WebClient web = new WebClient())
-                #pragma warning restore SYSLIB0014
+#pragma warning restore SYSLIB0014
                 {
                     #region WEB Scraper
                     List<string>? data_scraped = new List<string>(web.DownloadString(URL).Split('\n', StringSplitOptions.TrimEntries).ToArray());
@@ -141,7 +141,7 @@ namespace Keyboard_HeatMap
             {
                 data_parsed = null;
             }
-            #endif
+#endif
 
             // Lock program size.
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
