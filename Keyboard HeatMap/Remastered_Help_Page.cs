@@ -10,22 +10,24 @@ namespace Keyboard_HeatMap
     {
         // Get the desktop folder.
         private readonly static string Desktop_Folder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        // Get the shortcut from desktop.
         private readonly string ApplicationDesktopShortcut = Desktop_Folder + @"\Keyboard HeatMap.lnk";
         private bool DesktopShortcutExists = false;
         //Get window's startup folder.
         private readonly static string Startup_Folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Microsoft\Windows\Start Menu\Programs\Startup";
         // Get program's exe path.
         private readonly string ApplicationExecutablePath = Application.ExecutablePath;
-        // Get program's shortcut path + name_of_shortcut.
+        // Get program's shortcut path + name_of_shortcut from startup.
         private readonly string ApplicationStartupShortcut = Startup_Folder + @"\Keyboard HeatMap.lnk";
         private bool StartupShortcutExists = false;
         // Get the appdata folder.
         private readonly static string Appdata_Folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Keyboard HeatMap";
         // Get program's user_config path.
-        private readonly string UserConfigPath = Appdata_Folder + @"\user_config.conf";
-        
+        private readonly string UserConfigPath = Appdata_Folder + @"\user_config.conf";   
+        // Get program's version.
         private readonly string? Program_Version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
 
+        // Store the user settings into a dictionary.
         Dictionary<string, string> user_settings;
         private bool DarkMode = false;
 
@@ -120,6 +122,7 @@ namespace Keyboard_HeatMap
         }
         #endregion
 
+        #region Form Buttons
         private void GoBack(object sender, EventArgs e)
         {
             // Remove focus from any button.
@@ -136,6 +139,71 @@ namespace Keyboard_HeatMap
 
             Process.Start(new ProcessStartInfo("https://www.instagram.com/iambucuriee") { UseShellExecute = true });
         }
+
+        private void BTN_open_saves_folder_Click(object sender, EventArgs e)
+        {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
+            try
+            {
+                if (System.IO.Directory.Exists(Keyboard_Layout.SavedRecordsPath))
+                    Process.Start("explorer.exe", Keyboard_Layout.SavedRecordsPath);
+                else throw new Exception(@"Saved Records path doesn't exists.");
+            }
+            catch { }
+        }
+
+        public void ChangeTheme(object sender, EventArgs e)
+        {
+            // Remove focus from any button.
+            this.LABEL_title.Focus();
+
+            DarkMode = CHECKBOX_dark_theme.Checked;
+
+            if (DarkMode)
+            {
+                this.BackgroundImage = Properties.Resources.remastered_help_page_dark;
+                this.BackColor = Color.FromArgb(45, 45, 45);
+                BTN_GoBack.BackColor = Color.FromArgb(45, 45, 45);
+                BTN_GoBack.Image = Properties.Resources.go_back_white;
+                CHECKBOX_open_on_startup.BackColor = Color.FromArgb(45, 45, 45);
+                LABEL_launch_on_startup.ForeColor = Color.White;
+                LABEL_dark_theme.ForeColor = Color.White;
+                BTN_open_saves_folder.ForeColor = Color.White;
+                BTN_open_saves_folder.BackColor = Color.FromArgb(45, 45, 45);
+                LABEL_contact.ForeColor = Color.White;
+                LINKLABEL_ig_page.LinkColor = Color.DodgerBlue;
+                LABEL_title.ForeColor = Color.White;
+                LABEL_creator.ForeColor = Color.White;
+                CHECKBOX_desktop_shortcut.BackColor = Color.FromArgb(45, 45, 45);
+                LABEL_desktop_shortcut.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.remastered_help_page_light;
+                this.BackColor = Color.FromArgb(167, 173, 186);
+                BTN_GoBack.BackColor = Color.FromArgb(167, 173, 186);
+                BTN_GoBack.Image = Properties.Resources.go_back_black;
+                CHECKBOX_open_on_startup.BackColor = Color.FromArgb(167, 173, 186);
+                LABEL_launch_on_startup.ForeColor = Color.Black;
+                LABEL_dark_theme.ForeColor = Color.Black;
+                BTN_open_saves_folder.ForeColor = Color.Black;
+                BTN_open_saves_folder.BackColor = Color.FromArgb(167, 173, 186);
+                LABEL_contact.ForeColor = Color.Black;
+                LINKLABEL_ig_page.LinkColor = Color.Blue;
+                LABEL_title.ForeColor = Color.Black;
+                LABEL_creator.ForeColor = Color.Black;
+                CHECKBOX_desktop_shortcut.BackColor = Color.FromArgb(45, 45, 45);
+                LABEL_desktop_shortcut.ForeColor = Color.Black;
+            }
+
+            Form_Main.SwitchToDarkMode(DarkMode);
+#if RELEASE
+            _UserConfig_WriteSettings();
+#endif
+        }
+        #endregion
 
         #region Shortcuts
         // Startup folder shortcut.
@@ -202,69 +270,5 @@ namespace Keyboard_HeatMap
             shortcut.Save();
         }
         #endregion
-
-        private void BTN_open_saves_folder_Click(object sender, EventArgs e)
-        {
-            // Remove focus from any button.
-            this.LABEL_title.Focus();
-
-            try
-            {
-                if (System.IO.Directory.Exists(Keyboard_Layout.SavedRecordsPath))
-                    Process.Start("explorer.exe", Keyboard_Layout.SavedRecordsPath);
-                else throw new Exception(@"Saved Records path doesn't exists.");
-            }
-            catch { }
-        }
-
-        public void ChangeTheme(object sender, EventArgs e)
-        {
-            // Remove focus from any button.
-            this.LABEL_title.Focus();
-
-            DarkMode = CHECKBOX_dark_theme.Checked;
-
-            if (DarkMode)
-            {
-                this.BackgroundImage = Properties.Resources.remastered_help_page_dark;
-                this.BackColor = Color.FromArgb(45, 45, 45);
-                BTN_GoBack.BackColor = Color.FromArgb(45, 45, 45);
-                BTN_GoBack.Image = Properties.Resources.go_back_white;
-                CHECKBOX_open_on_startup.BackColor = Color.FromArgb(45, 45, 45);
-                LABEL_launch_on_startup.ForeColor = Color.White;
-                LABEL_dark_theme.ForeColor = Color.White;
-                BTN_open_saves_folder.ForeColor = Color.White;
-                BTN_open_saves_folder.BackColor = Color.FromArgb(45, 45, 45);
-                LABEL_contact.ForeColor = Color.White;
-                LINKLABEL_ig_page.LinkColor = Color.DodgerBlue;
-                LABEL_title.ForeColor = Color.White;
-                LABEL_creator.ForeColor = Color.White;
-                CHECKBOX_desktop_shortcut.BackColor = Color.FromArgb(45, 45, 45);
-                LABEL_desktop_shortcut.ForeColor = Color.White;
-            }
-            else
-            {
-                this.BackgroundImage = Properties.Resources.remastered_help_page_light;
-                this.BackColor = Color.FromArgb(167, 173, 186);
-                BTN_GoBack.BackColor = Color.FromArgb(167, 173, 186);
-                BTN_GoBack.Image = Properties.Resources.go_back_black;
-                CHECKBOX_open_on_startup.BackColor = Color.FromArgb(167, 173, 186);
-                LABEL_launch_on_startup.ForeColor = Color.Black;
-                LABEL_dark_theme.ForeColor = Color.Black;
-                BTN_open_saves_folder.ForeColor = Color.Black;
-                BTN_open_saves_folder.BackColor = Color.FromArgb(167, 173, 186);
-                LABEL_contact.ForeColor = Color.Black;
-                LINKLABEL_ig_page.LinkColor = Color.Blue;
-                LABEL_title.ForeColor = Color.Black;
-                LABEL_creator.ForeColor = Color.Black;
-                CHECKBOX_desktop_shortcut.BackColor = Color.FromArgb(45, 45, 45);
-                LABEL_desktop_shortcut.ForeColor = Color.Black;
-            }
-
-            Form_Main.SwitchToDarkMode(DarkMode);
-            #if RELEASE
-                _UserConfig_WriteSettings();
-            #endif
-        }
     }
 }

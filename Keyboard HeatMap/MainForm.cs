@@ -10,13 +10,6 @@ namespace Keyboard_HeatMap
     // Find: this\.(keyboard_Layout|MenuBar|BTN_Minimize|BTN_Close)        Replace: $1
     public partial class Form_Main : Form
     {
-        [DllImport("User32.dll", EntryPoint = "GetAsyncKeyState")]
-        private extern static short GetAsyncKeyState(int vKey);
-        [DllImport("User32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("User32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
         public Form_Main()
         {
             InitializeComponent();
@@ -49,10 +42,27 @@ namespace Keyboard_HeatMap
             return false;
         }
 
+        private bool OpenFile(string? filepath)
+        {
+            if (!String.IsNullOrEmpty(filepath))
+            {
+                keyboard_Layout.Reload();
+                if (keyboard_Layout.ReadLogFile(filepath))
+                {
+                    #pragma warning disable 8625
+                    Frame_Update_Tick(null, null);
+                    #pragma warning restore 8625
+
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Before starting (on load) checkings.
         private async void Form_Main_Load(object sender, EventArgs e)
         {
-#if RELEASE
+            #if RELEASE
             // Check if another instance of the program is already running.
             if (IsAnotherInstanceRunning())
             {
@@ -94,6 +104,7 @@ namespace Keyboard_HeatMap
                     data_scraped = null;
                     #endregion
 
+                    #region Data Parser & Checker
                     // Check if data was gathered from the server.
                     if (data_parsed == null || data_parsed.Count == 0)
                         throw new Exception("Couldn't retrive data from server.");
@@ -127,15 +138,16 @@ namespace Keyboard_HeatMap
                             }
                         }
                     });
+                    #endregion
                 }
             }
             catch (System.Net.WebException)
             {
-                MessageBox.Show("No internet connection. Couldn't retrive server information.", "Server Error", MessageBoxButtons.OK);
+                MessageBox.Show("No internet connection. Couldn't retrive server information.", "Server Connection Error", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Server Error", MessageBoxButtons.OK);
+                MessageBox.Show($"The server encountered an error: {ex.Message}", "Server Error", MessageBoxButtons.OK);
             }
             finally
             {
@@ -143,6 +155,7 @@ namespace Keyboard_HeatMap
             }
 #endif
 
+            #region Program Setup Settings
             // Lock program size.
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
             this.MaximumSize = new Size(this.Size.Width, this.Size.Height);
@@ -153,21 +166,17 @@ namespace Keyboard_HeatMap
             await Task.Run(() => UpdateTitlebarColor(sender, e));
             ApplicationStarted = true;
             RestoreForm(sender, e);
+            #endregion
 
+            #region Keymap File Opened
             // Check if an `.keymap` file was opened.
             string[] args = Environment.GetCommandLineArgs();
             // arg[0] is the dll file and arg[1] is the `.keymap` file if it was opened.
             string? keymap_file = args.Length > 1 ? (args[1].EndsWith(".keymap") ? args[1] : null) : null;
 
             // If there is a `.keymap` file found, load in into the program.
-            if (!String.IsNullOrEmpty(keymap_file))
-            {
-                keyboard_Layout.Reload();
-                if (keyboard_Layout.ReadLogFile(keymap_file))
-                {
-                    Frame_Update_Tick(sender, e);
-                }
-            }
+            OpenFile(keymap_file);
+            #endregion
         }
         // Autosave file on close (ALT+F4 or task kill because button is disabled).
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -321,15 +330,16 @@ namespace Keyboard_HeatMap
         #region Read Log File
         private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
         {
-#pragma warning disable CS8602
+            #pragma warning disable CS8602
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-#pragma warning restore CS8602
+            #pragma warning restore CS8602
         }
         private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
         {
-#pragma warning disable CS8602
+            #pragma warning disable CS8602
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-#pragma warning restore CS8602
+            #pragma warning restore CS8602
+            string droped_file = files[0];
 
             if (files.Length > 1)
             {
@@ -337,11 +347,7 @@ namespace Keyboard_HeatMap
                 return;
             }
 
-            keyboard_Layout.Reload();
-            if (keyboard_Layout.ReadLogFile(files[0]))
-            {
-                Frame_Update_Tick(sender, e);
-            }
+            OpenFile(droped_file);
         }
         #endregion
 
@@ -512,6 +518,15 @@ namespace Keyboard_HeatMap
                 this.Visible = true;
             }
         }
+        #endregion
+
+        #region DLL Imports
+        [DllImport("User32.dll", EntryPoint = "GetAsyncKeyState")]
+        private extern static short GetAsyncKeyState(int vKey);
+        [DllImport("User32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("User32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         #endregion
     }
 }

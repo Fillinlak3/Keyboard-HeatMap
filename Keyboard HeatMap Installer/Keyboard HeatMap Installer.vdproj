@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E1EA7449B4BA4BAD82CC700F7444D163"
+        "MsmKey" = "8:_76D1E608D9194986AABC203B34CE862A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -184,7 +184,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E1EA7449B4BA4BAD82CC700F7444D163"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_76D1E608D9194986AABC203B34CE862A"
             {
             "SourcePath" = "8:..\\Keyboard HeatMap\\source_code.zip"
             "TargetName" = "8:source_code.zip"
@@ -194,7 +194,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:TRUE"
+            "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -284,7 +284,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Keyboard HeatMap"
         "ProductCode" = "8:{CBC4567B-7D90-4AAB-BFE6-B07F641278D6}"
-        "PackageCode" = "8:{50A413D1-44E0-4DEF-B33C-FD038AF94298}"
+        "PackageCode" = "8:{47A9ADF1-B2BD-4D74-B2A4-E249A19BC8EB}"
         "UpgradeCode" = "8:{12B3A70D-D54E-472C-82BD-E69764C8427D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
