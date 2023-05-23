@@ -28,2131 +28,2132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.keys_panel = new System.Windows.Forms.Panel();
-            this.BTN_Help = new System.Windows.Forms.Button();
-            this.program_Status = new System.Windows.Forms.Label();
-            this.panel_key_times_pressed = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LB_times_pressed = new System.Windows.Forms.Label();
-            this.LABEL_total_number_of_keypresses = new System.Windows.Forms.Label();
-            this.P_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_P = new System.Windows.Forms.Label();
-            this.BACKSLASH_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_BACKSLASH = new System.Windows.Forms.Label();
-            this.EQUAL_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_EQUAL = new System.Windows.Forms.Label();
-            this.RSHIFT_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_RSHIFT = new System.Windows.Forms.Label();
-            this.MINUS_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_MINUS = new System.Windows.Forms.Label();
-            this.QUOTATION_MARK_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_QUOTATION_MARK = new System.Windows.Forms.Label();
-            this.BRACKET_CLOSE_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_BRACKET_CLOSE = new System.Windows.Forms.Label();
-            this.SEMICOLON_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_SEMICOLON = new System.Windows.Forms.Label();
-            this.BKSPC_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_BKSPC = new System.Windows.Forms.Label();
-            this.BRACKET_OPEN_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_BRACKET_OPEN = new System.Windows.Forms.Label();
-            this.ENTER_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_ENTER = new System.Windows.Forms.Label();
-            this.RCTRL_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_RCTRL = new System.Windows.Forms.Label();
-            this.SLASH_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_SLASH = new System.Windows.Forms.Label();
-            this.RB_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.MOUSE_RB = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.LB_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.MOUSE_LB = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.DOT_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_DOT = new System.Windows.Forms.Label();
-            this.RALT_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_RALT = new System.Windows.Forms.Label();
-            this.COMMA_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_COMMA = new System.Windows.Forms.Label();
-            this.L_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_L = new System.Windows.Forms.Label();
-            this.M_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_M = new System.Windows.Forms.Label();
-            this.SPACE_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_SPACE = new System.Windows.Forms.Label();
-            this.LALT_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_LALT = new System.Windows.Forms.Label();
-            this.N_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_N = new System.Windows.Forms.Label();
-            this.EMPTY_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.label65 = new System.Windows.Forms.Label();
-            this.K_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_K = new System.Windows.Forms.Label();
-            this.LCTRL_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_LCTRL = new System.Windows.Forms.Label();
-            this.B_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_B = new System.Windows.Forms.Label();
-            this.O_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_O = new System.Windows.Forms.Label();
-            this.V_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_V = new System.Windows.Forms.Label();
-            this.J_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_J = new System.Windows.Forms.Label();
-            this.C_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_C = new System.Windows.Forms.Label();
-            this.X_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_X = new System.Windows.Forms.Label();
-            this.H_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_H = new System.Windows.Forms.Label();
-            this.Z_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_Z = new System.Windows.Forms.Label();
-            this.I_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_I = new System.Windows.Forms.Label();
-            this.LSHIFT_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_LSHIFT = new System.Windows.Forms.Label();
-            this.G_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_G = new System.Windows.Forms.Label();
-            this.F_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_F = new System.Windows.Forms.Label();
-            this.U_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_U = new System.Windows.Forms.Label();
-            this.D_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_D = new System.Windows.Forms.Label();
-            this.S_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_S = new System.Windows.Forms.Label();
-            this.Y_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_Y = new System.Windows.Forms.Label();
-            this.A_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_A = new System.Windows.Forms.Label();
-            this.CAPS_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_CAPSLK = new System.Windows.Forms.Label();
-            this.T_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_T = new System.Windows.Forms.Label();
-            this.R_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_R = new System.Windows.Forms.Label();
-            this.E_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_E = new System.Windows.Forms.Label();
-            this.W_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_W = new System.Windows.Forms.Label();
-            this.Q_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.LETTER_Q = new System.Windows.Forms.Label();
-            this.TAB_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.FUNC_TAB = new System.Windows.Forms.Label();
-            this.NUMBER_0_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM0 = new System.Windows.Forms.Label();
-            this.NUMBER_9_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM9 = new System.Windows.Forms.Label();
-            this.NUMBER_8_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM8 = new System.Windows.Forms.Label();
-            this.NUMBER_7_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM7 = new System.Windows.Forms.Label();
-            this.NUMBER_6_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM6 = new System.Windows.Forms.Label();
-            this.NUMBER_5_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM5 = new System.Windows.Forms.Label();
-            this.NUMBER_4_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM4 = new System.Windows.Forms.Label();
-            this.NUMBER_3_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM3 = new System.Windows.Forms.Label();
-            this.NUMBER_2_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM2 = new System.Windows.Forms.Label();
-            this.NUMBER_1_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.NUM1 = new System.Windows.Forms.Label();
-            this.TILDA_key = new Keyboard_HeatMap.Toolbox.RoundEdgesPanel();
-            this.SYMBOL_TILDA = new System.Windows.Forms.Label();
-            this.keys_panel.SuspendLayout();
-            this.panel_key_times_pressed.SuspendLayout();
-            this.P_key.SuspendLayout();
-            this.BACKSLASH_key.SuspendLayout();
-            this.EQUAL_key.SuspendLayout();
-            this.RSHIFT_key.SuspendLayout();
-            this.MINUS_key.SuspendLayout();
-            this.QUOTATION_MARK_key.SuspendLayout();
-            this.BRACKET_CLOSE_key.SuspendLayout();
-            this.SEMICOLON_key.SuspendLayout();
-            this.BKSPC_key.SuspendLayout();
-            this.BRACKET_OPEN_key.SuspendLayout();
-            this.ENTER_key.SuspendLayout();
-            this.RCTRL_key.SuspendLayout();
-            this.SLASH_key.SuspendLayout();
-            this.RB_key.SuspendLayout();
-            this.LB_key.SuspendLayout();
-            this.DOT_key.SuspendLayout();
-            this.RALT_key.SuspendLayout();
-            this.COMMA_key.SuspendLayout();
-            this.L_key.SuspendLayout();
-            this.M_key.SuspendLayout();
-            this.SPACE_key.SuspendLayout();
-            this.LALT_key.SuspendLayout();
-            this.N_key.SuspendLayout();
-            this.EMPTY_key.SuspendLayout();
-            this.K_key.SuspendLayout();
-            this.LCTRL_key.SuspendLayout();
-            this.B_key.SuspendLayout();
-            this.O_key.SuspendLayout();
-            this.V_key.SuspendLayout();
-            this.J_key.SuspendLayout();
-            this.C_key.SuspendLayout();
-            this.X_key.SuspendLayout();
-            this.H_key.SuspendLayout();
-            this.Z_key.SuspendLayout();
-            this.I_key.SuspendLayout();
-            this.LSHIFT_key.SuspendLayout();
-            this.G_key.SuspendLayout();
-            this.F_key.SuspendLayout();
-            this.U_key.SuspendLayout();
-            this.D_key.SuspendLayout();
-            this.S_key.SuspendLayout();
-            this.Y_key.SuspendLayout();
-            this.A_key.SuspendLayout();
-            this.CAPS_key.SuspendLayout();
-            this.T_key.SuspendLayout();
-            this.R_key.SuspendLayout();
-            this.E_key.SuspendLayout();
-            this.W_key.SuspendLayout();
-            this.Q_key.SuspendLayout();
-            this.TAB_key.SuspendLayout();
-            this.NUMBER_0_key.SuspendLayout();
-            this.NUMBER_9_key.SuspendLayout();
-            this.NUMBER_8_key.SuspendLayout();
-            this.NUMBER_7_key.SuspendLayout();
-            this.NUMBER_6_key.SuspendLayout();
-            this.NUMBER_5_key.SuspendLayout();
-            this.NUMBER_4_key.SuspendLayout();
-            this.NUMBER_3_key.SuspendLayout();
-            this.NUMBER_2_key.SuspendLayout();
-            this.NUMBER_1_key.SuspendLayout();
-            this.TILDA_key.SuspendLayout();
-            this.SuspendLayout();
+            keys_panel = new Panel();
+            BTN_Help = new Button();
+            program_Status = new Label();
+            panel_key_times_pressed = new Toolbox.RoundEdgesPanel();
+            LB_times_pressed = new Label();
+            LABEL_total_number_of_keypresses = new Label();
+            P_key = new Toolbox.RoundEdgesPanel();
+            LETTER_P = new Label();
+            BACKSLASH_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_BACKSLASH = new Label();
+            EQUAL_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_EQUAL = new Label();
+            RSHIFT_key = new Toolbox.RoundEdgesPanel();
+            FUNC_RSHIFT = new Label();
+            MINUS_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_MINUS = new Label();
+            QUOTATION_MARK_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_QUOTATION_MARK = new Label();
+            BRACKET_CLOSE_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_BRACKET_CLOSE = new Label();
+            SEMICOLON_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_SEMICOLON = new Label();
+            BKSPC_key = new Toolbox.RoundEdgesPanel();
+            FUNC_BKSPC = new Label();
+            BRACKET_OPEN_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_BRACKET_OPEN = new Label();
+            ENTER_key = new Toolbox.RoundEdgesPanel();
+            FUNC_ENTER = new Label();
+            RCTRL_key = new Toolbox.RoundEdgesPanel();
+            FUNC_RCTRL = new Label();
+            SLASH_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_SLASH = new Label();
+            RB_key = new Toolbox.RoundEdgesPanel();
+            MOUSE_RB = new Label();
+            label57 = new Label();
+            LB_key = new Toolbox.RoundEdgesPanel();
+            MOUSE_LB = new Label();
+            label58 = new Label();
+            DOT_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_DOT = new Label();
+            RALT_key = new Toolbox.RoundEdgesPanel();
+            FUNC_RALT = new Label();
+            COMMA_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_COMMA = new Label();
+            L_key = new Toolbox.RoundEdgesPanel();
+            LETTER_L = new Label();
+            M_key = new Toolbox.RoundEdgesPanel();
+            LETTER_M = new Label();
+            SPACE_key = new Toolbox.RoundEdgesPanel();
+            FUNC_SPACE = new Label();
+            LALT_key = new Toolbox.RoundEdgesPanel();
+            FUNC_LALT = new Label();
+            N_key = new Toolbox.RoundEdgesPanel();
+            LETTER_N = new Label();
+            EMPTY_key = new Toolbox.RoundEdgesPanel();
+            label65 = new Label();
+            K_key = new Toolbox.RoundEdgesPanel();
+            LETTER_K = new Label();
+            LCTRL_key = new Toolbox.RoundEdgesPanel();
+            FUNC_LCTRL = new Label();
+            B_key = new Toolbox.RoundEdgesPanel();
+            LETTER_B = new Label();
+            O_key = new Toolbox.RoundEdgesPanel();
+            LETTER_O = new Label();
+            V_key = new Toolbox.RoundEdgesPanel();
+            LETTER_V = new Label();
+            J_key = new Toolbox.RoundEdgesPanel();
+            LETTER_J = new Label();
+            C_key = new Toolbox.RoundEdgesPanel();
+            LETTER_C = new Label();
+            X_key = new Toolbox.RoundEdgesPanel();
+            LETTER_X = new Label();
+            H_key = new Toolbox.RoundEdgesPanel();
+            LETTER_H = new Label();
+            Z_key = new Toolbox.RoundEdgesPanel();
+            LETTER_Z = new Label();
+            I_key = new Toolbox.RoundEdgesPanel();
+            LETTER_I = new Label();
+            LSHIFT_key = new Toolbox.RoundEdgesPanel();
+            FUNC_LSHIFT = new Label();
+            G_key = new Toolbox.RoundEdgesPanel();
+            LETTER_G = new Label();
+            F_key = new Toolbox.RoundEdgesPanel();
+            LETTER_F = new Label();
+            U_key = new Toolbox.RoundEdgesPanel();
+            LETTER_U = new Label();
+            D_key = new Toolbox.RoundEdgesPanel();
+            LETTER_D = new Label();
+            S_key = new Toolbox.RoundEdgesPanel();
+            LETTER_S = new Label();
+            Y_key = new Toolbox.RoundEdgesPanel();
+            LETTER_Y = new Label();
+            A_key = new Toolbox.RoundEdgesPanel();
+            LETTER_A = new Label();
+            CAPS_key = new Toolbox.RoundEdgesPanel();
+            FUNC_CAPSLK = new Label();
+            T_key = new Toolbox.RoundEdgesPanel();
+            LETTER_T = new Label();
+            R_key = new Toolbox.RoundEdgesPanel();
+            LETTER_R = new Label();
+            E_key = new Toolbox.RoundEdgesPanel();
+            LETTER_E = new Label();
+            W_key = new Toolbox.RoundEdgesPanel();
+            LETTER_W = new Label();
+            Q_key = new Toolbox.RoundEdgesPanel();
+            LETTER_Q = new Label();
+            TAB_key = new Toolbox.RoundEdgesPanel();
+            FUNC_TAB = new Label();
+            NUMBER_0_key = new Toolbox.RoundEdgesPanel();
+            NUM0 = new Label();
+            NUMBER_9_key = new Toolbox.RoundEdgesPanel();
+            NUM9 = new Label();
+            NUMBER_8_key = new Toolbox.RoundEdgesPanel();
+            NUM8 = new Label();
+            NUMBER_7_key = new Toolbox.RoundEdgesPanel();
+            NUM7 = new Label();
+            NUMBER_6_key = new Toolbox.RoundEdgesPanel();
+            NUM6 = new Label();
+            NUMBER_5_key = new Toolbox.RoundEdgesPanel();
+            NUM5 = new Label();
+            NUMBER_4_key = new Toolbox.RoundEdgesPanel();
+            NUM4 = new Label();
+            NUMBER_3_key = new Toolbox.RoundEdgesPanel();
+            NUM3 = new Label();
+            NUMBER_2_key = new Toolbox.RoundEdgesPanel();
+            NUM2 = new Label();
+            NUMBER_1_key = new Toolbox.RoundEdgesPanel();
+            NUM1 = new Label();
+            TILDA_key = new Toolbox.RoundEdgesPanel();
+            SYMBOL_TILDA = new Label();
+            keys_panel.SuspendLayout();
+            panel_key_times_pressed.SuspendLayout();
+            P_key.SuspendLayout();
+            BACKSLASH_key.SuspendLayout();
+            EQUAL_key.SuspendLayout();
+            RSHIFT_key.SuspendLayout();
+            MINUS_key.SuspendLayout();
+            QUOTATION_MARK_key.SuspendLayout();
+            BRACKET_CLOSE_key.SuspendLayout();
+            SEMICOLON_key.SuspendLayout();
+            BKSPC_key.SuspendLayout();
+            BRACKET_OPEN_key.SuspendLayout();
+            ENTER_key.SuspendLayout();
+            RCTRL_key.SuspendLayout();
+            SLASH_key.SuspendLayout();
+            RB_key.SuspendLayout();
+            LB_key.SuspendLayout();
+            DOT_key.SuspendLayout();
+            RALT_key.SuspendLayout();
+            COMMA_key.SuspendLayout();
+            L_key.SuspendLayout();
+            M_key.SuspendLayout();
+            SPACE_key.SuspendLayout();
+            LALT_key.SuspendLayout();
+            N_key.SuspendLayout();
+            EMPTY_key.SuspendLayout();
+            K_key.SuspendLayout();
+            LCTRL_key.SuspendLayout();
+            B_key.SuspendLayout();
+            O_key.SuspendLayout();
+            V_key.SuspendLayout();
+            J_key.SuspendLayout();
+            C_key.SuspendLayout();
+            X_key.SuspendLayout();
+            H_key.SuspendLayout();
+            Z_key.SuspendLayout();
+            I_key.SuspendLayout();
+            LSHIFT_key.SuspendLayout();
+            G_key.SuspendLayout();
+            F_key.SuspendLayout();
+            U_key.SuspendLayout();
+            D_key.SuspendLayout();
+            S_key.SuspendLayout();
+            Y_key.SuspendLayout();
+            A_key.SuspendLayout();
+            CAPS_key.SuspendLayout();
+            T_key.SuspendLayout();
+            R_key.SuspendLayout();
+            E_key.SuspendLayout();
+            W_key.SuspendLayout();
+            Q_key.SuspendLayout();
+            TAB_key.SuspendLayout();
+            NUMBER_0_key.SuspendLayout();
+            NUMBER_9_key.SuspendLayout();
+            NUMBER_8_key.SuspendLayout();
+            NUMBER_7_key.SuspendLayout();
+            NUMBER_6_key.SuspendLayout();
+            NUMBER_5_key.SuspendLayout();
+            NUMBER_4_key.SuspendLayout();
+            NUMBER_3_key.SuspendLayout();
+            NUMBER_2_key.SuspendLayout();
+            NUMBER_1_key.SuspendLayout();
+            TILDA_key.SuspendLayout();
+            SuspendLayout();
             // 
             // keys_panel
             // 
-            this.keys_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
-            this.keys_panel.Controls.Add(this.BTN_Help);
-            this.keys_panel.Controls.Add(this.program_Status);
-            this.keys_panel.Controls.Add(this.panel_key_times_pressed);
-            this.keys_panel.Controls.Add(this.LABEL_total_number_of_keypresses);
-            this.keys_panel.Controls.Add(this.P_key);
-            this.keys_panel.Controls.Add(this.BACKSLASH_key);
-            this.keys_panel.Controls.Add(this.EQUAL_key);
-            this.keys_panel.Controls.Add(this.RSHIFT_key);
-            this.keys_panel.Controls.Add(this.MINUS_key);
-            this.keys_panel.Controls.Add(this.QUOTATION_MARK_key);
-            this.keys_panel.Controls.Add(this.BRACKET_CLOSE_key);
-            this.keys_panel.Controls.Add(this.SEMICOLON_key);
-            this.keys_panel.Controls.Add(this.BKSPC_key);
-            this.keys_panel.Controls.Add(this.BRACKET_OPEN_key);
-            this.keys_panel.Controls.Add(this.ENTER_key);
-            this.keys_panel.Controls.Add(this.RCTRL_key);
-            this.keys_panel.Controls.Add(this.SLASH_key);
-            this.keys_panel.Controls.Add(this.RB_key);
-            this.keys_panel.Controls.Add(this.LB_key);
-            this.keys_panel.Controls.Add(this.DOT_key);
-            this.keys_panel.Controls.Add(this.RALT_key);
-            this.keys_panel.Controls.Add(this.COMMA_key);
-            this.keys_panel.Controls.Add(this.L_key);
-            this.keys_panel.Controls.Add(this.M_key);
-            this.keys_panel.Controls.Add(this.SPACE_key);
-            this.keys_panel.Controls.Add(this.LALT_key);
-            this.keys_panel.Controls.Add(this.N_key);
-            this.keys_panel.Controls.Add(this.EMPTY_key);
-            this.keys_panel.Controls.Add(this.K_key);
-            this.keys_panel.Controls.Add(this.LCTRL_key);
-            this.keys_panel.Controls.Add(this.B_key);
-            this.keys_panel.Controls.Add(this.O_key);
-            this.keys_panel.Controls.Add(this.V_key);
-            this.keys_panel.Controls.Add(this.J_key);
-            this.keys_panel.Controls.Add(this.C_key);
-            this.keys_panel.Controls.Add(this.X_key);
-            this.keys_panel.Controls.Add(this.H_key);
-            this.keys_panel.Controls.Add(this.Z_key);
-            this.keys_panel.Controls.Add(this.I_key);
-            this.keys_panel.Controls.Add(this.LSHIFT_key);
-            this.keys_panel.Controls.Add(this.G_key);
-            this.keys_panel.Controls.Add(this.F_key);
-            this.keys_panel.Controls.Add(this.U_key);
-            this.keys_panel.Controls.Add(this.D_key);
-            this.keys_panel.Controls.Add(this.S_key);
-            this.keys_panel.Controls.Add(this.Y_key);
-            this.keys_panel.Controls.Add(this.A_key);
-            this.keys_panel.Controls.Add(this.CAPS_key);
-            this.keys_panel.Controls.Add(this.T_key);
-            this.keys_panel.Controls.Add(this.R_key);
-            this.keys_panel.Controls.Add(this.E_key);
-            this.keys_panel.Controls.Add(this.W_key);
-            this.keys_panel.Controls.Add(this.Q_key);
-            this.keys_panel.Controls.Add(this.TAB_key);
-            this.keys_panel.Controls.Add(this.NUMBER_0_key);
-            this.keys_panel.Controls.Add(this.NUMBER_9_key);
-            this.keys_panel.Controls.Add(this.NUMBER_8_key);
-            this.keys_panel.Controls.Add(this.NUMBER_7_key);
-            this.keys_panel.Controls.Add(this.NUMBER_6_key);
-            this.keys_panel.Controls.Add(this.NUMBER_5_key);
-            this.keys_panel.Controls.Add(this.NUMBER_4_key);
-            this.keys_panel.Controls.Add(this.NUMBER_3_key);
-            this.keys_panel.Controls.Add(this.NUMBER_2_key);
-            this.keys_panel.Controls.Add(this.NUMBER_1_key);
-            this.keys_panel.Controls.Add(this.TILDA_key);
-            this.keys_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keys_panel.Location = new System.Drawing.Point(0, 0);
-            this.keys_panel.Name = "keys_panel";
-            this.keys_panel.Size = new System.Drawing.Size(845, 325);
-            this.keys_panel.TabIndex = 1;
+            keys_panel.BackColor = Color.FromArgb(167, 173, 186);
+            keys_panel.Controls.Add(BTN_Help);
+            keys_panel.Controls.Add(program_Status);
+            keys_panel.Controls.Add(panel_key_times_pressed);
+            keys_panel.Controls.Add(LABEL_total_number_of_keypresses);
+            keys_panel.Controls.Add(P_key);
+            keys_panel.Controls.Add(BACKSLASH_key);
+            keys_panel.Controls.Add(EQUAL_key);
+            keys_panel.Controls.Add(RSHIFT_key);
+            keys_panel.Controls.Add(MINUS_key);
+            keys_panel.Controls.Add(QUOTATION_MARK_key);
+            keys_panel.Controls.Add(BRACKET_CLOSE_key);
+            keys_panel.Controls.Add(SEMICOLON_key);
+            keys_panel.Controls.Add(BKSPC_key);
+            keys_panel.Controls.Add(BRACKET_OPEN_key);
+            keys_panel.Controls.Add(ENTER_key);
+            keys_panel.Controls.Add(RCTRL_key);
+            keys_panel.Controls.Add(SLASH_key);
+            keys_panel.Controls.Add(RB_key);
+            keys_panel.Controls.Add(LB_key);
+            keys_panel.Controls.Add(DOT_key);
+            keys_panel.Controls.Add(RALT_key);
+            keys_panel.Controls.Add(COMMA_key);
+            keys_panel.Controls.Add(L_key);
+            keys_panel.Controls.Add(M_key);
+            keys_panel.Controls.Add(SPACE_key);
+            keys_panel.Controls.Add(LALT_key);
+            keys_panel.Controls.Add(N_key);
+            keys_panel.Controls.Add(EMPTY_key);
+            keys_panel.Controls.Add(K_key);
+            keys_panel.Controls.Add(LCTRL_key);
+            keys_panel.Controls.Add(B_key);
+            keys_panel.Controls.Add(O_key);
+            keys_panel.Controls.Add(V_key);
+            keys_panel.Controls.Add(J_key);
+            keys_panel.Controls.Add(C_key);
+            keys_panel.Controls.Add(X_key);
+            keys_panel.Controls.Add(H_key);
+            keys_panel.Controls.Add(Z_key);
+            keys_panel.Controls.Add(I_key);
+            keys_panel.Controls.Add(LSHIFT_key);
+            keys_panel.Controls.Add(G_key);
+            keys_panel.Controls.Add(F_key);
+            keys_panel.Controls.Add(U_key);
+            keys_panel.Controls.Add(D_key);
+            keys_panel.Controls.Add(S_key);
+            keys_panel.Controls.Add(Y_key);
+            keys_panel.Controls.Add(A_key);
+            keys_panel.Controls.Add(CAPS_key);
+            keys_panel.Controls.Add(T_key);
+            keys_panel.Controls.Add(R_key);
+            keys_panel.Controls.Add(E_key);
+            keys_panel.Controls.Add(W_key);
+            keys_panel.Controls.Add(Q_key);
+            keys_panel.Controls.Add(TAB_key);
+            keys_panel.Controls.Add(NUMBER_0_key);
+            keys_panel.Controls.Add(NUMBER_9_key);
+            keys_panel.Controls.Add(NUMBER_8_key);
+            keys_panel.Controls.Add(NUMBER_7_key);
+            keys_panel.Controls.Add(NUMBER_6_key);
+            keys_panel.Controls.Add(NUMBER_5_key);
+            keys_panel.Controls.Add(NUMBER_4_key);
+            keys_panel.Controls.Add(NUMBER_3_key);
+            keys_panel.Controls.Add(NUMBER_2_key);
+            keys_panel.Controls.Add(NUMBER_1_key);
+            keys_panel.Controls.Add(TILDA_key);
+            keys_panel.Dock = DockStyle.Fill;
+            keys_panel.Location = new Point(0, 0);
+            keys_panel.Name = "keys_panel";
+            keys_panel.Size = new Size(845, 325);
+            keys_panel.TabIndex = 1;
             // 
             // BTN_Help
             // 
-            this.BTN_Help.Cursor = System.Windows.Forms.Cursors.Help;
-            this.BTN_Help.FlatAppearance.BorderSize = 0;
-            this.BTN_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Help.Image = global::Keyboard_HeatMap.Properties.Resources.info;
-            this.BTN_Help.Location = new System.Drawing.Point(12, 293);
-            this.BTN_Help.Name = "BTN_Help";
-            this.BTN_Help.Size = new System.Drawing.Size(35, 24);
-            this.BTN_Help.TabIndex = 0;
-            this.BTN_Help.TabStop = false;
-            this.BTN_Help.UseVisualStyleBackColor = true;
-            this.BTN_Help.Click += new System.EventHandler(this.BTN_Help_Click);
+            BTN_Help.Cursor = Cursors.Help;
+            BTN_Help.FlatAppearance.BorderSize = 0;
+            BTN_Help.FlatStyle = FlatStyle.Flat;
+            BTN_Help.Image = Properties.Resources.info;
+            BTN_Help.Location = new Point(12, 293);
+            BTN_Help.Name = "BTN_Help";
+            BTN_Help.Size = new Size(35, 24);
+            BTN_Help.TabIndex = 0;
+            BTN_Help.TabStop = false;
+            BTN_Help.UseVisualStyleBackColor = true;
+            BTN_Help.Click += BTN_Help_Click;
             // 
             // program_Status
             // 
-            this.program_Status.AutoSize = true;
-            this.program_Status.BackColor = System.Drawing.Color.Red;
-            this.program_Status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.program_Status.Location = new System.Drawing.Point(762, 293);
-            this.program_Status.Name = "program_Status";
-            this.program_Status.Size = new System.Drawing.Size(70, 21);
-            this.program_Status.TabIndex = 0;
-            this.program_Status.Text = "Disabled";
-            this.program_Status.Click += new System.EventHandler(this.program_Status_Click);
+            program_Status.AutoSize = true;
+            program_Status.BackColor = Color.Red;
+            program_Status.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            program_Status.Location = new Point(762, 293);
+            program_Status.Name = "program_Status";
+            program_Status.Size = new Size(70, 21);
+            program_Status.TabIndex = 0;
+            program_Status.Text = "Disabled";
+            program_Status.Click += program_Status_Click;
             // 
             // panel_key_times_pressed
             // 
-            this.panel_key_times_pressed.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panel_key_times_pressed.BorderRadius = 20;
-            this.panel_key_times_pressed.Controls.Add(this.LB_times_pressed);
-            this.panel_key_times_pressed.ForeColor = System.Drawing.Color.Black;
-            this.panel_key_times_pressed.Location = new System.Drawing.Point(326, 296);
-            this.panel_key_times_pressed.Name = "panel_key_times_pressed";
-            this.panel_key_times_pressed.Size = new System.Drawing.Size(151, 18);
-            this.panel_key_times_pressed.TabIndex = 47;
-            this.panel_key_times_pressed.Visible = false;
+            panel_key_times_pressed.BackColor = Color.DarkOrchid;
+            panel_key_times_pressed.BorderRadius = 20;
+            panel_key_times_pressed.Controls.Add(LB_times_pressed);
+            panel_key_times_pressed.ForeColor = Color.Black;
+            panel_key_times_pressed.Location = new Point(326, 296);
+            panel_key_times_pressed.Name = "panel_key_times_pressed";
+            panel_key_times_pressed.Size = new Size(151, 18);
+            panel_key_times_pressed.TabIndex = 47;
+            panel_key_times_pressed.Visible = false;
             // 
             // LB_times_pressed
             // 
-            this.LB_times_pressed.AutoSize = true;
-            this.LB_times_pressed.BackColor = System.Drawing.Color.Transparent;
-            this.LB_times_pressed.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LB_times_pressed.ForeColor = System.Drawing.Color.LawnGreen;
-            this.LB_times_pressed.Location = new System.Drawing.Point(2, -1);
-            this.LB_times_pressed.Name = "LB_times_pressed";
-            this.LB_times_pressed.Size = new System.Drawing.Size(148, 21);
-            this.LB_times_pressed.TabIndex = 0;
-            this.LB_times_pressed.Text = "XXX Times Pressed";
+            LB_times_pressed.AutoSize = true;
+            LB_times_pressed.BackColor = Color.Transparent;
+            LB_times_pressed.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LB_times_pressed.ForeColor = Color.LawnGreen;
+            LB_times_pressed.Location = new Point(2, -1);
+            LB_times_pressed.Name = "LB_times_pressed";
+            LB_times_pressed.Size = new Size(148, 21);
+            LB_times_pressed.TabIndex = 0;
+            LB_times_pressed.Text = "XXX Times Pressed";
             // 
             // LABEL_total_number_of_keypresses
             // 
-            this.LABEL_total_number_of_keypresses.AutoSize = true;
-            this.LABEL_total_number_of_keypresses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LABEL_total_number_of_keypresses.Location = new System.Drawing.Point(47, 297);
-            this.LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
-            this.LABEL_total_number_of_keypresses.Size = new System.Drawing.Size(115, 17);
-            this.LABEL_total_number_of_keypresses.TabIndex = 0;
-            this.LABEL_total_number_of_keypresses.Text = "No keypresses yet";
+            LABEL_total_number_of_keypresses.AutoSize = true;
+            LABEL_total_number_of_keypresses.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            LABEL_total_number_of_keypresses.Location = new Point(47, 297);
+            LABEL_total_number_of_keypresses.Name = "LABEL_total_number_of_keypresses";
+            LABEL_total_number_of_keypresses.Size = new Size(115, 17);
+            LABEL_total_number_of_keypresses.TabIndex = 0;
+            LABEL_total_number_of_keypresses.Text = "No keypresses yet";
             // 
             // P_key
             // 
-            this.P_key.BackColor = System.Drawing.Color.White;
-            this.P_key.BorderRadius = 20;
-            this.P_key.Controls.Add(this.LETTER_P);
-            this.P_key.ForeColor = System.Drawing.Color.Black;
-            this.P_key.Location = new System.Drawing.Point(603, 68);
-            this.P_key.Name = "P_key";
-            this.P_key.Size = new System.Drawing.Size(50, 50);
-            this.P_key.TabIndex = 6;
-            this.P_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.P_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.P_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            P_key.BackColor = Color.White;
+            P_key.BorderRadius = 20;
+            P_key.Controls.Add(LETTER_P);
+            P_key.ForeColor = Color.Black;
+            P_key.Location = new Point(603, 68);
+            P_key.Name = "P_key";
+            P_key.Size = new Size(50, 50);
+            P_key.TabIndex = 6;
+            P_key.MouseEnter += DisplayCursorOverKeypresses;
+            P_key.MouseLeave += HideCursorOverKeypresses;
+            P_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_P
             // 
-            this.LETTER_P.AutoSize = true;
-            this.LETTER_P.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_P.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_P.Name = "LETTER_P";
-            this.LETTER_P.Size = new System.Drawing.Size(19, 21);
-            this.LETTER_P.TabIndex = 0;
-            this.LETTER_P.Text = "P";
-            this.LETTER_P.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_P.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_P.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_P.AutoSize = true;
+            LETTER_P.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_P.Location = new Point(15, 15);
+            LETTER_P.Name = "LETTER_P";
+            LETTER_P.Size = new Size(19, 21);
+            LETTER_P.TabIndex = 0;
+            LETTER_P.Text = "P";
+            LETTER_P.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_P.MouseLeave += HideCursorOverKeypresses;
+            LETTER_P.MouseMove += UpdateCursorLocation;
             // 
             // BACKSLASH_key
             // 
-            this.BACKSLASH_key.BackColor = System.Drawing.Color.White;
-            this.BACKSLASH_key.BorderRadius = 20;
-            this.BACKSLASH_key.Controls.Add(this.SYMBOL_BACKSLASH);
-            this.BACKSLASH_key.ForeColor = System.Drawing.Color.Black;
-            this.BACKSLASH_key.Location = new System.Drawing.Point(718, 124);
-            this.BACKSLASH_key.Name = "BACKSLASH_key";
-            this.BACKSLASH_key.Size = new System.Drawing.Size(50, 50);
-            this.BACKSLASH_key.TabIndex = 0;
-            this.BACKSLASH_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.BACKSLASH_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.BACKSLASH_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            BACKSLASH_key.BackColor = Color.White;
+            BACKSLASH_key.BorderRadius = 20;
+            BACKSLASH_key.Controls.Add(SYMBOL_BACKSLASH);
+            BACKSLASH_key.ForeColor = Color.Black;
+            BACKSLASH_key.Location = new Point(718, 124);
+            BACKSLASH_key.Name = "BACKSLASH_key";
+            BACKSLASH_key.Size = new Size(50, 50);
+            BACKSLASH_key.TabIndex = 0;
+            BACKSLASH_key.MouseEnter += DisplayCursorOverKeypresses;
+            BACKSLASH_key.MouseLeave += HideCursorOverKeypresses;
+            BACKSLASH_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_BACKSLASH
             // 
-            this.SYMBOL_BACKSLASH.AutoSize = true;
-            this.SYMBOL_BACKSLASH.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_BACKSLASH.Location = new System.Drawing.Point(9, 15);
-            this.SYMBOL_BACKSLASH.Name = "SYMBOL_BACKSLASH";
-            this.SYMBOL_BACKSLASH.Size = new System.Drawing.Size(24, 21);
-            this.SYMBOL_BACKSLASH.TabIndex = 0;
-            this.SYMBOL_BACKSLASH.Text = "\\ |";
-            this.SYMBOL_BACKSLASH.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_BACKSLASH.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_BACKSLASH.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_BACKSLASH.AutoSize = true;
+            SYMBOL_BACKSLASH.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_BACKSLASH.Location = new Point(9, 15);
+            SYMBOL_BACKSLASH.Name = "SYMBOL_BACKSLASH";
+            SYMBOL_BACKSLASH.Size = new Size(24, 21);
+            SYMBOL_BACKSLASH.TabIndex = 0;
+            SYMBOL_BACKSLASH.Text = "\\ |";
+            SYMBOL_BACKSLASH.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_BACKSLASH.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_BACKSLASH.MouseMove += UpdateCursorLocation;
             // 
             // EQUAL_key
             // 
-            this.EQUAL_key.BackColor = System.Drawing.Color.White;
-            this.EQUAL_key.BorderRadius = 20;
-            this.EQUAL_key.Controls.Add(this.SYMBOL_EQUAL);
-            this.EQUAL_key.ForeColor = System.Drawing.Color.Black;
-            this.EQUAL_key.Location = new System.Drawing.Point(684, 12);
-            this.EQUAL_key.Name = "EQUAL_key";
-            this.EQUAL_key.Size = new System.Drawing.Size(50, 50);
-            this.EQUAL_key.TabIndex = 0;
-            this.EQUAL_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.EQUAL_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.EQUAL_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            EQUAL_key.BackColor = Color.White;
+            EQUAL_key.BorderRadius = 20;
+            EQUAL_key.Controls.Add(SYMBOL_EQUAL);
+            EQUAL_key.ForeColor = Color.Black;
+            EQUAL_key.Location = new Point(684, 12);
+            EQUAL_key.Name = "EQUAL_key";
+            EQUAL_key.Size = new Size(50, 50);
+            EQUAL_key.TabIndex = 0;
+            EQUAL_key.MouseEnter += DisplayCursorOverKeypresses;
+            EQUAL_key.MouseLeave += HideCursorOverKeypresses;
+            EQUAL_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_EQUAL
             // 
-            this.SYMBOL_EQUAL.AutoSize = true;
-            this.SYMBOL_EQUAL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_EQUAL.Location = new System.Drawing.Point(7, 15);
-            this.SYMBOL_EQUAL.Name = "SYMBOL_EQUAL";
-            this.SYMBOL_EQUAL.Size = new System.Drawing.Size(36, 21);
-            this.SYMBOL_EQUAL.TabIndex = 0;
-            this.SYMBOL_EQUAL.Text = "= +";
-            this.SYMBOL_EQUAL.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_EQUAL.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_EQUAL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_EQUAL.AutoSize = true;
+            SYMBOL_EQUAL.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_EQUAL.Location = new Point(7, 15);
+            SYMBOL_EQUAL.Name = "SYMBOL_EQUAL";
+            SYMBOL_EQUAL.Size = new Size(36, 21);
+            SYMBOL_EQUAL.TabIndex = 0;
+            SYMBOL_EQUAL.Text = "= +";
+            SYMBOL_EQUAL.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_EQUAL.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_EQUAL.MouseMove += UpdateCursorLocation;
             // 
             // RSHIFT_key
             // 
-            this.RSHIFT_key.BackColor = System.Drawing.Color.White;
-            this.RSHIFT_key.BorderRadius = 20;
-            this.RSHIFT_key.Controls.Add(this.FUNC_RSHIFT);
-            this.RSHIFT_key.ForeColor = System.Drawing.Color.Black;
-            this.RSHIFT_key.Location = new System.Drawing.Point(703, 180);
-            this.RSHIFT_key.Name = "RSHIFT_key";
-            this.RSHIFT_key.Size = new System.Drawing.Size(129, 50);
-            this.RSHIFT_key.TabIndex = 0;
-            this.RSHIFT_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.RSHIFT_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.RSHIFT_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            RSHIFT_key.BackColor = Color.White;
+            RSHIFT_key.BorderRadius = 20;
+            RSHIFT_key.Controls.Add(FUNC_RSHIFT);
+            RSHIFT_key.ForeColor = Color.Black;
+            RSHIFT_key.Location = new Point(703, 180);
+            RSHIFT_key.Name = "RSHIFT_key";
+            RSHIFT_key.Size = new Size(129, 50);
+            RSHIFT_key.TabIndex = 0;
+            RSHIFT_key.MouseEnter += DisplayCursorOverKeypresses;
+            RSHIFT_key.MouseLeave += HideCursorOverKeypresses;
+            RSHIFT_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_RSHIFT
             // 
-            this.FUNC_RSHIFT.AutoSize = true;
-            this.FUNC_RSHIFT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_RSHIFT.Location = new System.Drawing.Point(36, 15);
-            this.FUNC_RSHIFT.Name = "FUNC_RSHIFT";
-            this.FUNC_RSHIFT.Size = new System.Drawing.Size(53, 21);
-            this.FUNC_RSHIFT.TabIndex = 0;
-            this.FUNC_RSHIFT.Text = "SHIFT";
-            this.FUNC_RSHIFT.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_RSHIFT.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_RSHIFT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_RSHIFT.AutoSize = true;
+            FUNC_RSHIFT.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_RSHIFT.Location = new Point(36, 15);
+            FUNC_RSHIFT.Name = "FUNC_RSHIFT";
+            FUNC_RSHIFT.Size = new Size(53, 21);
+            FUNC_RSHIFT.TabIndex = 0;
+            FUNC_RSHIFT.Text = "SHIFT";
+            FUNC_RSHIFT.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_RSHIFT.MouseLeave += HideCursorOverKeypresses;
+            FUNC_RSHIFT.MouseMove += UpdateCursorLocation;
             // 
             // MINUS_key
             // 
-            this.MINUS_key.BackColor = System.Drawing.Color.White;
-            this.MINUS_key.BorderRadius = 20;
-            this.MINUS_key.Controls.Add(this.SYMBOL_MINUS);
-            this.MINUS_key.ForeColor = System.Drawing.Color.Black;
-            this.MINUS_key.Location = new System.Drawing.Point(628, 12);
-            this.MINUS_key.Name = "MINUS_key";
-            this.MINUS_key.Size = new System.Drawing.Size(50, 50);
-            this.MINUS_key.TabIndex = 0;
-            this.MINUS_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.MINUS_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.MINUS_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            MINUS_key.BackColor = Color.White;
+            MINUS_key.BorderRadius = 20;
+            MINUS_key.Controls.Add(SYMBOL_MINUS);
+            MINUS_key.ForeColor = Color.Black;
+            MINUS_key.Location = new Point(628, 12);
+            MINUS_key.Name = "MINUS_key";
+            MINUS_key.Size = new Size(50, 50);
+            MINUS_key.TabIndex = 0;
+            MINUS_key.MouseEnter += DisplayCursorOverKeypresses;
+            MINUS_key.MouseLeave += HideCursorOverKeypresses;
+            MINUS_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_MINUS
             // 
-            this.SYMBOL_MINUS.AutoSize = true;
-            this.SYMBOL_MINUS.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_MINUS.Location = new System.Drawing.Point(12, 15);
-            this.SYMBOL_MINUS.Name = "SYMBOL_MINUS";
-            this.SYMBOL_MINUS.Size = new System.Drawing.Size(27, 21);
-            this.SYMBOL_MINUS.TabIndex = 0;
-            this.SYMBOL_MINUS.Text = "- _";
-            this.SYMBOL_MINUS.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_MINUS.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_MINUS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_MINUS.AutoSize = true;
+            SYMBOL_MINUS.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_MINUS.Location = new Point(12, 15);
+            SYMBOL_MINUS.Name = "SYMBOL_MINUS";
+            SYMBOL_MINUS.Size = new Size(27, 21);
+            SYMBOL_MINUS.TabIndex = 0;
+            SYMBOL_MINUS.Text = "- _";
+            SYMBOL_MINUS.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_MINUS.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_MINUS.MouseMove += UpdateCursorLocation;
             // 
             // QUOTATION_MARK_key
             // 
-            this.QUOTATION_MARK_key.BackColor = System.Drawing.Color.White;
-            this.QUOTATION_MARK_key.BorderRadius = 20;
-            this.QUOTATION_MARK_key.Controls.Add(this.SYMBOL_QUOTATION_MARK);
-            this.QUOTATION_MARK_key.ForeColor = System.Drawing.Color.Black;
-            this.QUOTATION_MARK_key.Location = new System.Drawing.Point(662, 124);
-            this.QUOTATION_MARK_key.Name = "QUOTATION_MARK_key";
-            this.QUOTATION_MARK_key.Size = new System.Drawing.Size(50, 50);
-            this.QUOTATION_MARK_key.TabIndex = 9;
-            this.QUOTATION_MARK_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.QUOTATION_MARK_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.QUOTATION_MARK_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            QUOTATION_MARK_key.BackColor = Color.White;
+            QUOTATION_MARK_key.BorderRadius = 20;
+            QUOTATION_MARK_key.Controls.Add(SYMBOL_QUOTATION_MARK);
+            QUOTATION_MARK_key.ForeColor = Color.Black;
+            QUOTATION_MARK_key.Location = new Point(662, 124);
+            QUOTATION_MARK_key.Name = "QUOTATION_MARK_key";
+            QUOTATION_MARK_key.Size = new Size(50, 50);
+            QUOTATION_MARK_key.TabIndex = 9;
+            QUOTATION_MARK_key.MouseEnter += DisplayCursorOverKeypresses;
+            QUOTATION_MARK_key.MouseLeave += HideCursorOverKeypresses;
+            QUOTATION_MARK_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_QUOTATION_MARK
             // 
-            this.SYMBOL_QUOTATION_MARK.AutoSize = true;
-            this.SYMBOL_QUOTATION_MARK.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_QUOTATION_MARK.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_QUOTATION_MARK.Name = "SYMBOL_QUOTATION_MARK";
-            this.SYMBOL_QUOTATION_MARK.Size = new System.Drawing.Size(25, 21);
-            this.SYMBOL_QUOTATION_MARK.TabIndex = 0;
-            this.SYMBOL_QUOTATION_MARK.Text = "\' \"";
-            this.SYMBOL_QUOTATION_MARK.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_QUOTATION_MARK.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_QUOTATION_MARK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_QUOTATION_MARK.AutoSize = true;
+            SYMBOL_QUOTATION_MARK.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_QUOTATION_MARK.Location = new Point(15, 15);
+            SYMBOL_QUOTATION_MARK.Name = "SYMBOL_QUOTATION_MARK";
+            SYMBOL_QUOTATION_MARK.Size = new Size(25, 21);
+            SYMBOL_QUOTATION_MARK.TabIndex = 0;
+            SYMBOL_QUOTATION_MARK.Text = "' \"";
+            SYMBOL_QUOTATION_MARK.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_QUOTATION_MARK.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_QUOTATION_MARK.MouseMove += UpdateCursorLocation;
             // 
             // BRACKET_CLOSE_key
             // 
-            this.BRACKET_CLOSE_key.BackColor = System.Drawing.Color.White;
-            this.BRACKET_CLOSE_key.BorderRadius = 20;
-            this.BRACKET_CLOSE_key.Controls.Add(this.SYMBOL_BRACKET_CLOSE);
-            this.BRACKET_CLOSE_key.ForeColor = System.Drawing.Color.Black;
-            this.BRACKET_CLOSE_key.Location = new System.Drawing.Point(715, 68);
-            this.BRACKET_CLOSE_key.Name = "BRACKET_CLOSE_key";
-            this.BRACKET_CLOSE_key.Size = new System.Drawing.Size(50, 50);
-            this.BRACKET_CLOSE_key.TabIndex = 0;
-            this.BRACKET_CLOSE_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.BRACKET_CLOSE_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.BRACKET_CLOSE_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            BRACKET_CLOSE_key.BackColor = Color.White;
+            BRACKET_CLOSE_key.BorderRadius = 20;
+            BRACKET_CLOSE_key.Controls.Add(SYMBOL_BRACKET_CLOSE);
+            BRACKET_CLOSE_key.ForeColor = Color.Black;
+            BRACKET_CLOSE_key.Location = new Point(715, 68);
+            BRACKET_CLOSE_key.Name = "BRACKET_CLOSE_key";
+            BRACKET_CLOSE_key.Size = new Size(50, 50);
+            BRACKET_CLOSE_key.TabIndex = 0;
+            BRACKET_CLOSE_key.MouseEnter += DisplayCursorOverKeypresses;
+            BRACKET_CLOSE_key.MouseLeave += HideCursorOverKeypresses;
+            BRACKET_CLOSE_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_BRACKET_CLOSE
             // 
-            this.SYMBOL_BRACKET_CLOSE.AutoSize = true;
-            this.SYMBOL_BRACKET_CLOSE.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_BRACKET_CLOSE.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_BRACKET_CLOSE.Name = "SYMBOL_BRACKET_CLOSE";
-            this.SYMBOL_BRACKET_CLOSE.Size = new System.Drawing.Size(24, 21);
-            this.SYMBOL_BRACKET_CLOSE.TabIndex = 0;
-            this.SYMBOL_BRACKET_CLOSE.Text = "] }";
-            this.SYMBOL_BRACKET_CLOSE.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_BRACKET_CLOSE.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_BRACKET_CLOSE.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_BRACKET_CLOSE.AutoSize = true;
+            SYMBOL_BRACKET_CLOSE.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_BRACKET_CLOSE.Location = new Point(15, 15);
+            SYMBOL_BRACKET_CLOSE.Name = "SYMBOL_BRACKET_CLOSE";
+            SYMBOL_BRACKET_CLOSE.Size = new Size(24, 21);
+            SYMBOL_BRACKET_CLOSE.TabIndex = 0;
+            SYMBOL_BRACKET_CLOSE.Text = "] }";
+            SYMBOL_BRACKET_CLOSE.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_BRACKET_CLOSE.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_BRACKET_CLOSE.MouseMove += UpdateCursorLocation;
             // 
             // SEMICOLON_key
             // 
-            this.SEMICOLON_key.BackColor = System.Drawing.Color.White;
-            this.SEMICOLON_key.BorderRadius = 20;
-            this.SEMICOLON_key.Controls.Add(this.SYMBOL_SEMICOLON);
-            this.SEMICOLON_key.ForeColor = System.Drawing.Color.Black;
-            this.SEMICOLON_key.Location = new System.Drawing.Point(606, 124);
-            this.SEMICOLON_key.Name = "SEMICOLON_key";
-            this.SEMICOLON_key.Size = new System.Drawing.Size(50, 50);
-            this.SEMICOLON_key.TabIndex = 10;
-            this.SEMICOLON_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SEMICOLON_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SEMICOLON_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SEMICOLON_key.BackColor = Color.White;
+            SEMICOLON_key.BorderRadius = 20;
+            SEMICOLON_key.Controls.Add(SYMBOL_SEMICOLON);
+            SEMICOLON_key.ForeColor = Color.Black;
+            SEMICOLON_key.Location = new Point(606, 124);
+            SEMICOLON_key.Name = "SEMICOLON_key";
+            SEMICOLON_key.Size = new Size(50, 50);
+            SEMICOLON_key.TabIndex = 10;
+            SEMICOLON_key.MouseEnter += DisplayCursorOverKeypresses;
+            SEMICOLON_key.MouseLeave += HideCursorOverKeypresses;
+            SEMICOLON_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_SEMICOLON
             // 
-            this.SYMBOL_SEMICOLON.AutoSize = true;
-            this.SYMBOL_SEMICOLON.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_SEMICOLON.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_SEMICOLON.Name = "SYMBOL_SEMICOLON";
-            this.SYMBOL_SEMICOLON.Size = new System.Drawing.Size(22, 21);
-            this.SYMBOL_SEMICOLON.TabIndex = 0;
-            this.SYMBOL_SEMICOLON.Text = "; :";
-            this.SYMBOL_SEMICOLON.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_SEMICOLON.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_SEMICOLON.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_SEMICOLON.AutoSize = true;
+            SYMBOL_SEMICOLON.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_SEMICOLON.Location = new Point(15, 15);
+            SYMBOL_SEMICOLON.Name = "SYMBOL_SEMICOLON";
+            SYMBOL_SEMICOLON.Size = new Size(22, 21);
+            SYMBOL_SEMICOLON.TabIndex = 0;
+            SYMBOL_SEMICOLON.Text = "; :";
+            SYMBOL_SEMICOLON.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_SEMICOLON.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_SEMICOLON.MouseMove += UpdateCursorLocation;
             // 
             // BKSPC_key
             // 
-            this.BKSPC_key.BackColor = System.Drawing.Color.White;
-            this.BKSPC_key.BorderRadius = 20;
-            this.BKSPC_key.Controls.Add(this.FUNC_BKSPC);
-            this.BKSPC_key.ForeColor = System.Drawing.Color.Black;
-            this.BKSPC_key.Location = new System.Drawing.Point(740, 12);
-            this.BKSPC_key.Name = "BKSPC_key";
-            this.BKSPC_key.Size = new System.Drawing.Size(92, 50);
-            this.BKSPC_key.TabIndex = 0;
-            this.BKSPC_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.BKSPC_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.BKSPC_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            BKSPC_key.BackColor = Color.White;
+            BKSPC_key.BorderRadius = 20;
+            BKSPC_key.Controls.Add(FUNC_BKSPC);
+            BKSPC_key.ForeColor = Color.Black;
+            BKSPC_key.Location = new Point(740, 12);
+            BKSPC_key.Name = "BKSPC_key";
+            BKSPC_key.Size = new Size(92, 50);
+            BKSPC_key.TabIndex = 0;
+            BKSPC_key.MouseEnter += DisplayCursorOverKeypresses;
+            BKSPC_key.MouseLeave += HideCursorOverKeypresses;
+            BKSPC_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_BKSPC
             // 
-            this.FUNC_BKSPC.AutoSize = true;
-            this.FUNC_BKSPC.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_BKSPC.Location = new System.Drawing.Point(14, 15);
-            this.FUNC_BKSPC.Name = "FUNC_BKSPC";
-            this.FUNC_BKSPC.Size = new System.Drawing.Size(58, 21);
-            this.FUNC_BKSPC.TabIndex = 0;
-            this.FUNC_BKSPC.Text = "BKSPC";
-            this.FUNC_BKSPC.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_BKSPC.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_BKSPC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_BKSPC.AutoSize = true;
+            FUNC_BKSPC.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_BKSPC.Location = new Point(14, 15);
+            FUNC_BKSPC.Name = "FUNC_BKSPC";
+            FUNC_BKSPC.Size = new Size(58, 21);
+            FUNC_BKSPC.TabIndex = 0;
+            FUNC_BKSPC.Text = "BKSPC";
+            FUNC_BKSPC.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_BKSPC.MouseLeave += HideCursorOverKeypresses;
+            FUNC_BKSPC.MouseMove += UpdateCursorLocation;
             // 
             // BRACKET_OPEN_key
             // 
-            this.BRACKET_OPEN_key.BackColor = System.Drawing.Color.White;
-            this.BRACKET_OPEN_key.BorderRadius = 20;
-            this.BRACKET_OPEN_key.Controls.Add(this.SYMBOL_BRACKET_OPEN);
-            this.BRACKET_OPEN_key.ForeColor = System.Drawing.Color.Black;
-            this.BRACKET_OPEN_key.Location = new System.Drawing.Point(659, 68);
-            this.BRACKET_OPEN_key.Name = "BRACKET_OPEN_key";
-            this.BRACKET_OPEN_key.Size = new System.Drawing.Size(50, 50);
-            this.BRACKET_OPEN_key.TabIndex = 8;
-            this.BRACKET_OPEN_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.BRACKET_OPEN_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.BRACKET_OPEN_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            BRACKET_OPEN_key.BackColor = Color.White;
+            BRACKET_OPEN_key.BorderRadius = 20;
+            BRACKET_OPEN_key.Controls.Add(SYMBOL_BRACKET_OPEN);
+            BRACKET_OPEN_key.ForeColor = Color.Black;
+            BRACKET_OPEN_key.Location = new Point(659, 68);
+            BRACKET_OPEN_key.Name = "BRACKET_OPEN_key";
+            BRACKET_OPEN_key.Size = new Size(50, 50);
+            BRACKET_OPEN_key.TabIndex = 8;
+            BRACKET_OPEN_key.MouseEnter += DisplayCursorOverKeypresses;
+            BRACKET_OPEN_key.MouseLeave += HideCursorOverKeypresses;
+            BRACKET_OPEN_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_BRACKET_OPEN
             // 
-            this.SYMBOL_BRACKET_OPEN.AutoSize = true;
-            this.SYMBOL_BRACKET_OPEN.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_BRACKET_OPEN.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_BRACKET_OPEN.Name = "SYMBOL_BRACKET_OPEN";
-            this.SYMBOL_BRACKET_OPEN.Size = new System.Drawing.Size(24, 21);
-            this.SYMBOL_BRACKET_OPEN.TabIndex = 0;
-            this.SYMBOL_BRACKET_OPEN.Text = "[ {";
-            this.SYMBOL_BRACKET_OPEN.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_BRACKET_OPEN.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_BRACKET_OPEN.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_BRACKET_OPEN.AutoSize = true;
+            SYMBOL_BRACKET_OPEN.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_BRACKET_OPEN.Location = new Point(15, 15);
+            SYMBOL_BRACKET_OPEN.Name = "SYMBOL_BRACKET_OPEN";
+            SYMBOL_BRACKET_OPEN.Size = new Size(24, 21);
+            SYMBOL_BRACKET_OPEN.TabIndex = 0;
+            SYMBOL_BRACKET_OPEN.Text = "[ {";
+            SYMBOL_BRACKET_OPEN.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_BRACKET_OPEN.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_BRACKET_OPEN.MouseMove += UpdateCursorLocation;
             // 
             // ENTER_key
             // 
-            this.ENTER_key.BackColor = System.Drawing.Color.White;
-            this.ENTER_key.BorderRadius = 20;
-            this.ENTER_key.Controls.Add(this.FUNC_ENTER);
-            this.ENTER_key.ForeColor = System.Drawing.Color.Black;
-            this.ENTER_key.Location = new System.Drawing.Point(774, 68);
-            this.ENTER_key.Name = "ENTER_key";
-            this.ENTER_key.Size = new System.Drawing.Size(58, 106);
-            this.ENTER_key.TabIndex = 0;
-            this.ENTER_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.ENTER_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.ENTER_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            ENTER_key.BackColor = Color.White;
+            ENTER_key.BorderRadius = 20;
+            ENTER_key.Controls.Add(FUNC_ENTER);
+            ENTER_key.ForeColor = Color.Black;
+            ENTER_key.Location = new Point(774, 68);
+            ENTER_key.Name = "ENTER_key";
+            ENTER_key.Size = new Size(58, 106);
+            ENTER_key.TabIndex = 0;
+            ENTER_key.MouseEnter += DisplayCursorOverKeypresses;
+            ENTER_key.MouseLeave += HideCursorOverKeypresses;
+            ENTER_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_ENTER
             // 
-            this.FUNC_ENTER.AutoSize = true;
-            this.FUNC_ENTER.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_ENTER.Location = new System.Drawing.Point(2, 40);
-            this.FUNC_ENTER.Name = "FUNC_ENTER";
-            this.FUNC_ENTER.Size = new System.Drawing.Size(54, 20);
-            this.FUNC_ENTER.TabIndex = 0;
-            this.FUNC_ENTER.Text = "ENTER";
-            this.FUNC_ENTER.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_ENTER.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_ENTER.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_ENTER.AutoSize = true;
+            FUNC_ENTER.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_ENTER.Location = new Point(2, 40);
+            FUNC_ENTER.Name = "FUNC_ENTER";
+            FUNC_ENTER.Size = new Size(54, 20);
+            FUNC_ENTER.TabIndex = 0;
+            FUNC_ENTER.Text = "ENTER";
+            FUNC_ENTER.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_ENTER.MouseLeave += HideCursorOverKeypresses;
+            FUNC_ENTER.MouseMove += UpdateCursorLocation;
             // 
             // RCTRL_key
             // 
-            this.RCTRL_key.BackColor = System.Drawing.Color.White;
-            this.RCTRL_key.BorderRadius = 20;
-            this.RCTRL_key.Controls.Add(this.FUNC_RCTRL);
-            this.RCTRL_key.ForeColor = System.Drawing.Color.Black;
-            this.RCTRL_key.Location = new System.Drawing.Point(782, 236);
-            this.RCTRL_key.Name = "RCTRL_key";
-            this.RCTRL_key.Size = new System.Drawing.Size(50, 50);
-            this.RCTRL_key.TabIndex = 0;
-            this.RCTRL_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.RCTRL_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.RCTRL_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            RCTRL_key.BackColor = Color.White;
+            RCTRL_key.BorderRadius = 20;
+            RCTRL_key.Controls.Add(FUNC_RCTRL);
+            RCTRL_key.ForeColor = Color.Black;
+            RCTRL_key.Location = new Point(782, 236);
+            RCTRL_key.Name = "RCTRL_key";
+            RCTRL_key.Size = new Size(50, 50);
+            RCTRL_key.TabIndex = 0;
+            RCTRL_key.MouseEnter += DisplayCursorOverKeypresses;
+            RCTRL_key.MouseLeave += HideCursorOverKeypresses;
+            RCTRL_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_RCTRL
             // 
-            this.FUNC_RCTRL.AutoSize = true;
-            this.FUNC_RCTRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_RCTRL.Location = new System.Drawing.Point(2, 15);
-            this.FUNC_RCTRL.Name = "FUNC_RCTRL";
-            this.FUNC_RCTRL.Size = new System.Drawing.Size(47, 21);
-            this.FUNC_RCTRL.TabIndex = 0;
-            this.FUNC_RCTRL.Text = "CTRL";
-            this.FUNC_RCTRL.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_RCTRL.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_RCTRL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_RCTRL.AutoSize = true;
+            FUNC_RCTRL.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_RCTRL.Location = new Point(2, 15);
+            FUNC_RCTRL.Name = "FUNC_RCTRL";
+            FUNC_RCTRL.Size = new Size(47, 21);
+            FUNC_RCTRL.TabIndex = 0;
+            FUNC_RCTRL.Text = "CTRL";
+            FUNC_RCTRL.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_RCTRL.MouseLeave += HideCursorOverKeypresses;
+            FUNC_RCTRL.MouseMove += UpdateCursorLocation;
             // 
             // SLASH_key
             // 
-            this.SLASH_key.BackColor = System.Drawing.Color.White;
-            this.SLASH_key.BorderRadius = 20;
-            this.SLASH_key.Controls.Add(this.SYMBOL_SLASH);
-            this.SLASH_key.ForeColor = System.Drawing.Color.Black;
-            this.SLASH_key.Location = new System.Drawing.Point(647, 180);
-            this.SLASH_key.Name = "SLASH_key";
-            this.SLASH_key.Size = new System.Drawing.Size(50, 50);
-            this.SLASH_key.TabIndex = 0;
-            this.SLASH_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SLASH_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SLASH_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SLASH_key.BackColor = Color.White;
+            SLASH_key.BorderRadius = 20;
+            SLASH_key.Controls.Add(SYMBOL_SLASH);
+            SLASH_key.ForeColor = Color.Black;
+            SLASH_key.Location = new Point(647, 180);
+            SLASH_key.Name = "SLASH_key";
+            SLASH_key.Size = new Size(50, 50);
+            SLASH_key.TabIndex = 0;
+            SLASH_key.MouseEnter += DisplayCursorOverKeypresses;
+            SLASH_key.MouseLeave += HideCursorOverKeypresses;
+            SLASH_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_SLASH
             // 
-            this.SYMBOL_SLASH.AutoSize = true;
-            this.SYMBOL_SLASH.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_SLASH.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_SLASH.Name = "SYMBOL_SLASH";
-            this.SYMBOL_SLASH.Size = new System.Drawing.Size(28, 21);
-            this.SYMBOL_SLASH.TabIndex = 0;
-            this.SYMBOL_SLASH.Text = "/ ?";
-            this.SYMBOL_SLASH.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_SLASH.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_SLASH.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_SLASH.AutoSize = true;
+            SYMBOL_SLASH.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_SLASH.Location = new Point(15, 15);
+            SYMBOL_SLASH.Name = "SYMBOL_SLASH";
+            SYMBOL_SLASH.Size = new Size(28, 21);
+            SYMBOL_SLASH.TabIndex = 0;
+            SYMBOL_SLASH.Text = "/ ?";
+            SYMBOL_SLASH.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_SLASH.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_SLASH.MouseMove += UpdateCursorLocation;
             // 
             // RB_key
             // 
-            this.RB_key.BackColor = System.Drawing.Color.White;
-            this.RB_key.BorderRadius = 20;
-            this.RB_key.Controls.Add(this.MOUSE_RB);
-            this.RB_key.Controls.Add(this.label57);
-            this.RB_key.ForeColor = System.Drawing.Color.Black;
-            this.RB_key.Location = new System.Drawing.Point(726, 236);
-            this.RB_key.Name = "RB_key";
-            this.RB_key.Size = new System.Drawing.Size(50, 50);
-            this.RB_key.TabIndex = 0;
-            this.RB_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.RB_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.RB_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            RB_key.BackColor = Color.White;
+            RB_key.BorderRadius = 20;
+            RB_key.Controls.Add(MOUSE_RB);
+            RB_key.Controls.Add(label57);
+            RB_key.ForeColor = Color.Black;
+            RB_key.Location = new Point(726, 236);
+            RB_key.Name = "RB_key";
+            RB_key.Size = new Size(50, 50);
+            RB_key.TabIndex = 0;
+            RB_key.MouseEnter += DisplayCursorOverKeypresses;
+            RB_key.MouseLeave += HideCursorOverKeypresses;
+            RB_key.MouseMove += UpdateCursorLocation;
             // 
             // MOUSE_RB
             // 
-            this.MOUSE_RB.AutoSize = true;
-            this.MOUSE_RB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MOUSE_RB.Location = new System.Drawing.Point(10, 15);
-            this.MOUSE_RB.Name = "MOUSE_RB";
-            this.MOUSE_RB.Size = new System.Drawing.Size(30, 21);
-            this.MOUSE_RB.TabIndex = 2;
-            this.MOUSE_RB.Text = "RB";
-            this.MOUSE_RB.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.MOUSE_RB.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.MOUSE_RB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            MOUSE_RB.AutoSize = true;
+            MOUSE_RB.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            MOUSE_RB.Location = new Point(10, 15);
+            MOUSE_RB.Name = "MOUSE_RB";
+            MOUSE_RB.Size = new Size(30, 21);
+            MOUSE_RB.TabIndex = 2;
+            MOUSE_RB.Text = "RB";
+            MOUSE_RB.MouseEnter += DisplayCursorOverKeypresses;
+            MOUSE_RB.MouseLeave += HideCursorOverKeypresses;
+            MOUSE_RB.MouseMove += UpdateCursorLocation;
             // 
             // label57
             // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label57.Location = new System.Drawing.Point(7, 15);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(0, 21);
-            this.label57.TabIndex = 0;
+            label57.AutoSize = true;
+            label57.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label57.Location = new Point(7, 15);
+            label57.Name = "label57";
+            label57.Size = new Size(0, 21);
+            label57.TabIndex = 0;
             // 
             // LB_key
             // 
-            this.LB_key.BackColor = System.Drawing.Color.White;
-            this.LB_key.BorderRadius = 20;
-            this.LB_key.Controls.Add(this.MOUSE_LB);
-            this.LB_key.Controls.Add(this.label58);
-            this.LB_key.ForeColor = System.Drawing.Color.Black;
-            this.LB_key.Location = new System.Drawing.Point(670, 236);
-            this.LB_key.Name = "LB_key";
-            this.LB_key.Size = new System.Drawing.Size(50, 50);
-            this.LB_key.TabIndex = 0;
-            this.LB_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LB_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LB_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LB_key.BackColor = Color.White;
+            LB_key.BorderRadius = 20;
+            LB_key.Controls.Add(MOUSE_LB);
+            LB_key.Controls.Add(label58);
+            LB_key.ForeColor = Color.Black;
+            LB_key.Location = new Point(670, 236);
+            LB_key.Name = "LB_key";
+            LB_key.Size = new Size(50, 50);
+            LB_key.TabIndex = 0;
+            LB_key.MouseEnter += DisplayCursorOverKeypresses;
+            LB_key.MouseLeave += HideCursorOverKeypresses;
+            LB_key.MouseMove += UpdateCursorLocation;
             // 
             // MOUSE_LB
             // 
-            this.MOUSE_LB.AutoSize = true;
-            this.MOUSE_LB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MOUSE_LB.Location = new System.Drawing.Point(11, 15);
-            this.MOUSE_LB.Name = "MOUSE_LB";
-            this.MOUSE_LB.Size = new System.Drawing.Size(28, 21);
-            this.MOUSE_LB.TabIndex = 1;
-            this.MOUSE_LB.Text = "LB";
-            this.MOUSE_LB.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.MOUSE_LB.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.MOUSE_LB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            MOUSE_LB.AutoSize = true;
+            MOUSE_LB.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            MOUSE_LB.Location = new Point(11, 15);
+            MOUSE_LB.Name = "MOUSE_LB";
+            MOUSE_LB.Size = new Size(28, 21);
+            MOUSE_LB.TabIndex = 1;
+            MOUSE_LB.Text = "LB";
+            MOUSE_LB.MouseEnter += DisplayCursorOverKeypresses;
+            MOUSE_LB.MouseLeave += HideCursorOverKeypresses;
+            MOUSE_LB.MouseMove += UpdateCursorLocation;
             // 
             // label58
             // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label58.Location = new System.Drawing.Point(7, 15);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(0, 21);
-            this.label58.TabIndex = 0;
+            label58.AutoSize = true;
+            label58.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label58.Location = new Point(7, 15);
+            label58.Name = "label58";
+            label58.Size = new Size(0, 21);
+            label58.TabIndex = 0;
             // 
             // DOT_key
             // 
-            this.DOT_key.BackColor = System.Drawing.Color.White;
-            this.DOT_key.BorderRadius = 20;
-            this.DOT_key.Controls.Add(this.SYMBOL_DOT);
-            this.DOT_key.ForeColor = System.Drawing.Color.Black;
-            this.DOT_key.Location = new System.Drawing.Point(591, 180);
-            this.DOT_key.Name = "DOT_key";
-            this.DOT_key.Size = new System.Drawing.Size(50, 50);
-            this.DOT_key.TabIndex = 0;
-            this.DOT_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.DOT_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.DOT_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            DOT_key.BackColor = Color.White;
+            DOT_key.BorderRadius = 20;
+            DOT_key.Controls.Add(SYMBOL_DOT);
+            DOT_key.ForeColor = Color.Black;
+            DOT_key.Location = new Point(591, 180);
+            DOT_key.Name = "DOT_key";
+            DOT_key.Size = new Size(50, 50);
+            DOT_key.TabIndex = 0;
+            DOT_key.MouseEnter += DisplayCursorOverKeypresses;
+            DOT_key.MouseLeave += HideCursorOverKeypresses;
+            DOT_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_DOT
             // 
-            this.SYMBOL_DOT.AutoSize = true;
-            this.SYMBOL_DOT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_DOT.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_DOT.Name = "SYMBOL_DOT";
-            this.SYMBOL_DOT.Size = new System.Drawing.Size(29, 21);
-            this.SYMBOL_DOT.TabIndex = 0;
-            this.SYMBOL_DOT.Text = ". >";
-            this.SYMBOL_DOT.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_DOT.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_DOT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_DOT.AutoSize = true;
+            SYMBOL_DOT.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_DOT.Location = new Point(15, 15);
+            SYMBOL_DOT.Name = "SYMBOL_DOT";
+            SYMBOL_DOT.Size = new Size(29, 21);
+            SYMBOL_DOT.TabIndex = 0;
+            SYMBOL_DOT.Text = ". >";
+            SYMBOL_DOT.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_DOT.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_DOT.MouseMove += UpdateCursorLocation;
             // 
             // RALT_key
             // 
-            this.RALT_key.BackColor = System.Drawing.Color.White;
-            this.RALT_key.BorderRadius = 20;
-            this.RALT_key.Controls.Add(this.FUNC_RALT);
-            this.RALT_key.ForeColor = System.Drawing.Color.Black;
-            this.RALT_key.Location = new System.Drawing.Point(614, 236);
-            this.RALT_key.Name = "RALT_key";
-            this.RALT_key.Size = new System.Drawing.Size(50, 50);
-            this.RALT_key.TabIndex = 0;
-            this.RALT_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.RALT_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.RALT_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            RALT_key.BackColor = Color.White;
+            RALT_key.BorderRadius = 20;
+            RALT_key.Controls.Add(FUNC_RALT);
+            RALT_key.ForeColor = Color.Black;
+            RALT_key.Location = new Point(614, 236);
+            RALT_key.Name = "RALT_key";
+            RALT_key.Size = new Size(50, 50);
+            RALT_key.TabIndex = 0;
+            RALT_key.MouseEnter += DisplayCursorOverKeypresses;
+            RALT_key.MouseLeave += HideCursorOverKeypresses;
+            RALT_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_RALT
             // 
-            this.FUNC_RALT.AutoSize = true;
-            this.FUNC_RALT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_RALT.Location = new System.Drawing.Point(7, 15);
-            this.FUNC_RALT.Name = "FUNC_RALT";
-            this.FUNC_RALT.Size = new System.Drawing.Size(37, 21);
-            this.FUNC_RALT.TabIndex = 0;
-            this.FUNC_RALT.Text = "ALT";
-            this.FUNC_RALT.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_RALT.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_RALT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_RALT.AutoSize = true;
+            FUNC_RALT.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_RALT.Location = new Point(7, 15);
+            FUNC_RALT.Name = "FUNC_RALT";
+            FUNC_RALT.Size = new Size(37, 21);
+            FUNC_RALT.TabIndex = 0;
+            FUNC_RALT.Text = "ALT";
+            FUNC_RALT.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_RALT.MouseLeave += HideCursorOverKeypresses;
+            FUNC_RALT.MouseMove += UpdateCursorLocation;
             // 
             // COMMA_key
             // 
-            this.COMMA_key.BackColor = System.Drawing.Color.White;
-            this.COMMA_key.BorderRadius = 20;
-            this.COMMA_key.Controls.Add(this.SYMBOL_COMMA);
-            this.COMMA_key.ForeColor = System.Drawing.Color.Black;
-            this.COMMA_key.Location = new System.Drawing.Point(535, 180);
-            this.COMMA_key.Name = "COMMA_key";
-            this.COMMA_key.Size = new System.Drawing.Size(50, 50);
-            this.COMMA_key.TabIndex = 28;
-            this.COMMA_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.COMMA_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.COMMA_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            COMMA_key.BackColor = Color.White;
+            COMMA_key.BorderRadius = 20;
+            COMMA_key.Controls.Add(SYMBOL_COMMA);
+            COMMA_key.ForeColor = Color.Black;
+            COMMA_key.Location = new Point(535, 180);
+            COMMA_key.Name = "COMMA_key";
+            COMMA_key.Size = new Size(50, 50);
+            COMMA_key.TabIndex = 28;
+            COMMA_key.MouseEnter += DisplayCursorOverKeypresses;
+            COMMA_key.MouseLeave += HideCursorOverKeypresses;
+            COMMA_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_COMMA
             // 
-            this.SYMBOL_COMMA.AutoSize = true;
-            this.SYMBOL_COMMA.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_COMMA.Location = new System.Drawing.Point(11, 15);
-            this.SYMBOL_COMMA.Name = "SYMBOL_COMMA";
-            this.SYMBOL_COMMA.Size = new System.Drawing.Size(29, 21);
-            this.SYMBOL_COMMA.TabIndex = 0;
-            this.SYMBOL_COMMA.Text = ", <";
-            this.SYMBOL_COMMA.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_COMMA.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_COMMA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_COMMA.AutoSize = true;
+            SYMBOL_COMMA.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_COMMA.Location = new Point(11, 15);
+            SYMBOL_COMMA.Name = "SYMBOL_COMMA";
+            SYMBOL_COMMA.Size = new Size(29, 21);
+            SYMBOL_COMMA.TabIndex = 0;
+            SYMBOL_COMMA.Text = ", <";
+            SYMBOL_COMMA.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_COMMA.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_COMMA.MouseMove += UpdateCursorLocation;
             // 
             // L_key
             // 
-            this.L_key.BackColor = System.Drawing.Color.White;
-            this.L_key.BorderRadius = 20;
-            this.L_key.Controls.Add(this.LETTER_L);
-            this.L_key.ForeColor = System.Drawing.Color.Black;
-            this.L_key.Location = new System.Drawing.Point(550, 124);
-            this.L_key.Name = "L_key";
-            this.L_key.Size = new System.Drawing.Size(50, 50);
-            this.L_key.TabIndex = 16;
-            this.L_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.L_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.L_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            L_key.BackColor = Color.White;
+            L_key.BorderRadius = 20;
+            L_key.Controls.Add(LETTER_L);
+            L_key.ForeColor = Color.Black;
+            L_key.Location = new Point(550, 124);
+            L_key.Name = "L_key";
+            L_key.Size = new Size(50, 50);
+            L_key.TabIndex = 16;
+            L_key.MouseEnter += DisplayCursorOverKeypresses;
+            L_key.MouseLeave += HideCursorOverKeypresses;
+            L_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_L
             // 
-            this.LETTER_L.AutoSize = true;
-            this.LETTER_L.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_L.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_L.Name = "LETTER_L";
-            this.LETTER_L.Size = new System.Drawing.Size(18, 21);
-            this.LETTER_L.TabIndex = 0;
-            this.LETTER_L.Text = "L";
-            this.LETTER_L.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_L.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_L.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_L.AutoSize = true;
+            LETTER_L.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_L.Location = new Point(15, 15);
+            LETTER_L.Name = "LETTER_L";
+            LETTER_L.Size = new Size(18, 21);
+            LETTER_L.TabIndex = 0;
+            LETTER_L.Text = "L";
+            LETTER_L.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_L.MouseLeave += HideCursorOverKeypresses;
+            LETTER_L.MouseMove += UpdateCursorLocation;
             // 
             // M_key
             // 
-            this.M_key.BackColor = System.Drawing.Color.White;
-            this.M_key.BorderRadius = 20;
-            this.M_key.Controls.Add(this.LETTER_M);
-            this.M_key.ForeColor = System.Drawing.Color.Black;
-            this.M_key.Location = new System.Drawing.Point(479, 180);
-            this.M_key.Name = "M_key";
-            this.M_key.Size = new System.Drawing.Size(50, 50);
-            this.M_key.TabIndex = 29;
-            this.M_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.M_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.M_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            M_key.BackColor = Color.White;
+            M_key.BorderRadius = 20;
+            M_key.Controls.Add(LETTER_M);
+            M_key.ForeColor = Color.Black;
+            M_key.Location = new Point(479, 180);
+            M_key.Name = "M_key";
+            M_key.Size = new Size(50, 50);
+            M_key.TabIndex = 29;
+            M_key.MouseEnter += DisplayCursorOverKeypresses;
+            M_key.MouseLeave += HideCursorOverKeypresses;
+            M_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_M
             // 
-            this.LETTER_M.AutoSize = true;
-            this.LETTER_M.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_M.Location = new System.Drawing.Point(13, 15);
-            this.LETTER_M.Name = "LETTER_M";
-            this.LETTER_M.Size = new System.Drawing.Size(25, 21);
-            this.LETTER_M.TabIndex = 0;
-            this.LETTER_M.Text = "M";
-            this.LETTER_M.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_M.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_M.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_M.AutoSize = true;
+            LETTER_M.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_M.Location = new Point(13, 15);
+            LETTER_M.Name = "LETTER_M";
+            LETTER_M.Size = new Size(25, 21);
+            LETTER_M.TabIndex = 0;
+            LETTER_M.Text = "M";
+            LETTER_M.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_M.MouseLeave += HideCursorOverKeypresses;
+            LETTER_M.MouseMove += UpdateCursorLocation;
             // 
             // SPACE_key
             // 
-            this.SPACE_key.BackColor = System.Drawing.Color.White;
-            this.SPACE_key.BorderRadius = 20;
-            this.SPACE_key.Controls.Add(this.FUNC_SPACE);
-            this.SPACE_key.ForeColor = System.Drawing.Color.Black;
-            this.SPACE_key.Location = new System.Drawing.Point(184, 236);
-            this.SPACE_key.Name = "SPACE_key";
-            this.SPACE_key.Size = new System.Drawing.Size(422, 50);
-            this.SPACE_key.TabIndex = 0;
-            this.SPACE_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SPACE_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SPACE_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SPACE_key.BackColor = Color.White;
+            SPACE_key.BorderRadius = 20;
+            SPACE_key.Controls.Add(FUNC_SPACE);
+            SPACE_key.ForeColor = Color.Black;
+            SPACE_key.Location = new Point(184, 236);
+            SPACE_key.Name = "SPACE_key";
+            SPACE_key.Size = new Size(422, 50);
+            SPACE_key.TabIndex = 0;
+            SPACE_key.MouseEnter += DisplayCursorOverKeypresses;
+            SPACE_key.MouseLeave += HideCursorOverKeypresses;
+            SPACE_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_SPACE
             // 
-            this.FUNC_SPACE.AutoSize = true;
-            this.FUNC_SPACE.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_SPACE.Location = new System.Drawing.Point(170, 15);
-            this.FUNC_SPACE.Name = "FUNC_SPACE";
-            this.FUNC_SPACE.Size = new System.Drawing.Size(115, 21);
-            this.FUNC_SPACE.TabIndex = 0;
-            this.FUNC_SPACE.Text = "_______________";
-            this.FUNC_SPACE.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_SPACE.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_SPACE.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_SPACE.AutoSize = true;
+            FUNC_SPACE.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_SPACE.Location = new Point(170, 15);
+            FUNC_SPACE.Name = "FUNC_SPACE";
+            FUNC_SPACE.Size = new Size(115, 21);
+            FUNC_SPACE.TabIndex = 0;
+            FUNC_SPACE.Text = "_______________";
+            FUNC_SPACE.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_SPACE.MouseLeave += HideCursorOverKeypresses;
+            FUNC_SPACE.MouseMove += UpdateCursorLocation;
             // 
             // LALT_key
             // 
-            this.LALT_key.BackColor = System.Drawing.Color.White;
-            this.LALT_key.BorderRadius = 20;
-            this.LALT_key.Controls.Add(this.FUNC_LALT);
-            this.LALT_key.ForeColor = System.Drawing.Color.Black;
-            this.LALT_key.Location = new System.Drawing.Point(124, 236);
-            this.LALT_key.Name = "LALT_key";
-            this.LALT_key.Size = new System.Drawing.Size(50, 50);
-            this.LALT_key.TabIndex = 0;
-            this.LALT_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LALT_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LALT_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LALT_key.BackColor = Color.White;
+            LALT_key.BorderRadius = 20;
+            LALT_key.Controls.Add(FUNC_LALT);
+            LALT_key.ForeColor = Color.Black;
+            LALT_key.Location = new Point(124, 236);
+            LALT_key.Name = "LALT_key";
+            LALT_key.Size = new Size(50, 50);
+            LALT_key.TabIndex = 0;
+            LALT_key.MouseEnter += DisplayCursorOverKeypresses;
+            LALT_key.MouseLeave += HideCursorOverKeypresses;
+            LALT_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_LALT
             // 
-            this.FUNC_LALT.AutoSize = true;
-            this.FUNC_LALT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_LALT.Location = new System.Drawing.Point(7, 15);
-            this.FUNC_LALT.Name = "FUNC_LALT";
-            this.FUNC_LALT.Size = new System.Drawing.Size(37, 21);
-            this.FUNC_LALT.TabIndex = 0;
-            this.FUNC_LALT.Text = "ALT";
-            this.FUNC_LALT.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_LALT.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_LALT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_LALT.AutoSize = true;
+            FUNC_LALT.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_LALT.Location = new Point(7, 15);
+            FUNC_LALT.Name = "FUNC_LALT";
+            FUNC_LALT.Size = new Size(37, 21);
+            FUNC_LALT.TabIndex = 0;
+            FUNC_LALT.Text = "ALT";
+            FUNC_LALT.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_LALT.MouseLeave += HideCursorOverKeypresses;
+            FUNC_LALT.MouseMove += UpdateCursorLocation;
             // 
             // N_key
             // 
-            this.N_key.BackColor = System.Drawing.Color.White;
-            this.N_key.BorderRadius = 20;
-            this.N_key.Controls.Add(this.LETTER_N);
-            this.N_key.ForeColor = System.Drawing.Color.Black;
-            this.N_key.Location = new System.Drawing.Point(423, 180);
-            this.N_key.Name = "N_key";
-            this.N_key.Size = new System.Drawing.Size(50, 50);
-            this.N_key.TabIndex = 30;
-            this.N_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.N_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.N_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            N_key.BackColor = Color.White;
+            N_key.BorderRadius = 20;
+            N_key.Controls.Add(LETTER_N);
+            N_key.ForeColor = Color.Black;
+            N_key.Location = new Point(423, 180);
+            N_key.Name = "N_key";
+            N_key.Size = new Size(50, 50);
+            N_key.TabIndex = 30;
+            N_key.MouseEnter += DisplayCursorOverKeypresses;
+            N_key.MouseLeave += HideCursorOverKeypresses;
+            N_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_N
             // 
-            this.LETTER_N.AutoSize = true;
-            this.LETTER_N.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_N.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_N.Name = "LETTER_N";
-            this.LETTER_N.Size = new System.Drawing.Size(22, 21);
-            this.LETTER_N.TabIndex = 0;
-            this.LETTER_N.Text = "N";
-            this.LETTER_N.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_N.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_N.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_N.AutoSize = true;
+            LETTER_N.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_N.Location = new Point(15, 15);
+            LETTER_N.Name = "LETTER_N";
+            LETTER_N.Size = new Size(22, 21);
+            LETTER_N.TabIndex = 0;
+            LETTER_N.Text = "N";
+            LETTER_N.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_N.MouseLeave += HideCursorOverKeypresses;
+            LETTER_N.MouseMove += UpdateCursorLocation;
             // 
             // EMPTY_key
             // 
-            this.EMPTY_key.BackColor = System.Drawing.Color.White;
-            this.EMPTY_key.BorderRadius = 20;
-            this.EMPTY_key.Controls.Add(this.label65);
-            this.EMPTY_key.ForeColor = System.Drawing.Color.Black;
-            this.EMPTY_key.Location = new System.Drawing.Point(68, 236);
-            this.EMPTY_key.Name = "EMPTY_key";
-            this.EMPTY_key.Size = new System.Drawing.Size(50, 50);
-            this.EMPTY_key.TabIndex = 0;
+            EMPTY_key.BackColor = Color.White;
+            EMPTY_key.BorderRadius = 20;
+            EMPTY_key.Controls.Add(label65);
+            EMPTY_key.ForeColor = Color.Black;
+            EMPTY_key.Location = new Point(68, 236);
+            EMPTY_key.Name = "EMPTY_key";
+            EMPTY_key.Size = new Size(50, 50);
+            EMPTY_key.TabIndex = 0;
             // 
             // label65
             // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label65.Location = new System.Drawing.Point(7, 15);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(0, 21);
-            this.label65.TabIndex = 0;
+            label65.AutoSize = true;
+            label65.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label65.Location = new Point(7, 15);
+            label65.Name = "label65";
+            label65.Size = new Size(0, 21);
+            label65.TabIndex = 0;
             // 
             // K_key
             // 
-            this.K_key.BackColor = System.Drawing.Color.White;
-            this.K_key.BorderRadius = 20;
-            this.K_key.Controls.Add(this.LETTER_K);
-            this.K_key.ForeColor = System.Drawing.Color.Black;
-            this.K_key.Location = new System.Drawing.Point(494, 124);
-            this.K_key.Name = "K_key";
-            this.K_key.Size = new System.Drawing.Size(50, 50);
-            this.K_key.TabIndex = 17;
-            this.K_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.K_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.K_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            K_key.BackColor = Color.White;
+            K_key.BorderRadius = 20;
+            K_key.Controls.Add(LETTER_K);
+            K_key.ForeColor = Color.Black;
+            K_key.Location = new Point(494, 124);
+            K_key.Name = "K_key";
+            K_key.Size = new Size(50, 50);
+            K_key.TabIndex = 17;
+            K_key.MouseEnter += DisplayCursorOverKeypresses;
+            K_key.MouseLeave += HideCursorOverKeypresses;
+            K_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_K
             // 
-            this.LETTER_K.AutoSize = true;
-            this.LETTER_K.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_K.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_K.Name = "LETTER_K";
-            this.LETTER_K.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_K.TabIndex = 0;
-            this.LETTER_K.Text = "K";
-            this.LETTER_K.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_K.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_K.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_K.AutoSize = true;
+            LETTER_K.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_K.Location = new Point(15, 15);
+            LETTER_K.Name = "LETTER_K";
+            LETTER_K.Size = new Size(20, 21);
+            LETTER_K.TabIndex = 0;
+            LETTER_K.Text = "K";
+            LETTER_K.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_K.MouseLeave += HideCursorOverKeypresses;
+            LETTER_K.MouseMove += UpdateCursorLocation;
             // 
             // LCTRL_key
             // 
-            this.LCTRL_key.BackColor = System.Drawing.Color.White;
-            this.LCTRL_key.BorderRadius = 20;
-            this.LCTRL_key.Controls.Add(this.FUNC_LCTRL);
-            this.LCTRL_key.ForeColor = System.Drawing.Color.Black;
-            this.LCTRL_key.Location = new System.Drawing.Point(12, 236);
-            this.LCTRL_key.Name = "LCTRL_key";
-            this.LCTRL_key.Size = new System.Drawing.Size(50, 50);
-            this.LCTRL_key.TabIndex = 0;
-            this.LCTRL_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LCTRL_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LCTRL_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LCTRL_key.BackColor = Color.White;
+            LCTRL_key.BorderRadius = 20;
+            LCTRL_key.Controls.Add(FUNC_LCTRL);
+            LCTRL_key.ForeColor = Color.Black;
+            LCTRL_key.Location = new Point(12, 236);
+            LCTRL_key.Name = "LCTRL_key";
+            LCTRL_key.Size = new Size(50, 50);
+            LCTRL_key.TabIndex = 0;
+            LCTRL_key.MouseEnter += DisplayCursorOverKeypresses;
+            LCTRL_key.MouseLeave += HideCursorOverKeypresses;
+            LCTRL_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_LCTRL
             // 
-            this.FUNC_LCTRL.AutoSize = true;
-            this.FUNC_LCTRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_LCTRL.Location = new System.Drawing.Point(2, 15);
-            this.FUNC_LCTRL.Name = "FUNC_LCTRL";
-            this.FUNC_LCTRL.Size = new System.Drawing.Size(47, 21);
-            this.FUNC_LCTRL.TabIndex = 0;
-            this.FUNC_LCTRL.Text = "CTRL";
-            this.FUNC_LCTRL.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_LCTRL.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_LCTRL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_LCTRL.AutoSize = true;
+            FUNC_LCTRL.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_LCTRL.Location = new Point(2, 15);
+            FUNC_LCTRL.Name = "FUNC_LCTRL";
+            FUNC_LCTRL.Size = new Size(47, 21);
+            FUNC_LCTRL.TabIndex = 0;
+            FUNC_LCTRL.Text = "CTRL";
+            FUNC_LCTRL.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_LCTRL.MouseLeave += HideCursorOverKeypresses;
+            FUNC_LCTRL.MouseMove += UpdateCursorLocation;
             // 
             // B_key
             // 
-            this.B_key.BackColor = System.Drawing.Color.White;
-            this.B_key.BorderRadius = 20;
-            this.B_key.Controls.Add(this.LETTER_B);
-            this.B_key.ForeColor = System.Drawing.Color.Black;
-            this.B_key.Location = new System.Drawing.Point(367, 180);
-            this.B_key.Name = "B_key";
-            this.B_key.Size = new System.Drawing.Size(50, 50);
-            this.B_key.TabIndex = 31;
-            this.B_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.B_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.B_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            B_key.BackColor = Color.White;
+            B_key.BorderRadius = 20;
+            B_key.Controls.Add(LETTER_B);
+            B_key.ForeColor = Color.Black;
+            B_key.Location = new Point(367, 180);
+            B_key.Name = "B_key";
+            B_key.Size = new Size(50, 50);
+            B_key.TabIndex = 31;
+            B_key.MouseEnter += DisplayCursorOverKeypresses;
+            B_key.MouseLeave += HideCursorOverKeypresses;
+            B_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_B
             // 
-            this.LETTER_B.AutoSize = true;
-            this.LETTER_B.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_B.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_B.Name = "LETTER_B";
-            this.LETTER_B.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_B.TabIndex = 0;
-            this.LETTER_B.Text = "B";
-            this.LETTER_B.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_B.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_B.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_B.AutoSize = true;
+            LETTER_B.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_B.Location = new Point(15, 15);
+            LETTER_B.Name = "LETTER_B";
+            LETTER_B.Size = new Size(20, 21);
+            LETTER_B.TabIndex = 0;
+            LETTER_B.Text = "B";
+            LETTER_B.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_B.MouseLeave += HideCursorOverKeypresses;
+            LETTER_B.MouseMove += UpdateCursorLocation;
             // 
             // O_key
             // 
-            this.O_key.BackColor = System.Drawing.Color.White;
-            this.O_key.BorderRadius = 20;
-            this.O_key.Controls.Add(this.LETTER_O);
-            this.O_key.ForeColor = System.Drawing.Color.Black;
-            this.O_key.Location = new System.Drawing.Point(547, 68);
-            this.O_key.Name = "O_key";
-            this.O_key.Size = new System.Drawing.Size(50, 50);
-            this.O_key.TabIndex = 5;
-            this.O_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.O_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.O_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            O_key.BackColor = Color.White;
+            O_key.BorderRadius = 20;
+            O_key.Controls.Add(LETTER_O);
+            O_key.ForeColor = Color.Black;
+            O_key.Location = new Point(547, 68);
+            O_key.Name = "O_key";
+            O_key.Size = new Size(50, 50);
+            O_key.TabIndex = 5;
+            O_key.MouseEnter += DisplayCursorOverKeypresses;
+            O_key.MouseLeave += HideCursorOverKeypresses;
+            O_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_O
             // 
-            this.LETTER_O.AutoSize = true;
-            this.LETTER_O.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_O.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_O.Name = "LETTER_O";
-            this.LETTER_O.Size = new System.Drawing.Size(22, 21);
-            this.LETTER_O.TabIndex = 0;
-            this.LETTER_O.Text = "O";
-            this.LETTER_O.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_O.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_O.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_O.AutoSize = true;
+            LETTER_O.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_O.Location = new Point(15, 15);
+            LETTER_O.Name = "LETTER_O";
+            LETTER_O.Size = new Size(22, 21);
+            LETTER_O.TabIndex = 0;
+            LETTER_O.Text = "O";
+            LETTER_O.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_O.MouseLeave += HideCursorOverKeypresses;
+            LETTER_O.MouseMove += UpdateCursorLocation;
             // 
             // V_key
             // 
-            this.V_key.BackColor = System.Drawing.Color.White;
-            this.V_key.BorderRadius = 20;
-            this.V_key.Controls.Add(this.LETTER_V);
-            this.V_key.ForeColor = System.Drawing.Color.Black;
-            this.V_key.Location = new System.Drawing.Point(311, 180);
-            this.V_key.Name = "V_key";
-            this.V_key.Size = new System.Drawing.Size(50, 50);
-            this.V_key.TabIndex = 32;
-            this.V_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.V_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.V_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            V_key.BackColor = Color.White;
+            V_key.BorderRadius = 20;
+            V_key.Controls.Add(LETTER_V);
+            V_key.ForeColor = Color.Black;
+            V_key.Location = new Point(311, 180);
+            V_key.Name = "V_key";
+            V_key.Size = new Size(50, 50);
+            V_key.TabIndex = 32;
+            V_key.MouseEnter += DisplayCursorOverKeypresses;
+            V_key.MouseLeave += HideCursorOverKeypresses;
+            V_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_V
             // 
-            this.LETTER_V.AutoSize = true;
-            this.LETTER_V.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_V.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_V.Name = "LETTER_V";
-            this.LETTER_V.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_V.TabIndex = 0;
-            this.LETTER_V.Text = "V";
-            this.LETTER_V.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_V.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_V.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_V.AutoSize = true;
+            LETTER_V.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_V.Location = new Point(15, 15);
+            LETTER_V.Name = "LETTER_V";
+            LETTER_V.Size = new Size(20, 21);
+            LETTER_V.TabIndex = 0;
+            LETTER_V.Text = "V";
+            LETTER_V.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_V.MouseLeave += HideCursorOverKeypresses;
+            LETTER_V.MouseMove += UpdateCursorLocation;
             // 
             // J_key
             // 
-            this.J_key.BackColor = System.Drawing.Color.White;
-            this.J_key.BorderRadius = 20;
-            this.J_key.Controls.Add(this.LETTER_J);
-            this.J_key.ForeColor = System.Drawing.Color.Black;
-            this.J_key.Location = new System.Drawing.Point(438, 124);
-            this.J_key.Name = "J_key";
-            this.J_key.Size = new System.Drawing.Size(50, 50);
-            this.J_key.TabIndex = 18;
-            this.J_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.J_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.J_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            J_key.BackColor = Color.White;
+            J_key.BorderRadius = 20;
+            J_key.Controls.Add(LETTER_J);
+            J_key.ForeColor = Color.Black;
+            J_key.Location = new Point(438, 124);
+            J_key.Name = "J_key";
+            J_key.Size = new Size(50, 50);
+            J_key.TabIndex = 18;
+            J_key.MouseEnter += DisplayCursorOverKeypresses;
+            J_key.MouseLeave += HideCursorOverKeypresses;
+            J_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_J
             // 
-            this.LETTER_J.AutoSize = true;
-            this.LETTER_J.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_J.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_J.Name = "LETTER_J";
-            this.LETTER_J.Size = new System.Drawing.Size(16, 21);
-            this.LETTER_J.TabIndex = 0;
-            this.LETTER_J.Text = "J";
-            this.LETTER_J.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_J.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_J.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_J.AutoSize = true;
+            LETTER_J.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_J.Location = new Point(15, 15);
+            LETTER_J.Name = "LETTER_J";
+            LETTER_J.Size = new Size(16, 21);
+            LETTER_J.TabIndex = 0;
+            LETTER_J.Text = "J";
+            LETTER_J.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_J.MouseLeave += HideCursorOverKeypresses;
+            LETTER_J.MouseMove += UpdateCursorLocation;
             // 
             // C_key
             // 
-            this.C_key.BackColor = System.Drawing.Color.White;
-            this.C_key.BorderRadius = 20;
-            this.C_key.Controls.Add(this.LETTER_C);
-            this.C_key.ForeColor = System.Drawing.Color.Black;
-            this.C_key.Location = new System.Drawing.Point(255, 180);
-            this.C_key.Name = "C_key";
-            this.C_key.Size = new System.Drawing.Size(50, 50);
-            this.C_key.TabIndex = 33;
-            this.C_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.C_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.C_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            C_key.BackColor = Color.White;
+            C_key.BorderRadius = 20;
+            C_key.Controls.Add(LETTER_C);
+            C_key.ForeColor = Color.Black;
+            C_key.Location = new Point(255, 180);
+            C_key.Name = "C_key";
+            C_key.Size = new Size(50, 50);
+            C_key.TabIndex = 33;
+            C_key.MouseEnter += DisplayCursorOverKeypresses;
+            C_key.MouseLeave += HideCursorOverKeypresses;
+            C_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_C
             // 
-            this.LETTER_C.AutoSize = true;
-            this.LETTER_C.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_C.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_C.Name = "LETTER_C";
-            this.LETTER_C.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_C.TabIndex = 0;
-            this.LETTER_C.Text = "C";
-            this.LETTER_C.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_C.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_C.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_C.AutoSize = true;
+            LETTER_C.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_C.Location = new Point(15, 15);
+            LETTER_C.Name = "LETTER_C";
+            LETTER_C.Size = new Size(20, 21);
+            LETTER_C.TabIndex = 0;
+            LETTER_C.Text = "C";
+            LETTER_C.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_C.MouseLeave += HideCursorOverKeypresses;
+            LETTER_C.MouseMove += UpdateCursorLocation;
             // 
             // X_key
             // 
-            this.X_key.BackColor = System.Drawing.Color.White;
-            this.X_key.BorderRadius = 20;
-            this.X_key.Controls.Add(this.LETTER_X);
-            this.X_key.ForeColor = System.Drawing.Color.Black;
-            this.X_key.Location = new System.Drawing.Point(199, 180);
-            this.X_key.Name = "X_key";
-            this.X_key.Size = new System.Drawing.Size(50, 50);
-            this.X_key.TabIndex = 34;
-            this.X_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.X_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.X_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            X_key.BackColor = Color.White;
+            X_key.BorderRadius = 20;
+            X_key.Controls.Add(LETTER_X);
+            X_key.ForeColor = Color.Black;
+            X_key.Location = new Point(199, 180);
+            X_key.Name = "X_key";
+            X_key.Size = new Size(50, 50);
+            X_key.TabIndex = 34;
+            X_key.MouseEnter += DisplayCursorOverKeypresses;
+            X_key.MouseLeave += HideCursorOverKeypresses;
+            X_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_X
             // 
-            this.LETTER_X.AutoSize = true;
-            this.LETTER_X.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_X.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_X.Name = "LETTER_X";
-            this.LETTER_X.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_X.TabIndex = 0;
-            this.LETTER_X.Text = "X";
-            this.LETTER_X.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_X.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_X.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_X.AutoSize = true;
+            LETTER_X.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_X.Location = new Point(15, 15);
+            LETTER_X.Name = "LETTER_X";
+            LETTER_X.Size = new Size(20, 21);
+            LETTER_X.TabIndex = 0;
+            LETTER_X.Text = "X";
+            LETTER_X.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_X.MouseLeave += HideCursorOverKeypresses;
+            LETTER_X.MouseMove += UpdateCursorLocation;
             // 
             // H_key
             // 
-            this.H_key.BackColor = System.Drawing.Color.White;
-            this.H_key.BorderRadius = 20;
-            this.H_key.Controls.Add(this.LETTER_H);
-            this.H_key.ForeColor = System.Drawing.Color.Black;
-            this.H_key.Location = new System.Drawing.Point(382, 124);
-            this.H_key.Name = "H_key";
-            this.H_key.Size = new System.Drawing.Size(50, 50);
-            this.H_key.TabIndex = 19;
-            this.H_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.H_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.H_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            H_key.BackColor = Color.White;
+            H_key.BorderRadius = 20;
+            H_key.Controls.Add(LETTER_H);
+            H_key.ForeColor = Color.Black;
+            H_key.Location = new Point(382, 124);
+            H_key.Name = "H_key";
+            H_key.Size = new Size(50, 50);
+            H_key.TabIndex = 19;
+            H_key.MouseEnter += DisplayCursorOverKeypresses;
+            H_key.MouseLeave += HideCursorOverKeypresses;
+            H_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_H
             // 
-            this.LETTER_H.AutoSize = true;
-            this.LETTER_H.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_H.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_H.Name = "LETTER_H";
-            this.LETTER_H.Size = new System.Drawing.Size(22, 21);
-            this.LETTER_H.TabIndex = 0;
-            this.LETTER_H.Text = "H";
-            this.LETTER_H.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_H.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_H.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_H.AutoSize = true;
+            LETTER_H.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_H.Location = new Point(15, 15);
+            LETTER_H.Name = "LETTER_H";
+            LETTER_H.Size = new Size(22, 21);
+            LETTER_H.TabIndex = 0;
+            LETTER_H.Text = "H";
+            LETTER_H.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_H.MouseLeave += HideCursorOverKeypresses;
+            LETTER_H.MouseMove += UpdateCursorLocation;
             // 
             // Z_key
             // 
-            this.Z_key.BackColor = System.Drawing.Color.White;
-            this.Z_key.BorderRadius = 20;
-            this.Z_key.Controls.Add(this.LETTER_Z);
-            this.Z_key.ForeColor = System.Drawing.Color.Black;
-            this.Z_key.Location = new System.Drawing.Point(143, 180);
-            this.Z_key.Name = "Z_key";
-            this.Z_key.Size = new System.Drawing.Size(50, 50);
-            this.Z_key.TabIndex = 35;
-            this.Z_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.Z_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.Z_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            Z_key.BackColor = Color.White;
+            Z_key.BorderRadius = 20;
+            Z_key.Controls.Add(LETTER_Z);
+            Z_key.ForeColor = Color.Black;
+            Z_key.Location = new Point(143, 180);
+            Z_key.Name = "Z_key";
+            Z_key.Size = new Size(50, 50);
+            Z_key.TabIndex = 35;
+            Z_key.MouseEnter += DisplayCursorOverKeypresses;
+            Z_key.MouseLeave += HideCursorOverKeypresses;
+            Z_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_Z
             // 
-            this.LETTER_Z.AutoSize = true;
-            this.LETTER_Z.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_Z.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_Z.Name = "LETTER_Z";
-            this.LETTER_Z.Size = new System.Drawing.Size(19, 21);
-            this.LETTER_Z.TabIndex = 0;
-            this.LETTER_Z.Text = "Z";
-            this.LETTER_Z.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_Z.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_Z.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_Z.AutoSize = true;
+            LETTER_Z.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_Z.Location = new Point(15, 15);
+            LETTER_Z.Name = "LETTER_Z";
+            LETTER_Z.Size = new Size(19, 21);
+            LETTER_Z.TabIndex = 0;
+            LETTER_Z.Text = "Z";
+            LETTER_Z.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_Z.MouseLeave += HideCursorOverKeypresses;
+            LETTER_Z.MouseMove += UpdateCursorLocation;
             // 
             // I_key
             // 
-            this.I_key.BackColor = System.Drawing.Color.White;
-            this.I_key.BorderRadius = 20;
-            this.I_key.Controls.Add(this.LETTER_I);
-            this.I_key.ForeColor = System.Drawing.Color.Black;
-            this.I_key.Location = new System.Drawing.Point(491, 68);
-            this.I_key.Name = "I_key";
-            this.I_key.Size = new System.Drawing.Size(50, 50);
-            this.I_key.TabIndex = 6;
-            this.I_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.I_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.I_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            I_key.BackColor = Color.White;
+            I_key.BorderRadius = 20;
+            I_key.Controls.Add(LETTER_I);
+            I_key.ForeColor = Color.Black;
+            I_key.Location = new Point(491, 68);
+            I_key.Name = "I_key";
+            I_key.Size = new Size(50, 50);
+            I_key.TabIndex = 6;
+            I_key.MouseEnter += DisplayCursorOverKeypresses;
+            I_key.MouseLeave += HideCursorOverKeypresses;
+            I_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_I
             // 
-            this.LETTER_I.AutoSize = true;
-            this.LETTER_I.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_I.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_I.Name = "LETTER_I";
-            this.LETTER_I.Size = new System.Drawing.Size(15, 21);
-            this.LETTER_I.TabIndex = 0;
-            this.LETTER_I.Text = "I";
-            this.LETTER_I.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_I.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_I.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_I.AutoSize = true;
+            LETTER_I.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_I.Location = new Point(15, 15);
+            LETTER_I.Name = "LETTER_I";
+            LETTER_I.Size = new Size(15, 21);
+            LETTER_I.TabIndex = 0;
+            LETTER_I.Text = "I";
+            LETTER_I.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_I.MouseLeave += HideCursorOverKeypresses;
+            LETTER_I.MouseMove += UpdateCursorLocation;
             // 
             // LSHIFT_key
             // 
-            this.LSHIFT_key.BackColor = System.Drawing.Color.White;
-            this.LSHIFT_key.BorderRadius = 20;
-            this.LSHIFT_key.Controls.Add(this.FUNC_LSHIFT);
-            this.LSHIFT_key.ForeColor = System.Drawing.Color.Black;
-            this.LSHIFT_key.Location = new System.Drawing.Point(12, 180);
-            this.LSHIFT_key.Name = "LSHIFT_key";
-            this.LSHIFT_key.Size = new System.Drawing.Size(125, 50);
-            this.LSHIFT_key.TabIndex = 25;
-            this.LSHIFT_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LSHIFT_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LSHIFT_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LSHIFT_key.BackColor = Color.White;
+            LSHIFT_key.BorderRadius = 20;
+            LSHIFT_key.Controls.Add(FUNC_LSHIFT);
+            LSHIFT_key.ForeColor = Color.Black;
+            LSHIFT_key.Location = new Point(12, 180);
+            LSHIFT_key.Name = "LSHIFT_key";
+            LSHIFT_key.Size = new Size(125, 50);
+            LSHIFT_key.TabIndex = 25;
+            LSHIFT_key.MouseEnter += DisplayCursorOverKeypresses;
+            LSHIFT_key.MouseLeave += HideCursorOverKeypresses;
+            LSHIFT_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_LSHIFT
             // 
-            this.FUNC_LSHIFT.AutoSize = true;
-            this.FUNC_LSHIFT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_LSHIFT.Location = new System.Drawing.Point(35, 15);
-            this.FUNC_LSHIFT.Name = "FUNC_LSHIFT";
-            this.FUNC_LSHIFT.Size = new System.Drawing.Size(53, 21);
-            this.FUNC_LSHIFT.TabIndex = 0;
-            this.FUNC_LSHIFT.Text = "SHIFT";
-            this.FUNC_LSHIFT.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_LSHIFT.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_LSHIFT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_LSHIFT.AutoSize = true;
+            FUNC_LSHIFT.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_LSHIFT.Location = new Point(35, 15);
+            FUNC_LSHIFT.Name = "FUNC_LSHIFT";
+            FUNC_LSHIFT.Size = new Size(53, 21);
+            FUNC_LSHIFT.TabIndex = 0;
+            FUNC_LSHIFT.Text = "SHIFT";
+            FUNC_LSHIFT.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_LSHIFT.MouseLeave += HideCursorOverKeypresses;
+            FUNC_LSHIFT.MouseMove += UpdateCursorLocation;
             // 
             // G_key
             // 
-            this.G_key.BackColor = System.Drawing.Color.White;
-            this.G_key.BorderRadius = 20;
-            this.G_key.Controls.Add(this.LETTER_G);
-            this.G_key.ForeColor = System.Drawing.Color.Black;
-            this.G_key.Location = new System.Drawing.Point(326, 124);
-            this.G_key.Name = "G_key";
-            this.G_key.Size = new System.Drawing.Size(50, 50);
-            this.G_key.TabIndex = 20;
-            this.G_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.G_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.G_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            G_key.BackColor = Color.White;
+            G_key.BorderRadius = 20;
+            G_key.Controls.Add(LETTER_G);
+            G_key.ForeColor = Color.Black;
+            G_key.Location = new Point(326, 124);
+            G_key.Name = "G_key";
+            G_key.Size = new Size(50, 50);
+            G_key.TabIndex = 20;
+            G_key.MouseEnter += DisplayCursorOverKeypresses;
+            G_key.MouseLeave += HideCursorOverKeypresses;
+            G_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_G
             // 
-            this.LETTER_G.AutoSize = true;
-            this.LETTER_G.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_G.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_G.Name = "LETTER_G";
-            this.LETTER_G.Size = new System.Drawing.Size(21, 21);
-            this.LETTER_G.TabIndex = 0;
-            this.LETTER_G.Text = "G";
-            this.LETTER_G.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_G.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_G.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_G.AutoSize = true;
+            LETTER_G.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_G.Location = new Point(15, 15);
+            LETTER_G.Name = "LETTER_G";
+            LETTER_G.Size = new Size(21, 21);
+            LETTER_G.TabIndex = 0;
+            LETTER_G.Text = "G";
+            LETTER_G.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_G.MouseLeave += HideCursorOverKeypresses;
+            LETTER_G.MouseMove += UpdateCursorLocation;
             // 
             // F_key
             // 
-            this.F_key.BackColor = System.Drawing.Color.White;
-            this.F_key.BorderRadius = 20;
-            this.F_key.Controls.Add(this.LETTER_F);
-            this.F_key.ForeColor = System.Drawing.Color.Black;
-            this.F_key.Location = new System.Drawing.Point(270, 124);
-            this.F_key.Name = "F_key";
-            this.F_key.Size = new System.Drawing.Size(50, 50);
-            this.F_key.TabIndex = 21;
-            this.F_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.F_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.F_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            F_key.BackColor = Color.White;
+            F_key.BorderRadius = 20;
+            F_key.Controls.Add(LETTER_F);
+            F_key.ForeColor = Color.Black;
+            F_key.Location = new Point(270, 124);
+            F_key.Name = "F_key";
+            F_key.Size = new Size(50, 50);
+            F_key.TabIndex = 21;
+            F_key.MouseEnter += DisplayCursorOverKeypresses;
+            F_key.MouseLeave += HideCursorOverKeypresses;
+            F_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_F
             // 
-            this.LETTER_F.AutoSize = true;
-            this.LETTER_F.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_F.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_F.Name = "LETTER_F";
-            this.LETTER_F.Size = new System.Drawing.Size(18, 21);
-            this.LETTER_F.TabIndex = 0;
-            this.LETTER_F.Text = "F";
-            this.LETTER_F.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_F.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_F.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_F.AutoSize = true;
+            LETTER_F.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_F.Location = new Point(15, 15);
+            LETTER_F.Name = "LETTER_F";
+            LETTER_F.Size = new Size(18, 21);
+            LETTER_F.TabIndex = 0;
+            LETTER_F.Text = "F";
+            LETTER_F.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_F.MouseLeave += HideCursorOverKeypresses;
+            LETTER_F.MouseMove += UpdateCursorLocation;
             // 
             // U_key
             // 
-            this.U_key.BackColor = System.Drawing.Color.White;
-            this.U_key.BorderRadius = 20;
-            this.U_key.Controls.Add(this.LETTER_U);
-            this.U_key.ForeColor = System.Drawing.Color.Black;
-            this.U_key.Location = new System.Drawing.Point(435, 68);
-            this.U_key.Name = "U_key";
-            this.U_key.Size = new System.Drawing.Size(50, 50);
-            this.U_key.TabIndex = 7;
-            this.U_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.U_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.U_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            U_key.BackColor = Color.White;
+            U_key.BorderRadius = 20;
+            U_key.Controls.Add(LETTER_U);
+            U_key.ForeColor = Color.Black;
+            U_key.Location = new Point(435, 68);
+            U_key.Name = "U_key";
+            U_key.Size = new Size(50, 50);
+            U_key.TabIndex = 7;
+            U_key.MouseEnter += DisplayCursorOverKeypresses;
+            U_key.MouseLeave += HideCursorOverKeypresses;
+            U_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_U
             // 
-            this.LETTER_U.AutoSize = true;
-            this.LETTER_U.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_U.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_U.Name = "LETTER_U";
-            this.LETTER_U.Size = new System.Drawing.Size(21, 21);
-            this.LETTER_U.TabIndex = 0;
-            this.LETTER_U.Text = "U";
-            this.LETTER_U.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_U.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_U.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_U.AutoSize = true;
+            LETTER_U.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_U.Location = new Point(15, 15);
+            LETTER_U.Name = "LETTER_U";
+            LETTER_U.Size = new Size(21, 21);
+            LETTER_U.TabIndex = 0;
+            LETTER_U.Text = "U";
+            LETTER_U.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_U.MouseLeave += HideCursorOverKeypresses;
+            LETTER_U.MouseMove += UpdateCursorLocation;
             // 
             // D_key
             // 
-            this.D_key.BackColor = System.Drawing.Color.White;
-            this.D_key.BorderRadius = 20;
-            this.D_key.Controls.Add(this.LETTER_D);
-            this.D_key.ForeColor = System.Drawing.Color.Black;
-            this.D_key.Location = new System.Drawing.Point(214, 124);
-            this.D_key.Name = "D_key";
-            this.D_key.Size = new System.Drawing.Size(50, 50);
-            this.D_key.TabIndex = 22;
-            this.D_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.D_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.D_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            D_key.BackColor = Color.White;
+            D_key.BorderRadius = 20;
+            D_key.Controls.Add(LETTER_D);
+            D_key.ForeColor = Color.Black;
+            D_key.Location = new Point(214, 124);
+            D_key.Name = "D_key";
+            D_key.Size = new Size(50, 50);
+            D_key.TabIndex = 22;
+            D_key.MouseEnter += DisplayCursorOverKeypresses;
+            D_key.MouseLeave += HideCursorOverKeypresses;
+            D_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_D
             // 
-            this.LETTER_D.AutoSize = true;
-            this.LETTER_D.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_D.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_D.Name = "LETTER_D";
-            this.LETTER_D.Size = new System.Drawing.Size(21, 21);
-            this.LETTER_D.TabIndex = 0;
-            this.LETTER_D.Text = "D";
-            this.LETTER_D.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_D.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_D.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_D.AutoSize = true;
+            LETTER_D.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_D.Location = new Point(15, 15);
+            LETTER_D.Name = "LETTER_D";
+            LETTER_D.Size = new Size(21, 21);
+            LETTER_D.TabIndex = 0;
+            LETTER_D.Text = "D";
+            LETTER_D.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_D.MouseLeave += HideCursorOverKeypresses;
+            LETTER_D.MouseMove += UpdateCursorLocation;
             // 
             // S_key
             // 
-            this.S_key.BackColor = System.Drawing.Color.White;
-            this.S_key.BorderRadius = 20;
-            this.S_key.Controls.Add(this.LETTER_S);
-            this.S_key.ForeColor = System.Drawing.Color.Black;
-            this.S_key.Location = new System.Drawing.Point(158, 124);
-            this.S_key.Name = "S_key";
-            this.S_key.Size = new System.Drawing.Size(50, 50);
-            this.S_key.TabIndex = 23;
-            this.S_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.S_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.S_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            S_key.BackColor = Color.White;
+            S_key.BorderRadius = 20;
+            S_key.Controls.Add(LETTER_S);
+            S_key.ForeColor = Color.Black;
+            S_key.Location = new Point(158, 124);
+            S_key.Name = "S_key";
+            S_key.Size = new Size(50, 50);
+            S_key.TabIndex = 23;
+            S_key.MouseEnter += DisplayCursorOverKeypresses;
+            S_key.MouseLeave += HideCursorOverKeypresses;
+            S_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_S
             // 
-            this.LETTER_S.AutoSize = true;
-            this.LETTER_S.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_S.Location = new System.Drawing.Point(16, 15);
-            this.LETTER_S.Name = "LETTER_S";
-            this.LETTER_S.Size = new System.Drawing.Size(19, 21);
-            this.LETTER_S.TabIndex = 0;
-            this.LETTER_S.Text = "S";
-            this.LETTER_S.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_S.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_S.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_S.AutoSize = true;
+            LETTER_S.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_S.Location = new Point(16, 15);
+            LETTER_S.Name = "LETTER_S";
+            LETTER_S.Size = new Size(19, 21);
+            LETTER_S.TabIndex = 0;
+            LETTER_S.Text = "S";
+            LETTER_S.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_S.MouseLeave += HideCursorOverKeypresses;
+            LETTER_S.MouseMove += UpdateCursorLocation;
             // 
             // Y_key
             // 
-            this.Y_key.BackColor = System.Drawing.Color.White;
-            this.Y_key.BorderRadius = 20;
-            this.Y_key.Controls.Add(this.LETTER_Y);
-            this.Y_key.ForeColor = System.Drawing.Color.Black;
-            this.Y_key.Location = new System.Drawing.Point(379, 68);
-            this.Y_key.Name = "Y_key";
-            this.Y_key.Size = new System.Drawing.Size(50, 50);
-            this.Y_key.TabIndex = 8;
-            this.Y_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.Y_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.Y_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            Y_key.BackColor = Color.White;
+            Y_key.BorderRadius = 20;
+            Y_key.Controls.Add(LETTER_Y);
+            Y_key.ForeColor = Color.Black;
+            Y_key.Location = new Point(379, 68);
+            Y_key.Name = "Y_key";
+            Y_key.Size = new Size(50, 50);
+            Y_key.TabIndex = 8;
+            Y_key.MouseEnter += DisplayCursorOverKeypresses;
+            Y_key.MouseLeave += HideCursorOverKeypresses;
+            Y_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_Y
             // 
-            this.LETTER_Y.AutoSize = true;
-            this.LETTER_Y.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_Y.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_Y.Name = "LETTER_Y";
-            this.LETTER_Y.Size = new System.Drawing.Size(19, 21);
-            this.LETTER_Y.TabIndex = 0;
-            this.LETTER_Y.Text = "Y";
-            this.LETTER_Y.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_Y.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_Y.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_Y.AutoSize = true;
+            LETTER_Y.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_Y.Location = new Point(15, 15);
+            LETTER_Y.Name = "LETTER_Y";
+            LETTER_Y.Size = new Size(19, 21);
+            LETTER_Y.TabIndex = 0;
+            LETTER_Y.Text = "Y";
+            LETTER_Y.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_Y.MouseLeave += HideCursorOverKeypresses;
+            LETTER_Y.MouseMove += UpdateCursorLocation;
             // 
             // A_key
             // 
-            this.A_key.BackColor = System.Drawing.Color.White;
-            this.A_key.BorderRadius = 20;
-            this.A_key.Controls.Add(this.LETTER_A);
-            this.A_key.ForeColor = System.Drawing.Color.Black;
-            this.A_key.Location = new System.Drawing.Point(102, 124);
-            this.A_key.Name = "A_key";
-            this.A_key.Size = new System.Drawing.Size(50, 50);
-            this.A_key.TabIndex = 24;
-            this.A_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.A_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.A_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            A_key.BackColor = Color.White;
+            A_key.BorderRadius = 20;
+            A_key.Controls.Add(LETTER_A);
+            A_key.ForeColor = Color.Black;
+            A_key.Location = new Point(102, 124);
+            A_key.Name = "A_key";
+            A_key.Size = new Size(50, 50);
+            A_key.TabIndex = 24;
+            A_key.MouseEnter += DisplayCursorOverKeypresses;
+            A_key.MouseLeave += HideCursorOverKeypresses;
+            A_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_A
             // 
-            this.LETTER_A.AutoSize = true;
-            this.LETTER_A.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_A.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_A.Name = "LETTER_A";
-            this.LETTER_A.Size = new System.Drawing.Size(21, 21);
-            this.LETTER_A.TabIndex = 0;
-            this.LETTER_A.Text = "A";
-            this.LETTER_A.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_A.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_A.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_A.AutoSize = true;
+            LETTER_A.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_A.Location = new Point(15, 15);
+            LETTER_A.Name = "LETTER_A";
+            LETTER_A.Size = new Size(21, 21);
+            LETTER_A.TabIndex = 0;
+            LETTER_A.Text = "A";
+            LETTER_A.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_A.MouseLeave += HideCursorOverKeypresses;
+            LETTER_A.MouseMove += UpdateCursorLocation;
             // 
             // CAPS_key
             // 
-            this.CAPS_key.BackColor = System.Drawing.Color.White;
-            this.CAPS_key.BorderRadius = 20;
-            this.CAPS_key.Controls.Add(this.FUNC_CAPSLK);
-            this.CAPS_key.ForeColor = System.Drawing.Color.Black;
-            this.CAPS_key.Location = new System.Drawing.Point(12, 124);
-            this.CAPS_key.Name = "CAPS_key";
-            this.CAPS_key.Size = new System.Drawing.Size(84, 50);
-            this.CAPS_key.TabIndex = 14;
-            this.CAPS_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.CAPS_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.CAPS_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            CAPS_key.BackColor = Color.White;
+            CAPS_key.BorderRadius = 20;
+            CAPS_key.Controls.Add(FUNC_CAPSLK);
+            CAPS_key.ForeColor = Color.Black;
+            CAPS_key.Location = new Point(12, 124);
+            CAPS_key.Name = "CAPS_key";
+            CAPS_key.Size = new Size(84, 50);
+            CAPS_key.TabIndex = 14;
+            CAPS_key.MouseEnter += DisplayCursorOverKeypresses;
+            CAPS_key.MouseLeave += HideCursorOverKeypresses;
+            CAPS_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_CAPSLK
             // 
-            this.FUNC_CAPSLK.AutoSize = true;
-            this.FUNC_CAPSLK.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_CAPSLK.Location = new System.Drawing.Point(8, 15);
-            this.FUNC_CAPSLK.Name = "FUNC_CAPSLK";
-            this.FUNC_CAPSLK.Size = new System.Drawing.Size(67, 21);
-            this.FUNC_CAPSLK.TabIndex = 0;
-            this.FUNC_CAPSLK.Text = "CAPSLK";
-            this.FUNC_CAPSLK.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_CAPSLK.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_CAPSLK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_CAPSLK.AutoSize = true;
+            FUNC_CAPSLK.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_CAPSLK.Location = new Point(8, 15);
+            FUNC_CAPSLK.Name = "FUNC_CAPSLK";
+            FUNC_CAPSLK.Size = new Size(67, 21);
+            FUNC_CAPSLK.TabIndex = 0;
+            FUNC_CAPSLK.Text = "CAPSLK";
+            FUNC_CAPSLK.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_CAPSLK.MouseLeave += HideCursorOverKeypresses;
+            FUNC_CAPSLK.MouseMove += UpdateCursorLocation;
             // 
             // T_key
             // 
-            this.T_key.BackColor = System.Drawing.Color.White;
-            this.T_key.BorderRadius = 20;
-            this.T_key.Controls.Add(this.LETTER_T);
-            this.T_key.ForeColor = System.Drawing.Color.Black;
-            this.T_key.Location = new System.Drawing.Point(323, 68);
-            this.T_key.Name = "T_key";
-            this.T_key.Size = new System.Drawing.Size(50, 50);
-            this.T_key.TabIndex = 9;
-            this.T_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.T_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.T_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            T_key.BackColor = Color.White;
+            T_key.BorderRadius = 20;
+            T_key.Controls.Add(LETTER_T);
+            T_key.ForeColor = Color.Black;
+            T_key.Location = new Point(323, 68);
+            T_key.Name = "T_key";
+            T_key.Size = new Size(50, 50);
+            T_key.TabIndex = 9;
+            T_key.MouseEnter += DisplayCursorOverKeypresses;
+            T_key.MouseLeave += HideCursorOverKeypresses;
+            T_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_T
             // 
-            this.LETTER_T.AutoSize = true;
-            this.LETTER_T.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_T.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_T.Name = "LETTER_T";
-            this.LETTER_T.Size = new System.Drawing.Size(19, 21);
-            this.LETTER_T.TabIndex = 0;
-            this.LETTER_T.Text = "T";
-            this.LETTER_T.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_T.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_T.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_T.AutoSize = true;
+            LETTER_T.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_T.Location = new Point(15, 15);
+            LETTER_T.Name = "LETTER_T";
+            LETTER_T.Size = new Size(19, 21);
+            LETTER_T.TabIndex = 0;
+            LETTER_T.Text = "T";
+            LETTER_T.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_T.MouseLeave += HideCursorOverKeypresses;
+            LETTER_T.MouseMove += UpdateCursorLocation;
             // 
             // R_key
             // 
-            this.R_key.BackColor = System.Drawing.Color.White;
-            this.R_key.BorderRadius = 20;
-            this.R_key.Controls.Add(this.LETTER_R);
-            this.R_key.ForeColor = System.Drawing.Color.Black;
-            this.R_key.Location = new System.Drawing.Point(267, 68);
-            this.R_key.Name = "R_key";
-            this.R_key.Size = new System.Drawing.Size(50, 50);
-            this.R_key.TabIndex = 10;
-            this.R_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.R_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.R_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            R_key.BackColor = Color.White;
+            R_key.BorderRadius = 20;
+            R_key.Controls.Add(LETTER_R);
+            R_key.ForeColor = Color.Black;
+            R_key.Location = new Point(267, 68);
+            R_key.Name = "R_key";
+            R_key.Size = new Size(50, 50);
+            R_key.TabIndex = 10;
+            R_key.MouseEnter += DisplayCursorOverKeypresses;
+            R_key.MouseLeave += HideCursorOverKeypresses;
+            R_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_R
             // 
-            this.LETTER_R.AutoSize = true;
-            this.LETTER_R.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_R.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_R.Name = "LETTER_R";
-            this.LETTER_R.Size = new System.Drawing.Size(20, 21);
-            this.LETTER_R.TabIndex = 0;
-            this.LETTER_R.Text = "R";
-            this.LETTER_R.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_R.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_R.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_R.AutoSize = true;
+            LETTER_R.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_R.Location = new Point(15, 15);
+            LETTER_R.Name = "LETTER_R";
+            LETTER_R.Size = new Size(20, 21);
+            LETTER_R.TabIndex = 0;
+            LETTER_R.Text = "R";
+            LETTER_R.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_R.MouseLeave += HideCursorOverKeypresses;
+            LETTER_R.MouseMove += UpdateCursorLocation;
             // 
             // E_key
             // 
-            this.E_key.BackColor = System.Drawing.Color.White;
-            this.E_key.BorderRadius = 20;
-            this.E_key.Controls.Add(this.LETTER_E);
-            this.E_key.ForeColor = System.Drawing.Color.Black;
-            this.E_key.Location = new System.Drawing.Point(211, 68);
-            this.E_key.Name = "E_key";
-            this.E_key.Size = new System.Drawing.Size(50, 50);
-            this.E_key.TabIndex = 11;
-            this.E_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.E_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.E_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            E_key.BackColor = Color.White;
+            E_key.BorderRadius = 20;
+            E_key.Controls.Add(LETTER_E);
+            E_key.ForeColor = Color.Black;
+            E_key.Location = new Point(211, 68);
+            E_key.Name = "E_key";
+            E_key.Size = new Size(50, 50);
+            E_key.TabIndex = 11;
+            E_key.MouseEnter += DisplayCursorOverKeypresses;
+            E_key.MouseLeave += HideCursorOverKeypresses;
+            E_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_E
             // 
-            this.LETTER_E.AutoSize = true;
-            this.LETTER_E.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_E.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_E.Name = "LETTER_E";
-            this.LETTER_E.Size = new System.Drawing.Size(18, 21);
-            this.LETTER_E.TabIndex = 0;
-            this.LETTER_E.Text = "E";
-            this.LETTER_E.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_E.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_E.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_E.AutoSize = true;
+            LETTER_E.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_E.Location = new Point(15, 15);
+            LETTER_E.Name = "LETTER_E";
+            LETTER_E.Size = new Size(18, 21);
+            LETTER_E.TabIndex = 0;
+            LETTER_E.Text = "E";
+            LETTER_E.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_E.MouseLeave += HideCursorOverKeypresses;
+            LETTER_E.MouseMove += UpdateCursorLocation;
             // 
             // W_key
             // 
-            this.W_key.BackColor = System.Drawing.Color.White;
-            this.W_key.BorderRadius = 20;
-            this.W_key.Controls.Add(this.LETTER_W);
-            this.W_key.ForeColor = System.Drawing.Color.Black;
-            this.W_key.Location = new System.Drawing.Point(155, 68);
-            this.W_key.Name = "W_key";
-            this.W_key.Size = new System.Drawing.Size(50, 50);
-            this.W_key.TabIndex = 12;
-            this.W_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.W_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.W_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            W_key.BackColor = Color.White;
+            W_key.BorderRadius = 20;
+            W_key.Controls.Add(LETTER_W);
+            W_key.ForeColor = Color.Black;
+            W_key.Location = new Point(155, 68);
+            W_key.Name = "W_key";
+            W_key.Size = new Size(50, 50);
+            W_key.TabIndex = 12;
+            W_key.MouseEnter += DisplayCursorOverKeypresses;
+            W_key.MouseLeave += HideCursorOverKeypresses;
+            W_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_W
             // 
-            this.LETTER_W.AutoSize = true;
-            this.LETTER_W.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_W.Location = new System.Drawing.Point(14, 15);
-            this.LETTER_W.Name = "LETTER_W";
-            this.LETTER_W.Size = new System.Drawing.Size(25, 21);
-            this.LETTER_W.TabIndex = 0;
-            this.LETTER_W.Text = "W";
-            this.LETTER_W.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_W.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_W.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_W.AutoSize = true;
+            LETTER_W.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_W.Location = new Point(14, 15);
+            LETTER_W.Name = "LETTER_W";
+            LETTER_W.Size = new Size(25, 21);
+            LETTER_W.TabIndex = 0;
+            LETTER_W.Text = "W";
+            LETTER_W.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_W.MouseLeave += HideCursorOverKeypresses;
+            LETTER_W.MouseMove += UpdateCursorLocation;
             // 
             // Q_key
             // 
-            this.Q_key.BackColor = System.Drawing.Color.White;
-            this.Q_key.BorderRadius = 20;
-            this.Q_key.Controls.Add(this.LETTER_Q);
-            this.Q_key.ForeColor = System.Drawing.Color.Black;
-            this.Q_key.Location = new System.Drawing.Point(99, 68);
-            this.Q_key.Name = "Q_key";
-            this.Q_key.Size = new System.Drawing.Size(50, 50);
-            this.Q_key.TabIndex = 13;
-            this.Q_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.Q_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.Q_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            Q_key.BackColor = Color.White;
+            Q_key.BorderRadius = 20;
+            Q_key.Controls.Add(LETTER_Q);
+            Q_key.ForeColor = Color.Black;
+            Q_key.Location = new Point(99, 68);
+            Q_key.Name = "Q_key";
+            Q_key.Size = new Size(50, 50);
+            Q_key.TabIndex = 13;
+            Q_key.MouseEnter += DisplayCursorOverKeypresses;
+            Q_key.MouseLeave += HideCursorOverKeypresses;
+            Q_key.MouseMove += UpdateCursorLocation;
             // 
             // LETTER_Q
             // 
-            this.LETTER_Q.AutoSize = true;
-            this.LETTER_Q.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LETTER_Q.Location = new System.Drawing.Point(15, 15);
-            this.LETTER_Q.Name = "LETTER_Q";
-            this.LETTER_Q.Size = new System.Drawing.Size(22, 21);
-            this.LETTER_Q.TabIndex = 0;
-            this.LETTER_Q.Text = "Q";
-            this.LETTER_Q.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.LETTER_Q.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.LETTER_Q.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            LETTER_Q.AutoSize = true;
+            LETTER_Q.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LETTER_Q.Location = new Point(15, 15);
+            LETTER_Q.Name = "LETTER_Q";
+            LETTER_Q.Size = new Size(22, 21);
+            LETTER_Q.TabIndex = 0;
+            LETTER_Q.Text = "Q";
+            LETTER_Q.MouseEnter += DisplayCursorOverKeypresses;
+            LETTER_Q.MouseLeave += HideCursorOverKeypresses;
+            LETTER_Q.MouseMove += UpdateCursorLocation;
             // 
             // TAB_key
             // 
-            this.TAB_key.BackColor = System.Drawing.Color.White;
-            this.TAB_key.BorderRadius = 20;
-            this.TAB_key.Controls.Add(this.FUNC_TAB);
-            this.TAB_key.ForeColor = System.Drawing.Color.Black;
-            this.TAB_key.Location = new System.Drawing.Point(12, 68);
-            this.TAB_key.Name = "TAB_key";
-            this.TAB_key.Size = new System.Drawing.Size(79, 50);
-            this.TAB_key.TabIndex = 3;
-            this.TAB_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.TAB_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.TAB_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            TAB_key.BackColor = Color.White;
+            TAB_key.BorderRadius = 20;
+            TAB_key.Controls.Add(FUNC_TAB);
+            TAB_key.ForeColor = Color.Black;
+            TAB_key.Location = new Point(12, 68);
+            TAB_key.Name = "TAB_key";
+            TAB_key.Size = new Size(79, 50);
+            TAB_key.TabIndex = 3;
+            TAB_key.MouseEnter += DisplayCursorOverKeypresses;
+            TAB_key.MouseLeave += HideCursorOverKeypresses;
+            TAB_key.MouseMove += UpdateCursorLocation;
             // 
             // FUNC_TAB
             // 
-            this.FUNC_TAB.AutoSize = true;
-            this.FUNC_TAB.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FUNC_TAB.Location = new System.Drawing.Point(19, 15);
-            this.FUNC_TAB.Name = "FUNC_TAB";
-            this.FUNC_TAB.Size = new System.Drawing.Size(39, 21);
-            this.FUNC_TAB.TabIndex = 0;
-            this.FUNC_TAB.Text = "TAB";
-            this.FUNC_TAB.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.FUNC_TAB.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.FUNC_TAB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            FUNC_TAB.AutoSize = true;
+            FUNC_TAB.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FUNC_TAB.Location = new Point(19, 15);
+            FUNC_TAB.Name = "FUNC_TAB";
+            FUNC_TAB.Size = new Size(39, 21);
+            FUNC_TAB.TabIndex = 0;
+            FUNC_TAB.Text = "TAB";
+            FUNC_TAB.MouseEnter += DisplayCursorOverKeypresses;
+            FUNC_TAB.MouseLeave += HideCursorOverKeypresses;
+            FUNC_TAB.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_0_key
             // 
-            this.NUMBER_0_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_0_key.BorderRadius = 20;
-            this.NUMBER_0_key.Controls.Add(this.NUM0);
-            this.NUMBER_0_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_0_key.Location = new System.Drawing.Point(572, 12);
-            this.NUMBER_0_key.Name = "NUMBER_0_key";
-            this.NUMBER_0_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_0_key.TabIndex = 0;
-            this.NUMBER_0_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_0_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_0_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_0_key.BackColor = Color.White;
+            NUMBER_0_key.BorderRadius = 20;
+            NUMBER_0_key.Controls.Add(NUM0);
+            NUMBER_0_key.ForeColor = Color.Black;
+            NUMBER_0_key.Location = new Point(572, 12);
+            NUMBER_0_key.Name = "NUMBER_0_key";
+            NUMBER_0_key.Size = new Size(50, 50);
+            NUMBER_0_key.TabIndex = 0;
+            NUMBER_0_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_0_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_0_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM0
             // 
-            this.NUM0.AutoSize = true;
-            this.NUM0.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM0.Location = new System.Drawing.Point(15, 15);
-            this.NUM0.Name = "NUM0";
-            this.NUM0.Size = new System.Drawing.Size(19, 21);
-            this.NUM0.TabIndex = 0;
-            this.NUM0.Text = "0";
-            this.NUM0.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM0.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM0.AutoSize = true;
+            NUM0.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM0.Location = new Point(15, 15);
+            NUM0.Name = "NUM0";
+            NUM0.Size = new Size(19, 21);
+            NUM0.TabIndex = 0;
+            NUM0.Text = "0";
+            NUM0.MouseEnter += DisplayCursorOverKeypresses;
+            NUM0.MouseLeave += HideCursorOverKeypresses;
+            NUM0.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_9_key
             // 
-            this.NUMBER_9_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_9_key.BorderRadius = 20;
-            this.NUMBER_9_key.Controls.Add(this.NUM9);
-            this.NUMBER_9_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_9_key.Location = new System.Drawing.Point(516, 12);
-            this.NUMBER_9_key.Name = "NUMBER_9_key";
-            this.NUMBER_9_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_9_key.TabIndex = 0;
-            this.NUMBER_9_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_9_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_9_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_9_key.BackColor = Color.White;
+            NUMBER_9_key.BorderRadius = 20;
+            NUMBER_9_key.Controls.Add(NUM9);
+            NUMBER_9_key.ForeColor = Color.Black;
+            NUMBER_9_key.Location = new Point(516, 12);
+            NUMBER_9_key.Name = "NUMBER_9_key";
+            NUMBER_9_key.Size = new Size(50, 50);
+            NUMBER_9_key.TabIndex = 0;
+            NUMBER_9_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_9_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_9_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM9
             // 
-            this.NUM9.AutoSize = true;
-            this.NUM9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM9.Location = new System.Drawing.Point(15, 15);
-            this.NUM9.Name = "NUM9";
-            this.NUM9.Size = new System.Drawing.Size(19, 21);
-            this.NUM9.TabIndex = 0;
-            this.NUM9.Text = "9";
-            this.NUM9.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM9.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM9.AutoSize = true;
+            NUM9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM9.Location = new Point(15, 15);
+            NUM9.Name = "NUM9";
+            NUM9.Size = new Size(19, 21);
+            NUM9.TabIndex = 0;
+            NUM9.Text = "9";
+            NUM9.MouseEnter += DisplayCursorOverKeypresses;
+            NUM9.MouseLeave += HideCursorOverKeypresses;
+            NUM9.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_8_key
             // 
-            this.NUMBER_8_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_8_key.BorderRadius = 20;
-            this.NUMBER_8_key.Controls.Add(this.NUM8);
-            this.NUMBER_8_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_8_key.Location = new System.Drawing.Point(460, 12);
-            this.NUMBER_8_key.Name = "NUMBER_8_key";
-            this.NUMBER_8_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_8_key.TabIndex = 0;
-            this.NUMBER_8_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_8_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_8_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_8_key.BackColor = Color.White;
+            NUMBER_8_key.BorderRadius = 20;
+            NUMBER_8_key.Controls.Add(NUM8);
+            NUMBER_8_key.ForeColor = Color.Black;
+            NUMBER_8_key.Location = new Point(460, 12);
+            NUMBER_8_key.Name = "NUMBER_8_key";
+            NUMBER_8_key.Size = new Size(50, 50);
+            NUMBER_8_key.TabIndex = 0;
+            NUMBER_8_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_8_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_8_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM8
             // 
-            this.NUM8.AutoSize = true;
-            this.NUM8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM8.Location = new System.Drawing.Point(15, 15);
-            this.NUM8.Name = "NUM8";
-            this.NUM8.Size = new System.Drawing.Size(19, 21);
-            this.NUM8.TabIndex = 0;
-            this.NUM8.Text = "8";
-            this.NUM8.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM8.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM8.AutoSize = true;
+            NUM8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM8.Location = new Point(15, 15);
+            NUM8.Name = "NUM8";
+            NUM8.Size = new Size(19, 21);
+            NUM8.TabIndex = 0;
+            NUM8.Text = "8";
+            NUM8.MouseEnter += DisplayCursorOverKeypresses;
+            NUM8.MouseLeave += HideCursorOverKeypresses;
+            NUM8.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_7_key
             // 
-            this.NUMBER_7_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_7_key.BorderRadius = 20;
-            this.NUMBER_7_key.Controls.Add(this.NUM7);
-            this.NUMBER_7_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_7_key.Location = new System.Drawing.Point(404, 12);
-            this.NUMBER_7_key.Name = "NUMBER_7_key";
-            this.NUMBER_7_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_7_key.TabIndex = 0;
-            this.NUMBER_7_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_7_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_7_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_7_key.BackColor = Color.White;
+            NUMBER_7_key.BorderRadius = 20;
+            NUMBER_7_key.Controls.Add(NUM7);
+            NUMBER_7_key.ForeColor = Color.Black;
+            NUMBER_7_key.Location = new Point(404, 12);
+            NUMBER_7_key.Name = "NUMBER_7_key";
+            NUMBER_7_key.Size = new Size(50, 50);
+            NUMBER_7_key.TabIndex = 0;
+            NUMBER_7_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_7_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_7_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM7
             // 
-            this.NUM7.AutoSize = true;
-            this.NUM7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM7.Location = new System.Drawing.Point(15, 15);
-            this.NUM7.Name = "NUM7";
-            this.NUM7.Size = new System.Drawing.Size(19, 21);
-            this.NUM7.TabIndex = 0;
-            this.NUM7.Text = "7";
-            this.NUM7.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM7.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM7.AutoSize = true;
+            NUM7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM7.Location = new Point(15, 15);
+            NUM7.Name = "NUM7";
+            NUM7.Size = new Size(19, 21);
+            NUM7.TabIndex = 0;
+            NUM7.Text = "7";
+            NUM7.MouseEnter += DisplayCursorOverKeypresses;
+            NUM7.MouseLeave += HideCursorOverKeypresses;
+            NUM7.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_6_key
             // 
-            this.NUMBER_6_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_6_key.BorderRadius = 20;
-            this.NUMBER_6_key.Controls.Add(this.NUM6);
-            this.NUMBER_6_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_6_key.Location = new System.Drawing.Point(348, 12);
-            this.NUMBER_6_key.Name = "NUMBER_6_key";
-            this.NUMBER_6_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_6_key.TabIndex = 0;
-            this.NUMBER_6_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_6_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_6_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_6_key.BackColor = Color.White;
+            NUMBER_6_key.BorderRadius = 20;
+            NUMBER_6_key.Controls.Add(NUM6);
+            NUMBER_6_key.ForeColor = Color.Black;
+            NUMBER_6_key.Location = new Point(348, 12);
+            NUMBER_6_key.Name = "NUMBER_6_key";
+            NUMBER_6_key.Size = new Size(50, 50);
+            NUMBER_6_key.TabIndex = 0;
+            NUMBER_6_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_6_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_6_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM6
             // 
-            this.NUM6.AutoSize = true;
-            this.NUM6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM6.Location = new System.Drawing.Point(15, 15);
-            this.NUM6.Name = "NUM6";
-            this.NUM6.Size = new System.Drawing.Size(19, 21);
-            this.NUM6.TabIndex = 0;
-            this.NUM6.Text = "6";
-            this.NUM6.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM6.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM6.AutoSize = true;
+            NUM6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM6.Location = new Point(15, 15);
+            NUM6.Name = "NUM6";
+            NUM6.Size = new Size(19, 21);
+            NUM6.TabIndex = 0;
+            NUM6.Text = "6";
+            NUM6.MouseEnter += DisplayCursorOverKeypresses;
+            NUM6.MouseLeave += HideCursorOverKeypresses;
+            NUM6.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_5_key
             // 
-            this.NUMBER_5_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_5_key.BorderRadius = 20;
-            this.NUMBER_5_key.Controls.Add(this.NUM5);
-            this.NUMBER_5_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_5_key.Location = new System.Drawing.Point(292, 12);
-            this.NUMBER_5_key.Name = "NUMBER_5_key";
-            this.NUMBER_5_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_5_key.TabIndex = 0;
-            this.NUMBER_5_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_5_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_5_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_5_key.BackColor = Color.White;
+            NUMBER_5_key.BorderRadius = 20;
+            NUMBER_5_key.Controls.Add(NUM5);
+            NUMBER_5_key.ForeColor = Color.Black;
+            NUMBER_5_key.Location = new Point(292, 12);
+            NUMBER_5_key.Name = "NUMBER_5_key";
+            NUMBER_5_key.Size = new Size(50, 50);
+            NUMBER_5_key.TabIndex = 0;
+            NUMBER_5_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_5_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_5_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM5
             // 
-            this.NUM5.AutoSize = true;
-            this.NUM5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM5.Location = new System.Drawing.Point(15, 15);
-            this.NUM5.Name = "NUM5";
-            this.NUM5.Size = new System.Drawing.Size(19, 21);
-            this.NUM5.TabIndex = 0;
-            this.NUM5.Text = "5";
-            this.NUM5.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM5.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM5.AutoSize = true;
+            NUM5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM5.Location = new Point(15, 15);
+            NUM5.Name = "NUM5";
+            NUM5.Size = new Size(19, 21);
+            NUM5.TabIndex = 0;
+            NUM5.Text = "5";
+            NUM5.MouseEnter += DisplayCursorOverKeypresses;
+            NUM5.MouseLeave += HideCursorOverKeypresses;
+            NUM5.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_4_key
             // 
-            this.NUMBER_4_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_4_key.BorderRadius = 20;
-            this.NUMBER_4_key.Controls.Add(this.NUM4);
-            this.NUMBER_4_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_4_key.Location = new System.Drawing.Point(236, 12);
-            this.NUMBER_4_key.Name = "NUMBER_4_key";
-            this.NUMBER_4_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_4_key.TabIndex = 0;
-            this.NUMBER_4_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_4_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_4_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_4_key.BackColor = Color.White;
+            NUMBER_4_key.BorderRadius = 20;
+            NUMBER_4_key.Controls.Add(NUM4);
+            NUMBER_4_key.ForeColor = Color.Black;
+            NUMBER_4_key.Location = new Point(236, 12);
+            NUMBER_4_key.Name = "NUMBER_4_key";
+            NUMBER_4_key.Size = new Size(50, 50);
+            NUMBER_4_key.TabIndex = 0;
+            NUMBER_4_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_4_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_4_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM4
             // 
-            this.NUM4.AutoSize = true;
-            this.NUM4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM4.Location = new System.Drawing.Point(16, 15);
-            this.NUM4.Name = "NUM4";
-            this.NUM4.Size = new System.Drawing.Size(19, 21);
-            this.NUM4.TabIndex = 0;
-            this.NUM4.Text = "4";
-            this.NUM4.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM4.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM4.AutoSize = true;
+            NUM4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM4.Location = new Point(16, 15);
+            NUM4.Name = "NUM4";
+            NUM4.Size = new Size(19, 21);
+            NUM4.TabIndex = 0;
+            NUM4.Text = "4";
+            NUM4.MouseEnter += DisplayCursorOverKeypresses;
+            NUM4.MouseLeave += HideCursorOverKeypresses;
+            NUM4.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_3_key
             // 
-            this.NUMBER_3_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_3_key.BorderRadius = 20;
-            this.NUMBER_3_key.Controls.Add(this.NUM3);
-            this.NUMBER_3_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_3_key.Location = new System.Drawing.Point(180, 12);
-            this.NUMBER_3_key.Name = "NUMBER_3_key";
-            this.NUMBER_3_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_3_key.TabIndex = 0;
-            this.NUMBER_3_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_3_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_3_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_3_key.BackColor = Color.White;
+            NUMBER_3_key.BorderRadius = 20;
+            NUMBER_3_key.Controls.Add(NUM3);
+            NUMBER_3_key.ForeColor = Color.Black;
+            NUMBER_3_key.Location = new Point(180, 12);
+            NUMBER_3_key.Name = "NUMBER_3_key";
+            NUMBER_3_key.Size = new Size(50, 50);
+            NUMBER_3_key.TabIndex = 0;
+            NUMBER_3_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_3_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_3_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM3
             // 
-            this.NUM3.AutoSize = true;
-            this.NUM3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM3.Location = new System.Drawing.Point(16, 15);
-            this.NUM3.Name = "NUM3";
-            this.NUM3.Size = new System.Drawing.Size(19, 21);
-            this.NUM3.TabIndex = 0;
-            this.NUM3.Text = "3";
-            this.NUM3.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM3.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM3.AutoSize = true;
+            NUM3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM3.Location = new Point(16, 15);
+            NUM3.Name = "NUM3";
+            NUM3.Size = new Size(19, 21);
+            NUM3.TabIndex = 0;
+            NUM3.Text = "3";
+            NUM3.MouseEnter += DisplayCursorOverKeypresses;
+            NUM3.MouseLeave += HideCursorOverKeypresses;
+            NUM3.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_2_key
             // 
-            this.NUMBER_2_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_2_key.BorderRadius = 20;
-            this.NUMBER_2_key.Controls.Add(this.NUM2);
-            this.NUMBER_2_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_2_key.Location = new System.Drawing.Point(124, 12);
-            this.NUMBER_2_key.Name = "NUMBER_2_key";
-            this.NUMBER_2_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_2_key.TabIndex = 0;
-            this.NUMBER_2_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_2_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_2_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_2_key.BackColor = Color.White;
+            NUMBER_2_key.BorderRadius = 20;
+            NUMBER_2_key.Controls.Add(NUM2);
+            NUMBER_2_key.ForeColor = Color.Black;
+            NUMBER_2_key.Location = new Point(124, 12);
+            NUMBER_2_key.Name = "NUMBER_2_key";
+            NUMBER_2_key.Size = new Size(50, 50);
+            NUMBER_2_key.TabIndex = 0;
+            NUMBER_2_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_2_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_2_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM2
             // 
-            this.NUM2.AutoSize = true;
-            this.NUM2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM2.Location = new System.Drawing.Point(16, 15);
-            this.NUM2.Name = "NUM2";
-            this.NUM2.Size = new System.Drawing.Size(19, 21);
-            this.NUM2.TabIndex = 0;
-            this.NUM2.Text = "2";
-            this.NUM2.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM2.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM2.AutoSize = true;
+            NUM2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM2.Location = new Point(16, 15);
+            NUM2.Name = "NUM2";
+            NUM2.Size = new Size(19, 21);
+            NUM2.TabIndex = 0;
+            NUM2.Text = "2";
+            NUM2.MouseEnter += DisplayCursorOverKeypresses;
+            NUM2.MouseLeave += HideCursorOverKeypresses;
+            NUM2.MouseMove += UpdateCursorLocation;
             // 
             // NUMBER_1_key
             // 
-            this.NUMBER_1_key.BackColor = System.Drawing.Color.White;
-            this.NUMBER_1_key.BorderRadius = 20;
-            this.NUMBER_1_key.Controls.Add(this.NUM1);
-            this.NUMBER_1_key.ForeColor = System.Drawing.Color.Black;
-            this.NUMBER_1_key.Location = new System.Drawing.Point(68, 12);
-            this.NUMBER_1_key.Name = "NUMBER_1_key";
-            this.NUMBER_1_key.Size = new System.Drawing.Size(50, 50);
-            this.NUMBER_1_key.TabIndex = 0;
-            this.NUMBER_1_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUMBER_1_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUMBER_1_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUMBER_1_key.BackColor = Color.White;
+            NUMBER_1_key.BorderRadius = 20;
+            NUMBER_1_key.Controls.Add(NUM1);
+            NUMBER_1_key.ForeColor = Color.Black;
+            NUMBER_1_key.Location = new Point(68, 12);
+            NUMBER_1_key.Name = "NUMBER_1_key";
+            NUMBER_1_key.Size = new Size(50, 50);
+            NUMBER_1_key.TabIndex = 0;
+            NUMBER_1_key.MouseEnter += DisplayCursorOverKeypresses;
+            NUMBER_1_key.MouseLeave += HideCursorOverKeypresses;
+            NUMBER_1_key.MouseMove += UpdateCursorLocation;
             // 
             // NUM1
             // 
-            this.NUM1.AutoSize = true;
-            this.NUM1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NUM1.Location = new System.Drawing.Point(17, 15);
-            this.NUM1.Name = "NUM1";
-            this.NUM1.Size = new System.Drawing.Size(16, 21);
-            this.NUM1.TabIndex = 0;
-            this.NUM1.Text = "1";
-            this.NUM1.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.NUM1.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.NUM1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            NUM1.AutoSize = true;
+            NUM1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            NUM1.Location = new Point(17, 15);
+            NUM1.Name = "NUM1";
+            NUM1.Size = new Size(16, 21);
+            NUM1.TabIndex = 0;
+            NUM1.Text = "1";
+            NUM1.MouseEnter += DisplayCursorOverKeypresses;
+            NUM1.MouseLeave += HideCursorOverKeypresses;
+            NUM1.MouseMove += UpdateCursorLocation;
             // 
             // TILDA_key
             // 
-            this.TILDA_key.BackColor = System.Drawing.Color.White;
-            this.TILDA_key.BorderRadius = 20;
-            this.TILDA_key.Controls.Add(this.SYMBOL_TILDA);
-            this.TILDA_key.ForeColor = System.Drawing.Color.Black;
-            this.TILDA_key.Location = new System.Drawing.Point(12, 12);
-            this.TILDA_key.Name = "TILDA_key";
-            this.TILDA_key.Size = new System.Drawing.Size(50, 50);
-            this.TILDA_key.TabIndex = 49;
-            this.TILDA_key.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.TILDA_key.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.TILDA_key.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            TILDA_key.BackColor = Color.White;
+            TILDA_key.BorderRadius = 20;
+            TILDA_key.Controls.Add(SYMBOL_TILDA);
+            TILDA_key.ForeColor = Color.Black;
+            TILDA_key.Location = new Point(12, 12);
+            TILDA_key.Name = "TILDA_key";
+            TILDA_key.Size = new Size(50, 50);
+            TILDA_key.TabIndex = 49;
+            TILDA_key.MouseEnter += DisplayCursorOverKeypresses;
+            TILDA_key.MouseLeave += HideCursorOverKeypresses;
+            TILDA_key.MouseMove += UpdateCursorLocation;
             // 
             // SYMBOL_TILDA
             // 
-            this.SYMBOL_TILDA.AutoSize = true;
-            this.SYMBOL_TILDA.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SYMBOL_TILDA.Location = new System.Drawing.Point(15, 15);
-            this.SYMBOL_TILDA.Name = "SYMBOL_TILDA";
-            this.SYMBOL_TILDA.Size = new System.Drawing.Size(21, 21);
-            this.SYMBOL_TILDA.TabIndex = 1;
-            this.SYMBOL_TILDA.Text = "~";
-            this.SYMBOL_TILDA.MouseEnter += new System.EventHandler(this.DisplayCursorOverKeypresses);
-            this.SYMBOL_TILDA.MouseLeave += new System.EventHandler(this.HideCursorOverKeypresses);
-            this.SYMBOL_TILDA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateCursorLocation);
+            SYMBOL_TILDA.AutoSize = true;
+            SYMBOL_TILDA.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SYMBOL_TILDA.Location = new Point(15, 15);
+            SYMBOL_TILDA.Name = "SYMBOL_TILDA";
+            SYMBOL_TILDA.Size = new Size(21, 21);
+            SYMBOL_TILDA.TabIndex = 1;
+            SYMBOL_TILDA.Text = "~";
+            SYMBOL_TILDA.MouseEnter += DisplayCursorOverKeypresses;
+            SYMBOL_TILDA.MouseLeave += HideCursorOverKeypresses;
+            SYMBOL_TILDA.MouseMove += UpdateCursorLocation;
             // 
             // Keyboard_Layout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(186)))));
-            this.Controls.Add(this.keys_panel);
-            this.Name = "Keyboard_Layout";
-            this.Size = new System.Drawing.Size(845, 325);
-            this.keys_panel.ResumeLayout(false);
-            this.keys_panel.PerformLayout();
-            this.panel_key_times_pressed.ResumeLayout(false);
-            this.panel_key_times_pressed.PerformLayout();
-            this.P_key.ResumeLayout(false);
-            this.P_key.PerformLayout();
-            this.BACKSLASH_key.ResumeLayout(false);
-            this.BACKSLASH_key.PerformLayout();
-            this.EQUAL_key.ResumeLayout(false);
-            this.EQUAL_key.PerformLayout();
-            this.RSHIFT_key.ResumeLayout(false);
-            this.RSHIFT_key.PerformLayout();
-            this.MINUS_key.ResumeLayout(false);
-            this.MINUS_key.PerformLayout();
-            this.QUOTATION_MARK_key.ResumeLayout(false);
-            this.QUOTATION_MARK_key.PerformLayout();
-            this.BRACKET_CLOSE_key.ResumeLayout(false);
-            this.BRACKET_CLOSE_key.PerformLayout();
-            this.SEMICOLON_key.ResumeLayout(false);
-            this.SEMICOLON_key.PerformLayout();
-            this.BKSPC_key.ResumeLayout(false);
-            this.BKSPC_key.PerformLayout();
-            this.BRACKET_OPEN_key.ResumeLayout(false);
-            this.BRACKET_OPEN_key.PerformLayout();
-            this.ENTER_key.ResumeLayout(false);
-            this.ENTER_key.PerformLayout();
-            this.RCTRL_key.ResumeLayout(false);
-            this.RCTRL_key.PerformLayout();
-            this.SLASH_key.ResumeLayout(false);
-            this.SLASH_key.PerformLayout();
-            this.RB_key.ResumeLayout(false);
-            this.RB_key.PerformLayout();
-            this.LB_key.ResumeLayout(false);
-            this.LB_key.PerformLayout();
-            this.DOT_key.ResumeLayout(false);
-            this.DOT_key.PerformLayout();
-            this.RALT_key.ResumeLayout(false);
-            this.RALT_key.PerformLayout();
-            this.COMMA_key.ResumeLayout(false);
-            this.COMMA_key.PerformLayout();
-            this.L_key.ResumeLayout(false);
-            this.L_key.PerformLayout();
-            this.M_key.ResumeLayout(false);
-            this.M_key.PerformLayout();
-            this.SPACE_key.ResumeLayout(false);
-            this.SPACE_key.PerformLayout();
-            this.LALT_key.ResumeLayout(false);
-            this.LALT_key.PerformLayout();
-            this.N_key.ResumeLayout(false);
-            this.N_key.PerformLayout();
-            this.EMPTY_key.ResumeLayout(false);
-            this.EMPTY_key.PerformLayout();
-            this.K_key.ResumeLayout(false);
-            this.K_key.PerformLayout();
-            this.LCTRL_key.ResumeLayout(false);
-            this.LCTRL_key.PerformLayout();
-            this.B_key.ResumeLayout(false);
-            this.B_key.PerformLayout();
-            this.O_key.ResumeLayout(false);
-            this.O_key.PerformLayout();
-            this.V_key.ResumeLayout(false);
-            this.V_key.PerformLayout();
-            this.J_key.ResumeLayout(false);
-            this.J_key.PerformLayout();
-            this.C_key.ResumeLayout(false);
-            this.C_key.PerformLayout();
-            this.X_key.ResumeLayout(false);
-            this.X_key.PerformLayout();
-            this.H_key.ResumeLayout(false);
-            this.H_key.PerformLayout();
-            this.Z_key.ResumeLayout(false);
-            this.Z_key.PerformLayout();
-            this.I_key.ResumeLayout(false);
-            this.I_key.PerformLayout();
-            this.LSHIFT_key.ResumeLayout(false);
-            this.LSHIFT_key.PerformLayout();
-            this.G_key.ResumeLayout(false);
-            this.G_key.PerformLayout();
-            this.F_key.ResumeLayout(false);
-            this.F_key.PerformLayout();
-            this.U_key.ResumeLayout(false);
-            this.U_key.PerformLayout();
-            this.D_key.ResumeLayout(false);
-            this.D_key.PerformLayout();
-            this.S_key.ResumeLayout(false);
-            this.S_key.PerformLayout();
-            this.Y_key.ResumeLayout(false);
-            this.Y_key.PerformLayout();
-            this.A_key.ResumeLayout(false);
-            this.A_key.PerformLayout();
-            this.CAPS_key.ResumeLayout(false);
-            this.CAPS_key.PerformLayout();
-            this.T_key.ResumeLayout(false);
-            this.T_key.PerformLayout();
-            this.R_key.ResumeLayout(false);
-            this.R_key.PerformLayout();
-            this.E_key.ResumeLayout(false);
-            this.E_key.PerformLayout();
-            this.W_key.ResumeLayout(false);
-            this.W_key.PerformLayout();
-            this.Q_key.ResumeLayout(false);
-            this.Q_key.PerformLayout();
-            this.TAB_key.ResumeLayout(false);
-            this.TAB_key.PerformLayout();
-            this.NUMBER_0_key.ResumeLayout(false);
-            this.NUMBER_0_key.PerformLayout();
-            this.NUMBER_9_key.ResumeLayout(false);
-            this.NUMBER_9_key.PerformLayout();
-            this.NUMBER_8_key.ResumeLayout(false);
-            this.NUMBER_8_key.PerformLayout();
-            this.NUMBER_7_key.ResumeLayout(false);
-            this.NUMBER_7_key.PerformLayout();
-            this.NUMBER_6_key.ResumeLayout(false);
-            this.NUMBER_6_key.PerformLayout();
-            this.NUMBER_5_key.ResumeLayout(false);
-            this.NUMBER_5_key.PerformLayout();
-            this.NUMBER_4_key.ResumeLayout(false);
-            this.NUMBER_4_key.PerformLayout();
-            this.NUMBER_3_key.ResumeLayout(false);
-            this.NUMBER_3_key.PerformLayout();
-            this.NUMBER_2_key.ResumeLayout(false);
-            this.NUMBER_2_key.PerformLayout();
-            this.NUMBER_1_key.ResumeLayout(false);
-            this.NUMBER_1_key.PerformLayout();
-            this.TILDA_key.ResumeLayout(false);
-            this.TILDA_key.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            BackColor = Color.FromArgb(167, 173, 186);
+            Controls.Add(keys_panel);
+            DoubleBuffered = true;
+            Name = "Keyboard_Layout";
+            Size = new Size(845, 325);
+            keys_panel.ResumeLayout(false);
+            keys_panel.PerformLayout();
+            panel_key_times_pressed.ResumeLayout(false);
+            panel_key_times_pressed.PerformLayout();
+            P_key.ResumeLayout(false);
+            P_key.PerformLayout();
+            BACKSLASH_key.ResumeLayout(false);
+            BACKSLASH_key.PerformLayout();
+            EQUAL_key.ResumeLayout(false);
+            EQUAL_key.PerformLayout();
+            RSHIFT_key.ResumeLayout(false);
+            RSHIFT_key.PerformLayout();
+            MINUS_key.ResumeLayout(false);
+            MINUS_key.PerformLayout();
+            QUOTATION_MARK_key.ResumeLayout(false);
+            QUOTATION_MARK_key.PerformLayout();
+            BRACKET_CLOSE_key.ResumeLayout(false);
+            BRACKET_CLOSE_key.PerformLayout();
+            SEMICOLON_key.ResumeLayout(false);
+            SEMICOLON_key.PerformLayout();
+            BKSPC_key.ResumeLayout(false);
+            BKSPC_key.PerformLayout();
+            BRACKET_OPEN_key.ResumeLayout(false);
+            BRACKET_OPEN_key.PerformLayout();
+            ENTER_key.ResumeLayout(false);
+            ENTER_key.PerformLayout();
+            RCTRL_key.ResumeLayout(false);
+            RCTRL_key.PerformLayout();
+            SLASH_key.ResumeLayout(false);
+            SLASH_key.PerformLayout();
+            RB_key.ResumeLayout(false);
+            RB_key.PerformLayout();
+            LB_key.ResumeLayout(false);
+            LB_key.PerformLayout();
+            DOT_key.ResumeLayout(false);
+            DOT_key.PerformLayout();
+            RALT_key.ResumeLayout(false);
+            RALT_key.PerformLayout();
+            COMMA_key.ResumeLayout(false);
+            COMMA_key.PerformLayout();
+            L_key.ResumeLayout(false);
+            L_key.PerformLayout();
+            M_key.ResumeLayout(false);
+            M_key.PerformLayout();
+            SPACE_key.ResumeLayout(false);
+            SPACE_key.PerformLayout();
+            LALT_key.ResumeLayout(false);
+            LALT_key.PerformLayout();
+            N_key.ResumeLayout(false);
+            N_key.PerformLayout();
+            EMPTY_key.ResumeLayout(false);
+            EMPTY_key.PerformLayout();
+            K_key.ResumeLayout(false);
+            K_key.PerformLayout();
+            LCTRL_key.ResumeLayout(false);
+            LCTRL_key.PerformLayout();
+            B_key.ResumeLayout(false);
+            B_key.PerformLayout();
+            O_key.ResumeLayout(false);
+            O_key.PerformLayout();
+            V_key.ResumeLayout(false);
+            V_key.PerformLayout();
+            J_key.ResumeLayout(false);
+            J_key.PerformLayout();
+            C_key.ResumeLayout(false);
+            C_key.PerformLayout();
+            X_key.ResumeLayout(false);
+            X_key.PerformLayout();
+            H_key.ResumeLayout(false);
+            H_key.PerformLayout();
+            Z_key.ResumeLayout(false);
+            Z_key.PerformLayout();
+            I_key.ResumeLayout(false);
+            I_key.PerformLayout();
+            LSHIFT_key.ResumeLayout(false);
+            LSHIFT_key.PerformLayout();
+            G_key.ResumeLayout(false);
+            G_key.PerformLayout();
+            F_key.ResumeLayout(false);
+            F_key.PerformLayout();
+            U_key.ResumeLayout(false);
+            U_key.PerformLayout();
+            D_key.ResumeLayout(false);
+            D_key.PerformLayout();
+            S_key.ResumeLayout(false);
+            S_key.PerformLayout();
+            Y_key.ResumeLayout(false);
+            Y_key.PerformLayout();
+            A_key.ResumeLayout(false);
+            A_key.PerformLayout();
+            CAPS_key.ResumeLayout(false);
+            CAPS_key.PerformLayout();
+            T_key.ResumeLayout(false);
+            T_key.PerformLayout();
+            R_key.ResumeLayout(false);
+            R_key.PerformLayout();
+            E_key.ResumeLayout(false);
+            E_key.PerformLayout();
+            W_key.ResumeLayout(false);
+            W_key.PerformLayout();
+            Q_key.ResumeLayout(false);
+            Q_key.PerformLayout();
+            TAB_key.ResumeLayout(false);
+            TAB_key.PerformLayout();
+            NUMBER_0_key.ResumeLayout(false);
+            NUMBER_0_key.PerformLayout();
+            NUMBER_9_key.ResumeLayout(false);
+            NUMBER_9_key.PerformLayout();
+            NUMBER_8_key.ResumeLayout(false);
+            NUMBER_8_key.PerformLayout();
+            NUMBER_7_key.ResumeLayout(false);
+            NUMBER_7_key.PerformLayout();
+            NUMBER_6_key.ResumeLayout(false);
+            NUMBER_6_key.PerformLayout();
+            NUMBER_5_key.ResumeLayout(false);
+            NUMBER_5_key.PerformLayout();
+            NUMBER_4_key.ResumeLayout(false);
+            NUMBER_4_key.PerformLayout();
+            NUMBER_3_key.ResumeLayout(false);
+            NUMBER_3_key.PerformLayout();
+            NUMBER_2_key.ResumeLayout(false);
+            NUMBER_2_key.PerformLayout();
+            NUMBER_1_key.ResumeLayout(false);
+            NUMBER_1_key.PerformLayout();
+            TILDA_key.ResumeLayout(false);
+            TILDA_key.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

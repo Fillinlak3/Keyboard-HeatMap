@@ -177,6 +177,7 @@
             Controls.Add(keyboard_Layout);
             Controls.Add(help_Page);
             Controls.Add(MenuBar);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;

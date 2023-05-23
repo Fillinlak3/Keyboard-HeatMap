@@ -49,9 +49,9 @@ namespace Keyboard_HeatMap
                 keyboard_Layout.Reload();
                 if (keyboard_Layout.ReadLogFile(filepath))
                 {
-                    #pragma warning disable 8625
+#pragma warning disable 8625
                     Frame_Update_Tick(null, null);
-                    #pragma warning restore 8625
+#pragma warning restore 8625
 
                     return true;
                 }
@@ -62,7 +62,7 @@ namespace Keyboard_HeatMap
         // Before starting (on load) checkings.
         private async void Form_Main_Load(object sender, EventArgs e)
         {
-            #if RELEASE
+#if RELEASE
             // Check if another instance of the program is already running.
             if (IsAnotherInstanceRunning())
             {
@@ -330,15 +330,15 @@ namespace Keyboard_HeatMap
         #region Read Log File
         private void keyboard_Layout_DragEnter(object sender, DragEventArgs e)
         {
-            #pragma warning disable CS8602
+#pragma warning disable CS8602
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-            #pragma warning restore CS8602
+#pragma warning restore CS8602
         }
         private void keyboard_Layout_DragDrop(object sender, DragEventArgs e)
         {
-            #pragma warning disable CS8602
+#pragma warning disable CS8602
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            #pragma warning restore CS8602
+#pragma warning restore CS8602
             string droped_file = files[0];
 
             if (files.Length > 1)
