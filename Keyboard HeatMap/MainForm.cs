@@ -1,3 +1,4 @@
+using Keyboard_HeatMap.Properties;
 using System.Diagnostics;
 using System.Net;
 using System.Reflection;
@@ -296,6 +297,17 @@ namespace Keyboard_HeatMap
                 await Task.Delay(200);
             }
         }
+        private void LockOnTop(object sender, EventArgs e)
+        {
+            // Remove button focus.
+            this.ApplicationTitle.Focus();
+            this.TopMost = !this.TopMost;
+
+            if (this.TopMost == true)
+                BTN_AlwaysOnTop.Image = Resources.lock_locked;
+            else
+                BTN_AlwaysOnTop.Image = Resources.lock_unlocked;
+        }
         private async void MinimizeForm(object sender, EventArgs e)
         {
             await Task.Run(() => FadeOut(this, 5));
@@ -512,7 +524,7 @@ namespace Keyboard_HeatMap
             }
             else
             {
-                this.BackColor = BTN_Minimize.BackColor = MenuBar.BackColor;
+                this.BackColor = BTN_Minimize.BackColor = BTN_AlwaysOnTop.BackColor = MenuBar.BackColor;
 
                 this.Visible = false;
                 this.Visible = true;

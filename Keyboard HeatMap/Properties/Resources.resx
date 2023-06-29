@@ -145,4 +145,10 @@
   <data name="keyboard_icon_help_page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\keyboard_icon_help_page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lock_locked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\lock_locked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock_unlocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\lock_unlocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

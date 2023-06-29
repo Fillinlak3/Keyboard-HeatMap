@@ -123,6 +123,26 @@ namespace Keyboard_HeatMap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_locked {
+            get {
+                object obj = ResourceManager.GetObject("lock_locked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_unlocked {
+            get {
+                object obj = ResourceManager.GetObject("lock_unlocked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remastered_help_page_dark {
             get {
                 object obj = ResourceManager.GetObject("remastered_help_page_dark", resourceCulture);

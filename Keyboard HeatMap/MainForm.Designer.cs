@@ -35,6 +35,7 @@
             keyboard_Layout = new Keyboard_Layout();
             help_Page = new Remastered_Help_Page();
             MenuBar = new Panel();
+            BTN_AlwaysOnTop = new Button();
             BTN_Minimize = new Button();
             BTN_Maximize = new Button();
             BTN_Close = new Button();
@@ -57,6 +58,7 @@
             // keyboard_Layout
             // 
             keyboard_Layout.AllowDrop = true;
+            keyboard_Layout.AutoSize = true;
             keyboard_Layout.BackColor = Color.FromArgb(167, 173, 186);
             keyboard_Layout.Dock = DockStyle.Fill;
             keyboard_Layout.Location = new Point(0, 29);
@@ -84,6 +86,7 @@
             // 
             // MenuBar
             // 
+            MenuBar.Controls.Add(BTN_AlwaysOnTop);
             MenuBar.Controls.Add(BTN_Minimize);
             MenuBar.Controls.Add(BTN_Maximize);
             MenuBar.Controls.Add(BTN_Close);
@@ -95,6 +98,23 @@
             MenuBar.Size = new Size(845, 29);
             MenuBar.TabIndex = 1;
             MenuBar.MouseMove += MoveForm;
+            // 
+            // BTN_AlwaysOnTop
+            // 
+            BTN_AlwaysOnTop.BackColor = Color.Transparent;
+            BTN_AlwaysOnTop.Dock = DockStyle.Right;
+            BTN_AlwaysOnTop.FlatAppearance.BorderSize = 0;
+            BTN_AlwaysOnTop.FlatStyle = FlatStyle.Flat;
+            BTN_AlwaysOnTop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BTN_AlwaysOnTop.Image = Properties.Resources.lock_unlocked;
+            BTN_AlwaysOnTop.Location = new Point(685, 0);
+            BTN_AlwaysOnTop.Name = "BTN_AlwaysOnTop";
+            BTN_AlwaysOnTop.Size = new Size(25, 29);
+            BTN_AlwaysOnTop.TabIndex = 4;
+            BTN_AlwaysOnTop.TabStop = false;
+            BTN_AlwaysOnTop.TextAlign = ContentAlignment.MiddleRight;
+            BTN_AlwaysOnTop.UseVisualStyleBackColor = false;
+            BTN_AlwaysOnTop.Click += LockOnTop;
             // 
             // BTN_Minimize
             // 
@@ -208,7 +228,8 @@
         private Button BTN_Maximize;
         private Button BTN_Close;
         private Button BTN_Minimize;
-        private static Panel MenuBar;
-        private static Keyboard_Layout keyboard_Layout;
+        private Button BTN_AlwaysOnTop;
+        static private Panel MenuBar;
+        static private Keyboard_Layout keyboard_Layout;
     }
 }
