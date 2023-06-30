@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<AssemblyVersion>1.8.52</AssemblyVersion>
+	<AssemblyVersion>1.9.0</AssemblyVersion>
 	<FileVersion>$(AssemblyVersion)</FileVersion>
 	<Version>$(AssemblyVersion)</Version>
 	<Copyright>FillInHack Inc</Copyright>
@@ -17,7 +17,12 @@
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <Authors>FillInHack Inc</Authors>
     <SignAssembly>False</SignAssembly>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="source_code.zip" />
+  </ItemGroup>
 
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">

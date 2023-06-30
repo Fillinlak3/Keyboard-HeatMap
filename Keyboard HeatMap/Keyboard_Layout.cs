@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace Keyboard_HeatMap
@@ -8,15 +9,15 @@ namespace Keyboard_HeatMap
         public readonly static string SavedRecordsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $@"\Keyboard HeatMap\Saves\";
 
         // Store the keys panel.
-        public  Dictionary<int, Panel> keys;
+        public Dictionary<int, Panel> keys;
         // Store the number of keypresses of each key.
-        public  Dictionary<int, long> number_of_keyPress;
+        public Dictionary<int, long> number_of_keyPress;
         // Store the hashes for finding the mouse-hover object.
         private Dictionary<int, int> keys_hashcodes;
         private Dictionary<int, int> symbols_hashcodes;
         // Store the total number of keypresses.
         public long TOTAL_KEYPRESSES = 0;
-        
+
         // Dark/Light Mode Settings.
         private Color Dark_Mode_Keys_Background = Color.FromArgb(67, 67, 67);
         private Color Light_Mode_Keys_Background = Color.FromArgb(242, 243, 245);
@@ -435,9 +436,10 @@ namespace Keyboard_HeatMap
             data += "RB: " + number_of_keyPress[2].ToString() + "\n";
             data += "MB: " + number_of_keyPress[4].ToString() + "\n\n";
 
+            data += "#======= <TOTAL> =======#\n";
             data += ("TOTAL OF KEYPRESSES: " + TOTAL_KEYPRESSES.ToString() + "\n");
 
-            string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.log";
+            string LogFileName = @$"keypress_statistics_{DateTime.Now.ToString("ddMMyyyy_HHmmss")}.keymap";
             File.WriteAllText(SavedRecordsPath + LogFileName, data);
         }
 
@@ -484,8 +486,8 @@ namespace Keyboard_HeatMap
 
                 // If the file is ok, then assign the values to number_of_keyPress list.
                 #region Assign Values
-                if (number_of_keyPress.Count != 0)
-                    number_of_keyPress.Clear();
+                number_of_keyPress.Clear();
+                TOTAL_KEYPRESSES = 0;
 
                 number_of_keyPress.Add(192, Int32.Parse(data_scraped[0]));
                 number_of_keyPress.Add(49, Int32.Parse(data_scraped[1]));
@@ -560,7 +562,7 @@ namespace Keyboard_HeatMap
                 // Finally clean the mem.
                 data_scraped = null;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LABEL_total_number_of_keypresses.Text = "No keypresses yet";
                 MessageBox.Show($"Failed to open record file: {ex.Message}", "Operation Failed!", MessageBoxButtons.OK);
@@ -620,10 +622,10 @@ namespace Keyboard_HeatMap
         {
             int x = 0, y = 0;
 
-            if(keys_hashcodes.ContainsValue(sender.GetHashCode()))
+            if (keys_hashcodes.ContainsValue(sender.GetHashCode()))
             {
                 x = Hovered_Key_Location.X + e.Location.X - panel_key_times_pressed.Width;
-                y = Hovered_Key_Location.Y + e.Location.Y - panel_key_times_pressed.Height;       
+                y = Hovered_Key_Location.Y + e.Location.Y - panel_key_times_pressed.Height;
             }
             else
             {
@@ -634,7 +636,7 @@ namespace Keyboard_HeatMap
                         x = Hovered_Key_Location.X + e.Location.X - panel_key_times_pressed.Width + keys[symbolfound.Key].Controls[0].Location.X;
                         y = Hovered_Key_Location.Y + e.Location.Y - panel_key_times_pressed.Height + keys[symbolfound.Key].Controls[0].Location.Y;
                     }
-                }   
+                }
             }
 
             if (x <= 0) x += panel_key_times_pressed.Width + 5;
@@ -657,7 +659,7 @@ namespace Keyboard_HeatMap
         {
             SendKeys.SendWait("{F1}");
         }
-    
+
         // Switch from Light-Mode to Dark-Mode.
         public void SwitchToDarkMode(bool mode)
         {
